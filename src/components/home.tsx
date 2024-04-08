@@ -19,7 +19,7 @@ const Home: React.FC = () => {
                 width: '100%',
             }} >
                 <ResponsiveAppBar />
-                <MainHeader title="John Cinquegrana" />
+                <MainHeader title="John Cinquegnoodles" />
 
                 <div>
                     <a href="https://vitejs.dev" target="_blank">
