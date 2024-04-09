@@ -77,14 +77,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-html,
-body,
-#root,
-#root>div {
-  height: 100%;
-  width: 100%;
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
-}
