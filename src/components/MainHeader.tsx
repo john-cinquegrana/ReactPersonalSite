@@ -27,9 +27,17 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
                     fontWeight={700}
                     letterSpacing='0.15rem'
                 >{title}</Typography>
+                <Typography
+                    marginLeft={4}
+                    variant='subtitle1'
+                    textAlign={'left'}
+                    fontSize={30}
+                    fontWeight={500}
+                    letterSpacing='0.10rem'
+                >The World exists for Passion and Beauty</Typography>
 
             </Box>
-        </Box>
+        </Box >
     );
 };
 
