@@ -1,4 +1,5 @@
-import { Card } from '@mui/material';
+import { Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import React from 'react';
 
 interface MainHeaderProps {
@@ -7,9 +8,28 @@ interface MainHeaderProps {
 
 const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
     return (
-        <Card>
-            <h1>{title}</h1>
-        </Card>
+        // A box that aligns all of its items into a column
+        <Box sx={{
+            display: 'flex',
+            flexFlow: 'column nowrap',
+            justifyContent: 'flex-start',
+            alignItems: 'flex-start'
+        }}>
+            <Box sx={{
+                height: 0,
+            }} />
+            <Box sx={{
+                margin: 20
+            }}>
+                <Typography
+                    variant='h1'
+                    textAlign={'left'}
+                    fontWeight={700}
+                    letterSpacing='0.15rem'
+                >{title}</Typography>
+
+            </Box>
+        </Box>
     );
 };
 
