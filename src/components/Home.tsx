@@ -3,8 +3,8 @@ import { useState } from 'react';
 import reactLogo from '../assets/react.svg';
 import viteLogo from '/vite.svg';
 import MainHeader from './MainHeader';
-import ResponsiveAppBar from './ResponsiveAppBar';
 import Box from '@mui/material/Box';
+
 
 const Home: React.FC = () => {
     const [count, setCount] = useState(0);
@@ -18,8 +18,12 @@ const Home: React.FC = () => {
                 alignItems: 'stretch',
                 width: '100%',
             }} >
-                <ResponsiveAppBar />
-                <MainHeader title="John Cinquegrana" />
+
+                <MainHeader title="John Cinquegrana" />,
+
+
+
+
 
                 <div>
                     <a href="https://vitejs.dev" target="_blank">
