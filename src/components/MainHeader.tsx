@@ -18,9 +18,9 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
             flexFlow: 'column nowrap',
             justifyContent: 'flex-start',
             alignItems: 'flex-start',
-            backgroundImage: 'url(/src/assets/sunset-svgrepo-com.svg)',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
+            // backgroundImage: 'url(/src/assets/sunset-svgrepo-com.svg)',
+            // backgroundRepeat: 'no-repeat',
+            // backgroundSize: 'cover',
         }}>
             <Box sx={{
                 height: 0,
