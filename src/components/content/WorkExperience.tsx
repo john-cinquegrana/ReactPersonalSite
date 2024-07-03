@@ -1,5 +1,6 @@
-import { Card, CardContent, Typography } from '@mui/material';
+import { Box, Card, CardContent, Typography } from '@mui/material';
 import React from 'react';
+import Skill from '../Skill';
 
 interface WorkExperienceProps {
     // Define the props for your component here
@@ -30,7 +31,9 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
                     <li>Designed CI/CD for deployment of mobile apps to both testers, and app stores, using Firebase and AWS CodeStar</li>
                 </ul>
                 <Typography variant='h6'>Relevant Skills</Typography>
-
+                <Box>
+                    <Skill label='Flutter'></Skill>
+                </Box>
             </CardContent>
         </Card>
     );
