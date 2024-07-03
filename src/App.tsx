@@ -1,10 +1,14 @@
+import { ThemeProvider } from '@emotion/react'
 import './App.css'
 import Home from './components/Home'
+import { lightTheme } from './components/theme'
 
 function App() {
 
   return (
-    <Home />
+    <ThemeProvider theme={lightTheme}>
+      <Home />
+    </ThemeProvider>
   )
 }
 

@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import { Box, useTheme } from '@mui/system';
 import React from 'react';
 
 interface MainHeaderProps {
@@ -7,6 +7,10 @@ interface MainHeaderProps {
 }
 
 const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
+    const theme = useTheme();
+
+    console.log(theme);
+
     return (
         // A box that aligns all of its items into a column
         <Box sx={{
@@ -24,6 +28,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
             <Card sx={{
                 margin: 20,
                 padding: '16px',
+                backgroundColor: theme.palette.primaryContainer,
             }}>
                 <CardContent>
                     <Typography
