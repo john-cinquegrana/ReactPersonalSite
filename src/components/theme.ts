@@ -466,6 +466,9 @@ const themeSource = {
     }
 }
 
+const bodyFontFamily = ["Lora Variable", "serif"].join(',');
+const headerFontFamily = ["Ubuntu", "sans-serif"].join(',');
+
 export const lightTheme = createTheme({
     // The base color system of our theme
     palette: {
@@ -539,8 +542,43 @@ export const lightTheme = createTheme({
         "surfaceContainerHighest": themeSource.schemes.light.surfaceContainerHighest
     },
     typography: {
-        fontFamily: ["Lora Variable", "Ubuntu", "Roboto", "Helvetica", "Arial", "sans-serif"].join(','),
-
+        fontFamily: ["Lora Variable", "Ubuntu", "sans-serif"].join(','),
+        h1: {
+            fontFamily: headerFontFamily,
+        },
+        h2: {
+            fontFamily: headerFontFamily,
+        },
+        h3: {
+            fontFamily: headerFontFamily,
+        },
+        h4: {
+            fontFamily: headerFontFamily,
+        },
+        h5: {
+            fontFamily: headerFontFamily,
+        },
+        h6: {
+            fontFamily: headerFontFamily,
+        },
+        subtitle1: {
+            fontFamily: bodyFontFamily,
+        },
+        subtitle2: {
+            fontFamily: bodyFontFamily,
+        },
+        body1: {
+            fontFamily: bodyFontFamily,
+        },
+        body2: {
+            fontFamily: bodyFontFamily,
+        },
+        caption: {
+            fontFamily: bodyFontFamily,
+        },
+        overline: {
+            fontFamily: bodyFontFamily,
+        },
     },
     // Changes in the default properties of components
     components: {
