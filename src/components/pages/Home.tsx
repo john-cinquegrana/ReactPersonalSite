@@ -1,9 +1,9 @@
 import React from 'react';
 
-import MainHeader from './MainHeader';
+import MainHeader from '../MainHeader';
 import Box from '@mui/material/Box';
 import { Card, CardContent, Typography } from '@mui/material';
-import WorkExperience from './content/WorkExperience';
+import WorkExperience from '../content/WorkExperience';
 
 
 const Home: React.FC = () => {
