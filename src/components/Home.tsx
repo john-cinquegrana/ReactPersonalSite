@@ -19,12 +19,7 @@ const Home: React.FC = () => {
                 width: '100%',
             }} >
 
-                <MainHeader title="John Cinquegrana" />,
-
-
-
-
-
+                <MainHeader title="John Cinquegrana" />
                 <div>
                     <a href="https://vitejs.dev" target="_blank">
                         <img src={viteLogo} className="logo" alt="Vite logo" />
