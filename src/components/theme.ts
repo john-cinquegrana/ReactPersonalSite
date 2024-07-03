@@ -590,6 +590,7 @@ export const lightTheme = createTheme({
                     // border: '1px solid',
                     // borderColor: '#D7C2B9',
                     boxShadow: 'none',
+                    overflow: 'visible'
                 }
             }
         }
