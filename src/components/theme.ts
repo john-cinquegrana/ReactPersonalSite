@@ -2,6 +2,53 @@ import { createTheme } from '@mui/material/styles';
 
 
 declare module '@mui/material/styles' {
+    interface Palette {
+        surfaceTint: string;
+        onPrimary: string;
+        primaryContainer: string;
+        onPrimaryContainer: string;
+        onSecondary: string;
+        secondaryContainer: string;
+        onSecondaryContainer: string;
+        tertiary: string;
+        onTertiary: string;
+        tertiaryContainer: string;
+        onTertiaryContainer: string;
+        onError: string;
+        errorContainer: string;
+        onErrorContainer: string;
+        onBackground: string;
+        surface: string;
+        onSurface: string;
+        surfaceVariant: string;
+        onSurfaceVariant: string;
+        outline: string;
+        outlineVariant: string;
+        shadow: string;
+        scrim: string;
+        inverseSurface: string;
+        inverseOnSurface: string;
+        inversePrimary: string;
+        primaryFixed: string;
+        onPrimaryFixed: string;
+        primaryFixedDim: string;
+        onPrimaryFixedVariant: string;
+        secondaryFixed: string;
+        onSecondaryFixed: string;
+        secondaryFixedDim: string;
+        onSecondaryFixedVariant: string;
+        tertiaryFixed: string;
+        onTertiaryFixed: string;
+        tertiaryFixedDim: string;
+        onTertiaryFixedVariant: string;
+        surfaceDim: string;
+        surfaceBright: string;
+        surfaceContainerLowest: string;
+        surfaceContainerLow: string;
+        surfaceContainer: string;
+        surfaceContainerHigh: string;
+        surfaceContainerHighest: string;
+    }
     // Allow configuration for the palette used in the theme
     interface PaletteOptions {
         surfaceTint: string;
@@ -49,7 +96,6 @@ declare module '@mui/material/styles' {
         surfaceContainer: string;
         surfaceContainerHigh: string;
         surfaceContainerHighest: string;
-
     }
 }
 
