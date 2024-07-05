@@ -781,6 +781,13 @@ function themeFromMaterialColors(materialTheme: MaterialColorTheme, palettes: Ma
             },
             subtitle1: {
                 fontFamily: bodyFontFamily,
+                [templateTheme.breakpoints.up('md')]: {
+                    fontSize: '1.3rem',
+                },
+                // Have 1rem for sizes smaller than md
+                [templateTheme.breakpoints.down('md')]: {
+                    fontSize: '1rem',
+                }
             },
             subtitle2: {
                 fontFamily: bodyFontFamily,
