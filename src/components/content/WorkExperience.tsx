@@ -22,7 +22,8 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
             }}>
                 <Typography variant='h3' paddingBottom={2}>Lead Mobile and FullStack Developer</Typography>
                 <Typography variant='h4' paddingBottom={2}>911inform</Typography>
-                <Typography variant='body1'>An all-encompassing 911 and emergency management solution</Typography>
+                <Typography variant='subtitle1'><i>05/2022 - 08/2023</i></Typography>
+                <Typography variant='body1' paddingBottom={2}>An all-encompassing 911 and emergency management solution</Typography>
                 <Typography variant='h6'>Experiences</Typography>
                 <ul>
                     <li><Typography variant='body1'>Lead architecture, design, and development, of a Flutter-based mobile application deployed to Android and iOS</Typography></li>
