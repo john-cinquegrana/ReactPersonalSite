@@ -794,6 +794,9 @@ function themeFromMaterialColors(
 			},
 			subtitle1: {
 				fontFamily: bodyFontFamily,
+				fontStyle: 'italic',
+				opacity: 0.6,
+				fontWeight: 500,
 				[templateTheme.breakpoints.up('md')]: {
 					fontSize: '1.3rem',
 				},
@@ -842,6 +845,9 @@ function themeFromMaterialColors(
 					},
 				},
 			},
+			// MuiTypography: {
+			// 	styleOverrides: {},
+			// },
 		},
 	});
 	// Return the brand new theme that we have created
