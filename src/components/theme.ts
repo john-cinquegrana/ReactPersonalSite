@@ -185,6 +185,7 @@ interface MaterialColorTheme {
     surfaceContainerHighest: string;
 }
 
+// The actual color themes that we will use for this application
 const themeSource: SourceMaterialTheme = {
     schemes: {
         "light": {
