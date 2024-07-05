@@ -721,21 +721,63 @@ function themeFromMaterialColors(materialTheme: MaterialColorTheme, palettes: Ma
             fontFamily: ["Lora Variable", "Ubuntu", "sans-serif"].join(','),
             h1: {
                 fontFamily: headerFontFamily,
+                [templateTheme.breakpoints.up('md')]: {
+                    fontSize: '6.3rem',
+                },
+                // Have 1rem for sizes smaller than md
+                [templateTheme.breakpoints.down('md')]: {
+                    fontSize: '6rem',
+                }
             },
             h2: {
                 fontFamily: headerFontFamily,
+                [templateTheme.breakpoints.up('md')]: {
+                    fontSize: '3.95rem',
+                },
+                // Have 1rem for sizes smaller than md
+                [templateTheme.breakpoints.down('md')]: {
+                    fontSize: '3.75rem',
+                }
             },
             h3: {
                 fontFamily: headerFontFamily,
+                [templateTheme.breakpoints.up('md')]: {
+                    fontSize: '3.2rem',
+                },
+                // Have 1rem for sizes smaller than md
+                [templateTheme.breakpoints.down('md')]: {
+                    fontSize: '3rem',
+                }
             },
             h4: {
                 fontFamily: headerFontFamily,
+                [templateTheme.breakpoints.up('md')]: {
+                    fontSize: '2.325rem',
+                },
+                // Have 1rem for sizes smaller than md
+                [templateTheme.breakpoints.down('md')]: {
+                    fontSize: '2.125rem',
+                }
             },
             h5: {
                 fontFamily: headerFontFamily,
+                [templateTheme.breakpoints.up('md')]: {
+                    fontSize: '1.7rem',
+                },
+                // Have 1rem for sizes smaller than md
+                [templateTheme.breakpoints.down('md')]: {
+                    fontSize: '1.5rem',
+                }
             },
             h6: {
                 fontFamily: headerFontFamily,
+                [templateTheme.breakpoints.up('md')]: {
+                    fontSize: '1.55rem',
+                },
+                // Have 1rem for sizes smaller than md
+                [templateTheme.breakpoints.down('md')]: {
+                    fontSize: '1.25rem',
+                }
             },
             subtitle1: {
                 fontFamily: bodyFontFamily,
@@ -745,8 +787,9 @@ function themeFromMaterialColors(materialTheme: MaterialColorTheme, palettes: Ma
             },
             body1: {
                 fontFamily: bodyFontFamily,
+                fontWeight: 400,
                 [templateTheme.breakpoints.up('md')]: {
-                    fontSize: '1.4rem',
+                    fontSize: '1.3rem',
                 },
                 // Have 1rem for sizes smaller than md
                 [templateTheme.breakpoints.down('md')]: {
