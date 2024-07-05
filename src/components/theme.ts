@@ -631,6 +631,20 @@ const headerFontFamily = ["Ubuntu", "sans-serif"].join(',');
  * component styling.
  */
 function themeFromMaterialColors(materialTheme: MaterialColorTheme, palettes: MaterialColorPaletteMap): Theme {
+    // Create an initial theme with nothing but breakpoints so that we can use them later on.
+    const templateTheme = createTheme({
+        breakpoints: {
+            keys: ['xs', 'sm', 'md', 'lg', 'xl'],
+            values: {
+                xs: 0,
+                sm: 600,
+                md: 900,
+                lg: 1200,
+                xl: 1536,
+            }
+        }
+    });
+    // Create the theme that we will actually use in our application
     const newTheme = createTheme({
         // The base color system of our theme
         palette: {
@@ -731,6 +745,13 @@ function themeFromMaterialColors(materialTheme: MaterialColorTheme, palettes: Ma
             },
             body1: {
                 fontFamily: bodyFontFamily,
+                [templateTheme.breakpoints.up('md')]: {
+                    fontSize: '1.4rem',
+                },
+                // Have 1rem for sizes smaller than md
+                [templateTheme.breakpoints.down('md')]: {
+                    fontSize: '1rem',
+                }
             },
             body2: {
                 fontFamily: bodyFontFamily,
