@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { Theme, createTheme } from '@mui/material/styles';
 
 
 declare module '@mui/material/styles' {
@@ -99,8 +99,94 @@ declare module '@mui/material/styles' {
     }
 }
 
-const themeSource = {
-    "schemes": {
+type ThemeMap = {
+    [key: 'light' | 'light-medium-contrast' | 'light-high-contrast' | 'dark' | 'dark-medium-contrast' | 'dark-high-contrast' | string]: MaterialColorTheme;
+}
+
+type MaterialColorPaletteMap = {
+    [key: 'primary' | 'secondary' | 'tertiary' | 'error' | string]: MaterialColorPalette;
+}
+
+interface SourceMaterialTheme {
+    schemes: ThemeMap;
+    palettes: MaterialColorPaletteMap;
+}
+
+interface MaterialColorPalette {
+    0: string;
+    5: string;
+    10: string;
+    15: string;
+    20: string;
+    25: string;
+    30: string;
+    35: string;
+    40: string;
+    50: string;
+    60: string;
+    70: string;
+    80: string;
+    90: string;
+    95: string;
+    98: string;
+    99: string;
+    100: string;
+}
+
+interface MaterialColorTheme {
+    primary: string;
+    surfaceTint: string;
+    onPrimary: string;
+    primaryContainer: string;
+    onPrimaryContainer: string;
+    secondary: string;
+    onSecondary: string;
+    secondaryContainer: string;
+    onSecondaryContainer: string;
+    tertiary: string;
+    onTertiary: string;
+    tertiaryContainer: string;
+    onTertiaryContainer: string;
+    error: string;
+    onError: string;
+    errorContainer: string;
+    onErrorContainer: string;
+    background: string;
+    onBackground: string;
+    surface: string;
+    onSurface: string;
+    surfaceVariant: string;
+    onSurfaceVariant: string;
+    outline: string;
+    outlineVariant: string;
+    shadow: string;
+    scrim: string;
+    inverseSurface: string;
+    inverseOnSurface: string;
+    inversePrimary: string;
+    primaryFixed: string;
+    onPrimaryFixed: string;
+    primaryFixedDim: string;
+    onPrimaryFixedVariant: string;
+    secondaryFixed: string;
+    onSecondaryFixed: string;
+    secondaryFixedDim: string;
+    onSecondaryFixedVariant: string;
+    tertiaryFixed: string;
+    onTertiaryFixed: string;
+    tertiaryFixedDim: string;
+    onTertiaryFixedVariant: string;
+    surfaceDim: string;
+    surfaceBright: string;
+    surfaceContainerLowest: string;
+    surfaceContainerLow: string;
+    surfaceContainer: string;
+    surfaceContainerHigh: string;
+    surfaceContainerHighest: string;
+}
+
+const themeSource: SourceMaterialTheme = {
+    schemes: {
         "light": {
             "primary": "#8D4E2A",
             "surfaceTint": "#8D4E2A",
@@ -508,137 +594,182 @@ const themeSource = {
             "98": "#FFF8F6",
             "99": "#FFFBFF",
             "100": "#FFFFFF"
+        },
+        "error": {
+            "0": "#000000",
+            "5": "#2d0001",
+            "10": "#410002",
+            "15": "#540003",
+            "20": "#690005",
+            "25": "#7e0007",
+            "30": "#93000a",
+            "35": "#a80710",
+            "40": "#ba1a1a",
+            "50": "#de3730",
+            "60": "#ff5449",
+            "70": "#ff897d",
+            "80": "#ffb4ab",
+            "90": "#ffdad6",
+            "95": "#ffedea",
+            "98": "#fff8f7",
+            "99": "#fffbff",
+            "100": "#ffffff",
         }
     }
 }
 
+
 const bodyFontFamily = ["Lora Variable", "serif"].join(',');
 const headerFontFamily = ["Ubuntu", "sans-serif"].join(',');
 
-export const lightTheme = createTheme({
-    // The base color system of our theme
-    palette: {
-        mode: 'light',
-        primary: {
-            light: themeSource.palettes.primary[30],
-            main: themeSource.schemes.light.primary,
-            dark: themeSource.palettes.primary[50],
-            contrastText: themeSource.palettes.primary[90],
+/**
+ * 
+ * @param materialTheme The color theme to be used when created the MUI theme for the application
+ * @param palettes The extended Material color palettes for the more important colors. This field
+ * must have a 'primary', 'secondary', and 'error' value for this function to run successfully.
+ * @returns A useable MUI theme using the colors from the arguments. Also has additional font and
+ * component styling.
+ */
+function themeFromMaterialColors(materialTheme: MaterialColorTheme, palettes: MaterialColorPaletteMap): Theme {
+    const newTheme = createTheme({
+        // The base color system of our theme
+        palette: {
+            mode: 'light',
+            primary: {
+                light: palettes.primary[30],
+                main: materialTheme.primary,
+                dark: palettes.primary[50],
+                contrastText: palettes.primary[90],
+            },
+            secondary: {
+                light: palettes.secondary[30],
+                main: materialTheme.secondary,
+                dark: palettes.secondary[50],
+                contrastText: palettes.secondary[90],
+            },
+            error: {
+                light: "#de3730",
+                main: materialTheme.error,
+                dark: "#93000a",
+                contrastText: "#410002",
+            },
+            background: {
+                default: materialTheme.background,
+                paper: materialTheme.surface,
+            },
+            "surfaceTint": materialTheme.surfaceTint,
+            "onPrimary": materialTheme.onPrimary,
+            "primaryContainer": materialTheme.primaryContainer,
+            "onPrimaryContainer": materialTheme.onPrimaryContainer,
+            "onSecondary": materialTheme.onSecondary,
+            "secondaryContainer": materialTheme.secondaryContainer,
+            "onSecondaryContainer": materialTheme.onSecondaryContainer,
+            "tertiary": materialTheme.tertiary,
+            "onTertiary": materialTheme.onTertiary,
+            "tertiaryContainer": materialTheme.tertiaryContainer,
+            "onTertiaryContainer": materialTheme.onTertiaryContainer,
+            "onError": materialTheme.onError,
+            "errorContainer": materialTheme.errorContainer,
+            "onErrorContainer": materialTheme.onErrorContainer,
+            "onBackground": materialTheme.onBackground,
+            "surface": materialTheme.surface,
+            "onSurface": materialTheme.onSurface,
+            "surfaceVariant": materialTheme.surfaceVariant,
+            "onSurfaceVariant": materialTheme.onSurfaceVariant,
+            "outline": materialTheme.outline,
+            "outlineVariant": materialTheme.outlineVariant,
+            "shadow": materialTheme.shadow,
+            "scrim": materialTheme.scrim,
+            "inverseSurface": materialTheme.inverseSurface,
+            "inverseOnSurface": materialTheme.inverseOnSurface,
+            "inversePrimary": materialTheme.inversePrimary,
+            "primaryFixed": materialTheme.primaryFixed,
+            "onPrimaryFixed": materialTheme.onPrimaryFixed,
+            "primaryFixedDim": materialTheme.primaryFixedDim,
+            "onPrimaryFixedVariant": materialTheme.onPrimaryFixedVariant,
+            "secondaryFixed": materialTheme.secondaryFixed,
+            "onSecondaryFixed": materialTheme.onSecondaryFixed,
+            "secondaryFixedDim": materialTheme.secondaryFixedDim,
+            "onSecondaryFixedVariant": materialTheme.onSecondaryFixedVariant,
+            "tertiaryFixed": materialTheme.tertiaryFixed,
+            "onTertiaryFixed": materialTheme.onTertiaryFixed,
+            "tertiaryFixedDim": materialTheme.tertiaryFixedDim,
+            "onTertiaryFixedVariant": materialTheme.onTertiaryFixedVariant,
+            "surfaceDim": materialTheme.surfaceDim,
+            "surfaceBright": materialTheme.surfaceBright,
+            "surfaceContainerLowest": materialTheme.surfaceContainerLowest,
+            "surfaceContainerLow": materialTheme.surfaceContainerLow,
+            "surfaceContainer": materialTheme.surfaceContainer,
+            "surfaceContainerHigh": materialTheme.surfaceContainerHigh,
+            "surfaceContainerHighest": materialTheme.surfaceContainerHighest
         },
-        secondary: {
-            light: themeSource.palettes.secondary[30],
-            main: themeSource.schemes.light.secondary,
-            dark: themeSource.palettes.secondary[50],
-            contrastText: themeSource.palettes.secondary[90],
+        typography: {
+            fontFamily: ["Lora Variable", "Ubuntu", "sans-serif"].join(','),
+            h1: {
+                fontFamily: headerFontFamily,
+            },
+            h2: {
+                fontFamily: headerFontFamily,
+            },
+            h3: {
+                fontFamily: headerFontFamily,
+            },
+            h4: {
+                fontFamily: headerFontFamily,
+            },
+            h5: {
+                fontFamily: headerFontFamily,
+            },
+            h6: {
+                fontFamily: headerFontFamily,
+            },
+            subtitle1: {
+                fontFamily: bodyFontFamily,
+            },
+            subtitle2: {
+                fontFamily: bodyFontFamily,
+            },
+            body1: {
+                fontFamily: bodyFontFamily,
+            },
+            body2: {
+                fontFamily: bodyFontFamily,
+            },
+            caption: {
+                fontFamily: bodyFontFamily,
+            },
+            overline: {
+                fontFamily: bodyFontFamily,
+            },
         },
-        error: {
-            light: "#de3730",
-            main: themeSource.schemes.light.error,
-            dark: "#93000a",
-            contrastText: "#410002",
-        },
-        background: {
-            default: themeSource.schemes.light.background,
-            paper: themeSource.schemes.light.surface,
-        },
-        "surfaceTint": themeSource.schemes.light.surfaceTint,
-        "onPrimary": themeSource.schemes.light.onPrimary,
-        "primaryContainer": themeSource.schemes.light.primaryContainer,
-        "onPrimaryContainer": themeSource.schemes.light.onPrimaryContainer,
-        "onSecondary": themeSource.schemes.light.onSecondary,
-        "secondaryContainer": themeSource.schemes.light.secondaryContainer,
-        "onSecondaryContainer": themeSource.schemes.light.onSecondaryContainer,
-        "tertiary": themeSource.schemes.light.tertiary,
-        "onTertiary": themeSource.schemes.light.onTertiary,
-        "tertiaryContainer": themeSource.schemes.light.tertiaryContainer,
-        "onTertiaryContainer": themeSource.schemes.light.onTertiaryContainer,
-        "onError": themeSource.schemes.light.onError,
-        "errorContainer": themeSource.schemes.light.errorContainer,
-        "onErrorContainer": themeSource.schemes.light.onErrorContainer,
-        "onBackground": themeSource.schemes.light.onBackground,
-        "surface": themeSource.schemes.light.surface,
-        "onSurface": themeSource.schemes.light.onSurface,
-        "surfaceVariant": themeSource.schemes.light.surfaceVariant,
-        "onSurfaceVariant": themeSource.schemes.light.onSurfaceVariant,
-        "outline": themeSource.schemes.light.outline,
-        "outlineVariant": themeSource.schemes.light.outlineVariant,
-        "shadow": themeSource.schemes.light.shadow,
-        "scrim": themeSource.schemes.light.scrim,
-        "inverseSurface": themeSource.schemes.light.inverseSurface,
-        "inverseOnSurface": themeSource.schemes.light.inverseOnSurface,
-        "inversePrimary": themeSource.schemes.light.inversePrimary,
-        "primaryFixed": themeSource.schemes.light.primaryFixed,
-        "onPrimaryFixed": themeSource.schemes.light.onPrimaryFixed,
-        "primaryFixedDim": themeSource.schemes.light.primaryFixedDim,
-        "onPrimaryFixedVariant": themeSource.schemes.light.onPrimaryFixedVariant,
-        "secondaryFixed": themeSource.schemes.light.secondaryFixed,
-        "onSecondaryFixed": themeSource.schemes.light.onSecondaryFixed,
-        "secondaryFixedDim": themeSource.schemes.light.secondaryFixedDim,
-        "onSecondaryFixedVariant": themeSource.schemes.light.onSecondaryFixedVariant,
-        "tertiaryFixed": themeSource.schemes.light.tertiaryFixed,
-        "onTertiaryFixed": themeSource.schemes.light.onTertiaryFixed,
-        "tertiaryFixedDim": themeSource.schemes.light.tertiaryFixedDim,
-        "onTertiaryFixedVariant": themeSource.schemes.light.onTertiaryFixedVariant,
-        "surfaceDim": themeSource.schemes.light.surfaceDim,
-        "surfaceBright": themeSource.schemes.light.surfaceBright,
-        "surfaceContainerLowest": themeSource.schemes.light.surfaceContainerLowest,
-        "surfaceContainerLow": themeSource.schemes.light.surfaceContainerLow,
-        "surfaceContainer": themeSource.schemes.light.surfaceContainer,
-        "surfaceContainerHigh": themeSource.schemes.light.surfaceContainerHigh,
-        "surfaceContainerHighest": themeSource.schemes.light.surfaceContainerHighest
-    },
-    typography: {
-        fontFamily: ["Lora Variable", "Ubuntu", "sans-serif"].join(','),
-        h1: {
-            fontFamily: headerFontFamily,
-        },
-        h2: {
-            fontFamily: headerFontFamily,
-        },
-        h3: {
-            fontFamily: headerFontFamily,
-        },
-        h4: {
-            fontFamily: headerFontFamily,
-        },
-        h5: {
-            fontFamily: headerFontFamily,
-        },
-        h6: {
-            fontFamily: headerFontFamily,
-        },
-        subtitle1: {
-            fontFamily: bodyFontFamily,
-        },
-        subtitle2: {
-            fontFamily: bodyFontFamily,
-        },
-        body1: {
-            fontFamily: bodyFontFamily,
-        },
-        body2: {
-            fontFamily: bodyFontFamily,
-        },
-        caption: {
-            fontFamily: bodyFontFamily,
-        },
-        overline: {
-            fontFamily: bodyFontFamily,
-        },
-    },
-    // Changes in the default properties of components
-    components: {
-        MuiCard: {
-            styleOverrides: {
-                root: {
-                    backgroundColor: themeSource.schemes.light.surface,
-                    borderRadius: '8px',
-                    // border: '1px solid',
-                    // borderColor: '#D7C2B9',
-                    boxShadow: 'none',
-                    overflow: 'visible'
+        // Changes in the default properties of components
+        components: {
+            MuiCard: {
+                styleOverrides: {
+                    root: {
+                        backgroundColor: materialTheme.primaryContainer,
+                        color: materialTheme.onPrimaryContainer,
+                        borderRadius: '8px',
+                        // border: '1px solid',
+                        // borderColor: '#D7C2B9',
+                        boxShadow: 'none',
+                        overflow: 'visible',
+                        padding: '16px',
+                    }
                 }
             }
+
         }
-    }
-})
+    });
+    // Return the brand new theme that we have created
+    return newTheme;
+}
+
+// Create the light theme that will be used for the application
+export const lightTheme = themeFromMaterialColors(themeSource.schemes.light, themeSource.palettes);
+
+// Create a light theme with medium contrast that will be used for the application
+export const lightMediumContrastTheme = themeFromMaterialColors(themeSource.schemes['light-medium-contrast'], themeSource.palettes);
+
+// Create the dark theme that will be used for the application
+export const darkTheme = themeFromMaterialColors(themeSource.schemes.dark, themeSource.palettes);
