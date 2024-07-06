@@ -1,6 +1,8 @@
 import { Card, CardContent, Typography } from '@mui/material';
-import { Box, useTheme } from '@mui/system';
+import { Box, Container, useTheme } from '@mui/system';
+import SunsetWaves from './../assets/sunset-waves.svg';
 import React from 'react';
+import Color from 'color';
 
 interface MainHeaderProps {
 	title: string;
@@ -8,6 +10,12 @@ interface MainHeaderProps {
 
 const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
 	const theme = useTheme();
+
+	// Take the color out of the theme and add opacity to it
+	const backgroundColor = Color(theme.palette.inversePrimary);
+	console.log(`Without alpha ${backgroundColor}`);
+	const withAlpha = backgroundColor.alpha(0.95).string();
+	console.log(`With alpha ${withAlpha}`);
 
 	return (
 		// A box that aligns all of its items into a column
@@ -17,39 +25,50 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
 				flexFlow: 'column nowrap',
 				justifyContent: 'flex-start',
 				alignItems: 'flex-start',
+				backgroundColor: '#FF750D',
 				// backgroundImage: 'url(/src/assets/sunset-svgrepo-com.svg)',
 				// backgroundRepeat: 'no-repeat',
 				// backgroundSize: 'cover',
 			}}
 		>
-			<Card
-				sx={{
-					margin: 20,
-					padding: '16px',
-					backgroundColor: theme.palette.primaryContainer,
+			<Container>
+				<Card
+					sx={{
+						margin: '80px 0px 10px 0px',
+						padding: '16px',
+						backgroundColor: withAlpha,
+						backdropFilter: 'blur(10px)',
+					}}
+				>
+					<CardContent>
+						<Typography
+							variant='h1'
+							textAlign={'left'}
+							fontWeight={700}
+							letterSpacing='0.15rem'
+						>
+							{title}
+						</Typography>
+						<Typography
+							marginLeft={4}
+							variant='subtitle1'
+							textAlign={'left'}
+							fontSize={30}
+							fontWeight={500}
+							letterSpacing='0.10rem'
+						>
+							The World exists for Passion and Beauty
+						</Typography>
+					</CardContent>
+				</Card>
+			</Container>
+			<img
+				src={SunsetWaves}
+				style={{
+					width: '100%',
+					height: 'auto',
 				}}
-			>
-				<CardContent>
-					<Typography
-						variant='h1'
-						textAlign={'left'}
-						fontWeight={700}
-						letterSpacing='0.15rem'
-					>
-						{title}
-					</Typography>
-					<Typography
-						marginLeft={4}
-						variant='subtitle1'
-						textAlign={'left'}
-						fontSize={30}
-						fontWeight={500}
-						letterSpacing='0.10rem'
-					>
-						The World exists for Passion and Beauty
-					</Typography>
-				</CardContent>
-			</Card>
+			/>
 		</Box>
 	);
 };
