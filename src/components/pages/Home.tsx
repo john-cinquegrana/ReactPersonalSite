@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 import WorkExperience from '../cards/WorkExperience';
 import AboutMe from '../content/AboutMe';
+import SocialBar from '../content/SocialBar';
 
 const Home: React.FC = () => {
 	return (
@@ -18,23 +19,7 @@ const Home: React.FC = () => {
 			}}
 		>
 			<MainHeader title='John Cinquegrana' />
-			<Box
-				sx={{
-					color: 'white',
-					backgroundColor: 'black',
-					width: '100%',
-					height: '2em',
-					display: 'flex',
-					flexFlow: 'row nowrap',
-					justifyContent: 'space-around',
-					alignItems: 'center',
-				}}
-			>
-				<Typography variant='caption'>Github</Typography>
-				<Typography variant='caption'>LinkedIn</Typography>
-				<Typography variant='caption'>Email</Typography>
-				<Typography variant='caption'>Address</Typography>
-			</Box>
+			<SocialBar />
 			<AboutMe />
 			<Typography
 				variant='h2'
