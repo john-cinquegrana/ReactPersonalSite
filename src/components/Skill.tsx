@@ -30,7 +30,7 @@ const Skill: React.FC<SkillProps> = ({ color, label }) => {
 			}}
 		>
 			<Typography
-				variant='subtitle1'
+				variant='body1'
 				sx={{
 					letterSpacing: '0.09rem',
 					fontWeight: 500,
