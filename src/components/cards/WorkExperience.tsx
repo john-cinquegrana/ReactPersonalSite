@@ -95,7 +95,10 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 					}}
 				>
 					{skills.map((skill) => (
-						<Skill label={skill}></Skill>
+						<Skill
+							label={skill}
+							key={skill}
+						></Skill>
 					))}
 				</Box>
 			</CardContent>
