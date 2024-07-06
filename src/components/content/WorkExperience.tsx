@@ -7,8 +7,6 @@ interface WorkExperienceProps {
 }
 
 const WorkExperience: React.FC<WorkExperienceProps> = () => {
-	// Implement your component logic here
-
 	return (
 		<Card
 			sx={{
@@ -30,17 +28,43 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
 				>
 					Lead Mobile and FullStack Developer
 				</Typography>
-				<Typography
-					variant='h4'
-					paddingBottom={2}
+				<Box
+					sx={{
+						// A basic row wrap
+						display: 'flex',
+						flexFlow: 'row wrap',
+						justifyContent: 'flex-start',
+						alignItems: 'flex-end',
+						width: '100%',
+					}}
 				>
-					911inform
-				</Typography>
-				<Typography variant='subtitle1'>
-					<i>05/2022 - 08/2023</i>
-				</Typography>
+					<Typography
+						variant='h4'
+						paddingRight={8}
+					>
+						911inform
+					</Typography>
+					<Box
+						sx={{
+							// Make the box a flex row with wrap
+							display: 'flex',
+							flexFlow: 'row wrap',
+							justifyContent: 'space-between',
+							alignItems: 'flex-end',
+							maxWidth: '500px',
+							flexGrow: 1,
+						}}
+					>
+						<Typography variant='subtitle1'>
+							<i>05/2022 - 08/2023</i>
+						</Typography>
+						<Typography variant='subtitle1'>
+							Farmingdale, NJ
+						</Typography>
+					</Box>
+				</Box>
 				<Typography
-					variant='body1'
+					variant='subtitle2'
 					paddingBottom={2}
 				>
 					An all-encompassing 911 and emergency management solution
