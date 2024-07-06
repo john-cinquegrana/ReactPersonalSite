@@ -14,7 +14,7 @@ const Skill: React.FC<SkillProps> = ({ color, label }) => {
 	let usedColor: string;
 
 	if (!color) {
-		usedColor = theme.palette.secondaryContainer;
+		usedColor = theme.palette.primary.main;
 	} else {
 		usedColor = color;
 	}
@@ -23,12 +23,21 @@ const Skill: React.FC<SkillProps> = ({ color, label }) => {
 		<Box
 			sx={{
 				backgroundColor: usedColor,
-				color: theme.palette.onSecondaryContainer,
-				padding: '6px',
-				borderRadius: '6px',
+				color: theme.palette.onPrimary,
+				padding: '8px 16px 8px 16px',
+				margin: '4px',
+				borderRadius: '10px',
 			}}
 		>
-			<Typography variant='body1'>{label}</Typography>
+			<Typography
+				variant='body1'
+				sx={{
+					letterSpacing: '0.07rem',
+					fontWeight: 500,
+				}}
+			>
+				{label}
+			</Typography>
 		</Box>
 	);
 };
