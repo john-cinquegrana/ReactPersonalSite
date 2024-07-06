@@ -102,7 +102,52 @@ const Home: React.FC = () => {
 			>
 				Work Experience
 			</Typography>
-			<WorkExperience />
+			<WorkExperience
+				title='Lead Mobile and FullStack Developer'
+				company='911inform'
+				startDate='05/2022'
+				endDate='08/2023'
+				location='Farmingdale, NJ'
+				skills={[
+					'Flutter',
+					'Dart',
+					'AWS',
+					'Firebase',
+					'Aruba IoT',
+					'CI/CD',
+				]}
+			>
+				<ul>
+					<li>
+						<Typography variant='body1'>
+							Lead architecture, design, and development, of a
+							Flutter-based mobile application deployed to Android
+							and iOS
+						</Typography>
+					</li>
+					<li>
+						<Typography variant='body1'>
+							Integrated into Aruba IoT to dynamically track
+							phones across WLAN for the purposes of locating 911
+							calls
+						</Typography>
+					</li>
+					<li>
+						<Typography variant='body1'>
+							Lead developers in high stress scenarios to provide
+							necessary hotfixes on day-of-discovery for website
+							vulnerabilities
+						</Typography>
+					</li>
+					<li>
+						<Typography variant='body1'>
+							Designed CI/CD for deployment of mobile apps to both
+							testers, and app stores, using Firebase and AWS
+							CodeStar
+						</Typography>
+					</li>
+				</ul>
+			</WorkExperience>
 		</Box>
 	);
 };

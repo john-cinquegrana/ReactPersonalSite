@@ -1,12 +1,26 @@
 import { Box, Card, CardContent, Typography } from '@mui/material';
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import Skill from '../Skill';
 
 interface WorkExperienceProps {
 	// Define the props for your component here
+	title: string;
+	company: string;
+	location: string;
+	startDate: string;
+	endDate: string;
+	skills: string[];
 }
 
-const WorkExperience: React.FC<WorkExperienceProps> = () => {
+const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
+	title,
+	company,
+	location,
+	startDate,
+	endDate,
+	skills,
+	children,
+}) => {
 	return (
 		<Card
 			sx={{
@@ -26,7 +40,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
 					variant='h3'
 					paddingBottom={2}
 				>
-					Lead Mobile and FullStack Developer
+					{title}
 				</Typography>
 				<Box
 					sx={{
@@ -42,7 +56,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
 						variant='h4'
 						paddingRight={8}
 					>
-						911inform
+						{company}
 					</Typography>
 					<Box
 						sx={{
@@ -56,11 +70,11 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
 						}}
 					>
 						<Typography variant='subtitle1'>
-							<i>05/2022 - 08/2023</i>
+							<i>
+								{startDate} - {endDate}
+							</i>
 						</Typography>
-						<Typography variant='subtitle1'>
-							Farmingdale, NJ
-						</Typography>
+						<Typography variant='subtitle1'>{location}</Typography>
 					</Box>
 				</Box>
 				<Typography
@@ -70,39 +84,12 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
 					An all-encompassing 911 and emergency management solution
 				</Typography>
 				<Typography variant='h6'>Experiences</Typography>
-				<ul>
-					<li>
-						<Typography variant='body1'>
-							Lead architecture, design, and development, of a
-							Flutter-based mobile application deployed to Android
-							and iOS
-						</Typography>
-					</li>
-					<li>
-						<Typography variant='body1'>
-							Integrated into Aruba IoT to dynamically track
-							phones across WLAN for the purposes of locating 911
-							calls
-						</Typography>
-					</li>
-					<li>
-						<Typography variant='body1'>
-							Lead developers in high stress scenarios to provide
-							necessary hotfixes on day-of-discovery for website
-							vulnerabilities
-						</Typography>
-					</li>
-					<li>
-						<Typography variant='body1'>
-							Designed CI/CD for deployment of mobile apps to both
-							testers, and app stores, using Firebase and AWS
-							CodeStar
-						</Typography>
-					</li>
-				</ul>
+				{children}
 				<Typography variant='h6'>Relevant Skills</Typography>
 				<Box>
-					<Skill label='Flutter'></Skill>
+					{skills.map((skill) => (
+						<Skill label={skill}></Skill>
+					))}
 				</Box>
 			</CardContent>
 		</Card>
