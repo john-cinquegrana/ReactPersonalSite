@@ -1,15 +1,14 @@
-import { ThemeProvider } from '@emotion/react'
-import './App.css'
-import Home from './components/pages/Home'
-import { lightTheme } from './components/theme'
+import { ThemeProvider } from '@mui/material';
+import './App.css';
+import Home from './components/pages/Home';
+import { lightTheme } from './components/theme';
 
 function App() {
-
-  return (
-    <ThemeProvider theme={lightTheme}>
-      <Home />
-    </ThemeProvider>
-  )
+	return (
+		<ThemeProvider theme={lightTheme}>
+			<Home />
+		</ThemeProvider>
+	);
 }
 
-export default App
+export default App;

@@ -1,10 +1,8 @@
 import React from 'react';
-
-import MainHeader from '../MainHeader';
-import Box from '@mui/material/Box';
-import { Typography } from '@mui/material';
-import WorkExperience from '../cards/WorkExperience';
 import AboutMe from '../content/AboutMe';
+import { Box, Typography } from '@mui/material';
+import MainHeader from '../MainHeader';
+import WorkExperience from '../cards/WorkExperience';
 import SocialBar from '../content/SocialBar';
 
 const Home: React.FC = () => {
@@ -15,7 +13,6 @@ const Home: React.FC = () => {
 				flexFlow: 'column nowrap',
 				justifyContent: 'flex-start',
 				alignItems: 'stretch',
-				width: '100%',
 			}}
 		>
 			<MainHeader title='John Cinquegrana' />
