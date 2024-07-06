@@ -5,7 +5,7 @@ const AboutMe = () => {
 	const theme = useTheme();
 
 	// Add opacity to the background of the card element
-	const backgroundColor = Color(theme.palette.primaryContainer).alpha(0.8);
+	const backgroundColor = Color(theme.palette.primaryContainer).alpha(0.9);
 
 	return (
 		<Card
