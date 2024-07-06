@@ -869,6 +869,15 @@ function themeFromMaterialColors(
 					},
 				},
 			},
+			MuiCardContent: {
+				styleOverrides: {
+					root: {
+						// Remove the color so that we can go through only the card's background,
+						// instead of both card and content.
+						backgroundColor: 'transparent',
+					},
+				},
+			},
 			// MuiTypography: {
 			// 	styleOverrides: {},
 			// },
