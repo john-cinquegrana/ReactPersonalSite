@@ -34,7 +34,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
 			<Container>
 				<Card
 					sx={{
-						margin: '80px 0px 10px 0px',
+						margin: '80px 80px 10px 80px',
 						padding: '16px',
 						backgroundColor: withAlpha,
 						backdropFilter: 'blur(10px)',
