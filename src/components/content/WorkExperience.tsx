@@ -86,7 +86,14 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 				<Typography variant='h6'>Experiences</Typography>
 				{children}
 				<Typography variant='h6'>Relevant Skills</Typography>
-				<Box>
+				<Box
+					sx={{
+						display: 'flex',
+						flexFlow: 'row wrap',
+						justifyContent: 'flex-start',
+						alignItems: 'center',
+					}}
+				>
 					{skills.map((skill) => (
 						<Skill label={skill}></Skill>
 					))}
