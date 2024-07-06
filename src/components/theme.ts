@@ -657,29 +657,35 @@ function themeFromMaterialColors(
 			},
 		},
 	});
+	// Create a function to take in argument and to create palette color options
+	function createPaletteColorOptions(
+		color: string,
+		palette: MaterialColorPalette,
+	) {
+		return {
+			light: palette[60],
+			main: color,
+			dark: palette[30],
+			contrastText: palette[90],
+		};
+	}
 	// Create the theme that we will actually use in our application
 	const newTheme = createTheme({
 		// The base color system of our theme
 		palette: {
 			mode: 'light',
-			primary: {
-				light: palettes.primary[30],
-				main: materialTheme.primary,
-				dark: palettes.primary[50],
-				contrastText: palettes.primary[90],
-			},
-			secondary: {
-				light: palettes.secondary[30],
-				main: materialTheme.secondary,
-				dark: palettes.secondary[50],
-				contrastText: palettes.secondary[90],
-			},
-			error: {
-				light: '#de3730',
-				main: materialTheme.error,
-				dark: '#93000a',
-				contrastText: '#410002',
-			},
+			primary: createPaletteColorOptions(
+				materialTheme.primary,
+				palettes.primary,
+			),
+			secondary: createPaletteColorOptions(
+				materialTheme.secondary,
+				palettes.secondary,
+			),
+			error: createPaletteColorOptions(
+				materialTheme.error,
+				palettes.error,
+			),
 			background: {
 				default: materialTheme.background,
 				paper: materialTheme.surface,
