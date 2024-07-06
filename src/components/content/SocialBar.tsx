@@ -1,5 +1,4 @@
-import { LinkedIn } from '@mui/icons-material';
-import GitHub from '@mui/icons-material/GitHub';
+import { Email, GitHub, LinkedIn, Place } from '@mui/icons-material';
 import { Typography, Box, SxProps, Theme } from '@mui/material';
 
 // An interface that contains the social text, icon, and link
@@ -20,6 +19,15 @@ const SocialBar = () => {
 			text: 'LinkedIn',
 			icon: <LinkedIn />,
 			link: 'https://www.linkedin.com/in/jcinquegrana/',
+		},
+		{
+			text: 'alllegron@gmail.com',
+			icon: <Email />,
+			link: 'mailto:alllegron@gmail.com',
+		},
+		{
+			text: 'Orange, NJ',
+			icon: <Place />,
 		},
 	];
 
