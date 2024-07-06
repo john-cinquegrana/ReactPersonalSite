@@ -9,8 +9,6 @@ interface MainHeaderProps {
 const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
 	const theme = useTheme();
 
-	console.log(theme);
-
 	return (
 		// A box that aligns all of its items into a column
 		<Box
@@ -24,11 +22,6 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
 				// backgroundSize: 'cover',
 			}}
 		>
-			<Box
-				sx={{
-					height: 0,
-				}}
-			/>
 			<Card
 				sx={{
 					margin: 20,
