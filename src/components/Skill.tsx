@@ -24,16 +24,18 @@ const Skill: React.FC<SkillProps> = ({ color, label }) => {
 			sx={{
 				backgroundColor: usedColor,
 				color: theme.palette.onPrimary,
-				padding: '8px 16px 8px 16px',
+				padding: '12px 16px 12px 16px',
 				margin: '4px',
 				borderRadius: '10px',
 			}}
 		>
 			<Typography
-				variant='body1'
+				variant='subtitle1'
 				sx={{
-					letterSpacing: '0.07rem',
+					letterSpacing: '0.09rem',
 					fontWeight: 500,
+					opacity: 1,
+					fontStyle: 'normal',
 				}}
 			>
 				{label}
