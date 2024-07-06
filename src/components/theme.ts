@@ -798,21 +798,31 @@ function themeFromMaterialColors(
 				opacity: 0.6,
 				fontWeight: 500,
 				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '1.3rem',
+					fontSize: '1.35rem',
+				},
+				// Have 1rem for sizes smaller than md
+				[templateTheme.breakpoints.down('md')]: {
+					fontSize: '1.225rem',
+				},
+			},
+			subtitle2: {
+				fontFamily: bodyFontFamily,
+				fontStyle: 'italic',
+				fontWeight: 500,
+				opacity: 0.65,
+				[templateTheme.breakpoints.up('md')]: {
+					fontSize: '1.2rem',
 				},
 				// Have 1rem for sizes smaller than md
 				[templateTheme.breakpoints.down('md')]: {
 					fontSize: '1rem',
 				},
 			},
-			subtitle2: {
-				fontFamily: bodyFontFamily,
-			},
 			body1: {
 				fontFamily: bodyFontFamily,
 				fontWeight: 400,
 				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '1.3rem',
+					fontSize: '1.2rem',
 				},
 				// Have 1rem for sizes smaller than md
 				[templateTheme.breakpoints.down('md')]: {
@@ -837,11 +847,19 @@ function themeFromMaterialColors(
 						backgroundColor: materialTheme.primaryContainer,
 						color: materialTheme.onPrimaryContainer,
 						borderRadius: '8px',
-						// border: '1px solid',
-						// borderColor: '#D7C2B9',
 						boxShadow: 'none',
 						overflow: 'visible',
-						padding: '16px',
+					},
+				},
+			},
+			MuiPaper: {
+				styleOverrides: {
+					root: {
+						backgroundColor: materialTheme.surface,
+						color: materialTheme.onSurface,
+						borderRadius: '8px',
+						boxShadow: 'none',
+						overflow: 'visible',
 					},
 				},
 			},
