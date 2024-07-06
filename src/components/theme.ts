@@ -741,11 +741,11 @@ function themeFromMaterialColors(
 			h1: {
 				fontFamily: headerFontFamily,
 				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '6.3rem',
+					fontSize: '6rem',
 				},
 				// Have 1rem for sizes smaller than md
 				[templateTheme.breakpoints.down('md')]: {
-					fontSize: '6rem',
+					fontSize: '5rem',
 				},
 			},
 			h2: {
