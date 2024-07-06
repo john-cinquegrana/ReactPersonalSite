@@ -1,7 +1,23 @@
-import { Box, Typography } from '@mui/material';
+import { LinkedIn } from '@mui/icons-material';
+import GitHub from '@mui/icons-material/GitHub';
+import { Typography, Box } from '@mui/material';
+
+// An interface that contains the social text, icon, and link
+interface SocialProps {
+	text: string;
+	icon: React.ReactNode;
+	link: string;
+}
 
 const SocialBar = () => {
-	// Implement component logic here
+	const socials: SocialProps[] = [
+		{
+			text: 'Github',
+			icon: <GitHub />,
+			link: 'github.com',
+		},
+		{ text: 'LinkedIn', icon: <LinkedIn />, link: 'linkedin.com' },
+	];
 
 	return (
 		<Box
@@ -15,11 +31,24 @@ const SocialBar = () => {
 				justifyContent: 'space-around',
 				alignItems: 'center',
 			}}
+
+			// ...
 		>
-			<Typography variant='caption'>Github</Typography>
-			<Typography variant='caption'>LinkedIn</Typography>
-			<Typography variant='caption'>Email</Typography>
-			<Typography variant='caption'>Address</Typography>
+			{socials.map((social, index) => (
+				// A Box containing the relevant icon and the text
+				<Box
+					key={index}
+					sx={{
+						display: 'flex',
+						flexFlow: 'row nowrap',
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}
+				>
+					{social.icon}
+					<Typography variant='subtitle1'>{social.text}</Typography>
+				</Box>
+			))}
 		</Box>
 	);
 };
