@@ -1,12 +1,21 @@
 import React from 'react';
 import AboutMe from '../content/AboutMe';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import MainHeader from '../MainHeader';
 import WorkExperience from '../cards/WorkExperience';
 import SocialBar from '../content/SocialBar';
 import BubbbleSvg from './../../assets/circle-scatter.svg';
+import Color from 'color';
 
 const Home: React.FC = () => {
+	const theme = useTheme();
+
+	// Add opacity to the background of the card element
+	// const backgroundColor = Color(theme.palette.background.default)
+	const backgroundColor = Color(theme.palette.primaryContainer)
+		.alpha(0.5)
+		.string();
+
 	return (
 		<Box
 			sx={{
@@ -25,19 +34,34 @@ const Home: React.FC = () => {
 					justifyContent: 'flex-start',
 					alignItems: 'stretch',
 					padding: '0px',
+					imageRendering: 'crisp-edges',
 					backgroundImage: `url(${BubbbleSvg})`,
 					backgroundRepeat: 'repeat-y',
 					backgroundSize: '100% auto',
+					'@keyframes swim': {
+						from: {
+							backgroundPosition: 'center 6500px',
+						},
+						to: { backgroundPosition: 'center 0px' },
+					},
+					animation: 'swim 3600s infinite linear',
 				}}
 			>
 				<AboutMe />
-				<Typography
-					variant='h2'
-					padding={4}
-					align='center'
-				>
-					Work Experience
-				</Typography>
+				<Box>
+					<Typography
+						variant='h2'
+						padding={4}
+						align='center'
+						sx={{
+							backdropFilter: 'blur(20px)',
+							backgroundColor: backgroundColor,
+							width: 'auto',
+						}}
+					>
+						Work Experience
+					</Typography>
+				</Box>
 				<WorkExperience
 					title='Lead Mobile and FullStack Developer'
 					company='911inform'
