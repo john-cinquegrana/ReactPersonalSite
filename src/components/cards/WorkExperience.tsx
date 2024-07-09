@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, Typography, useTheme } from '@mui/material';
 import React, { PropsWithChildren } from 'react';
-import Skill from '../Skill';
+import Skill from '../text/Skill';
 import Color from 'color';
 
 interface WorkExperienceProps {

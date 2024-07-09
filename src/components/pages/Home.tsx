@@ -1,7 +1,7 @@
 import React from 'react';
 import AboutMe from '../content/AboutMe';
 import { Box, Typography, useTheme } from '@mui/material';
-import MainHeader from '../MainHeader';
+import MainHeader from '../cards/MainHeader';
 import WorkExperience from '../cards/WorkExperience';
 import SocialBar from '../content/SocialBar';
 import BubbbleSvg from './../../assets/circle-scatter.svg';
