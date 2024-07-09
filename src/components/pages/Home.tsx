@@ -1,21 +1,13 @@
 import React from 'react';
 import AboutMe from '../content/AboutMe';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import MainHeader from '../cards/MainHeader';
 import WorkExperience from '../cards/WorkExperience';
 import SocialBar from '../content/SocialBar';
 import BubbbleSvg from './../../assets/circle-scatter.svg';
-import Color from 'color';
+import BlurredBackground from '../text/BlurredBackground';
 
 const Home: React.FC = () => {
-	const theme = useTheme();
-
-	// Add opacity to the background of the card element
-	// const backgroundColor = Color(theme.palette.background.default)
-	const backgroundColor = Color(theme.palette.background.default)
-		.alpha(0.5)
-		.string();
-
 	return (
 		<Box
 			sx={{
@@ -48,34 +40,17 @@ const Home: React.FC = () => {
 				}}
 			>
 				<AboutMe />
-				<Box
-					sx={{
-						display: 'flex',
-						flexFlow: 'column nowrap',
-						justifyContent: 'flex-start',
-						alignItems: 'center',
-					}}
-				>
-					<Box
+				<BlurredBackground>
+					<Typography
+						variant='h2'
+						align='center'
 						sx={{
-							backdropFilter: 'blur(10px)',
-							backgroundColor: backgroundColor,
-							padding: '12px',
-							borderRadius: '8px',
-							width: 'auto',
+							display: 'inline',
 						}}
 					>
-						<Typography
-							variant='h2'
-							align='center'
-							sx={{
-								display: 'inline',
-							}}
-						>
-							Work Experience
-						</Typography>
-					</Box>
-				</Box>
+						Work Experience
+					</Typography>
+				</BlurredBackground>
 				<WorkExperience
 					title='Lead Mobile and FullStack Developer'
 					company='911inform'
