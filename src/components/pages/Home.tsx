@@ -12,7 +12,7 @@ const Home: React.FC = () => {
 
 	// Add opacity to the background of the card element
 	// const backgroundColor = Color(theme.palette.background.default)
-	const backgroundColor = Color(theme.palette.primaryContainer)
+	const backgroundColor = Color(theme.palette.background.default)
 		.alpha(0.5)
 		.string();
 
@@ -48,19 +48,33 @@ const Home: React.FC = () => {
 				}}
 			>
 				<AboutMe />
-				<Box>
-					<Typography
-						variant='h2'
-						padding={4}
-						align='center'
+				<Box
+					sx={{
+						display: 'flex',
+						flexFlow: 'column nowrap',
+						justifyContent: 'flex-start',
+						alignItems: 'center',
+					}}
+				>
+					<Box
 						sx={{
-							backdropFilter: 'blur(20px)',
+							backdropFilter: 'blur(10px)',
 							backgroundColor: backgroundColor,
+							padding: '12px',
+							borderRadius: '8px',
 							width: 'auto',
 						}}
 					>
-						Work Experience
-					</Typography>
+						<Typography
+							variant='h2'
+							align='center'
+							sx={{
+								display: 'inline',
+							}}
+						>
+							Work Experience
+						</Typography>
+					</Box>
 				</Box>
 				<WorkExperience
 					title='Lead Mobile and FullStack Developer'
