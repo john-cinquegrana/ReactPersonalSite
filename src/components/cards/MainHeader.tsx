@@ -1,6 +1,6 @@
 import { Card, CardContent, Typography } from '@mui/material';
 import { Box, Container, useTheme } from '@mui/system';
-import SunsetWaves from './../assets/sunset-waves.svg';
+import SunsetWaves from './../../assets/sunset-waves.svg';
 import React from 'react';
 import Color from 'color';
 
