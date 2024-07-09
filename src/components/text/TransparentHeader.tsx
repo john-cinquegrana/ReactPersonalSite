@@ -2,7 +2,7 @@ import { Box, useTheme } from '@mui/material';
 import Color from 'color';
 import React from 'react';
 
-const TransparentHeader: React.FC<React.PropsWithChildren> = ({ children }) => {
+const BlurredBackground: React.FC<React.PropsWithChildren> = ({ children }) => {
 	// The theme to be used by our components
 	const theme = useTheme();
 
@@ -36,4 +36,4 @@ const TransparentHeader: React.FC<React.PropsWithChildren> = ({ children }) => {
 	);
 };
 
-export default TransparentHeader;
+export default BlurredBackground;
