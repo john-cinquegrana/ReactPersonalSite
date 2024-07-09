@@ -11,14 +11,14 @@ interface SocialProps {
 const SocialBar = () => {
 	const socials: SocialProps[] = [
 		{
-			text: 'Github',
+			text: 'GitHub',
 			icon: <GitHub />,
 			link: 'https://github.com/john-cinquegrana',
 		},
 		{
 			text: 'LinkedIn',
 			icon: <LinkedIn />,
-			link: 'https://www.linkedin.com/in/jcinquegrana/',
+			link: 'https://www.LinkedIn.com/in/jcinquegrana/',
 		},
 		{
 			text: 'alllegron@gmail.com',
@@ -46,7 +46,7 @@ const SocialBar = () => {
 				},
 				display: 'flex',
 				flexFlow: 'row nowrap',
-				justifyContent: 'space-around',
+				justifyContent: 'space-evenly',
 				alignItems: 'center',
 			}}
 
