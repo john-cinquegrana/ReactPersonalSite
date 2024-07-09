@@ -1,8 +1,9 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import Color from 'color';
 import React from 'react';
 
-const TransparentHeader: React.FC = () => {
+const TransparentHeader: React.FC<React.PropsWithChildren> = ({ children }) => {
+	// The theme to be used by our components
 	const theme = useTheme();
 
 	// Add opacity to the background of the card element
@@ -29,15 +30,7 @@ const TransparentHeader: React.FC = () => {
 					width: 'auto',
 				}}
 			>
-				<Typography
-					variant='h2'
-					align='center'
-					sx={{
-						display: 'inline',
-					}}
-				>
-					Work Experience
-				</Typography>
+				{children}
 			</Box>
 		</Box>
 	);
