@@ -741,11 +741,11 @@ function themeFromMaterialColors(
 			h1: {
 				fontFamily: headerFontFamily,
 				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '6.3rem',
+					fontSize: '6rem',
 				},
 				// Have 1rem for sizes smaller than md
 				[templateTheme.breakpoints.down('md')]: {
-					fontSize: '6rem',
+					fontSize: '5rem',
 				},
 			},
 			h2: {
@@ -866,6 +866,15 @@ function themeFromMaterialColors(
 						borderRadius: '8px',
 						boxShadow: 'none',
 						overflow: 'visible',
+					},
+				},
+			},
+			MuiCardContent: {
+				styleOverrides: {
+					root: {
+						// Remove the color so that we can go through only the card's background,
+						// instead of both card and content.
+						backgroundColor: 'transparent',
 					},
 				},
 			},

@@ -1,6 +1,7 @@
-import { Box, Card, CardContent, Typography } from '@mui/material';
+import { Box, Card, CardContent, Typography, useTheme } from '@mui/material';
 import React, { PropsWithChildren } from 'react';
-import Skill from '../Skill';
+import Skill from '../text/Skill';
+import Color from 'color';
 
 interface WorkExperienceProps {
 	// Define the props for your component here
@@ -21,11 +22,18 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 	skills,
 	children,
 }) => {
+	// Grab the theme so we can pull out colors
+	const theme = useTheme();
+
+	// Add opacity to the background of the card element
+	const backgroundColor = Color(theme.palette.primaryContainer).alpha(0.9);
 	return (
 		<Card
 			sx={{
 				margin: 10,
 				padding: 6,
+				backgroundColor: backgroundColor.string(),
+				backdropFilter: 'blur(10px)',
 			}}
 		>
 			<CardContent

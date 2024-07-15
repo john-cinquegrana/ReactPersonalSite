@@ -34,8 +34,6 @@ const Skill: React.FC<SkillProps> = ({ color, label }) => {
 				sx={{
 					letterSpacing: '0.09rem',
 					fontWeight: 500,
-					opacity: 1,
-					fontStyle: 'normal',
 				}}
 			>
 				{label}

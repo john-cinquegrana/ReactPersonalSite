@@ -1,13 +1,20 @@
-import { Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Typography, useTheme } from '@mui/material';
+import Color from 'color';
 
 const AboutMe = () => {
-	// Add your component logic here
+	const theme = useTheme();
+
+	// Add opacity to the background of the card element
+	const backgroundColor = Color(theme.palette.primaryContainer).alpha(0.9);
 
 	return (
 		<Card
 			sx={{
 				padding: 6,
 				margin: 10,
+				backdropFilter: 'blur(10px)',
+				backgroundColor: backgroundColor.string(),
+				// opacity: 0.8,
 			}}
 		>
 			<CardContent
