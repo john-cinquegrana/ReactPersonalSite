@@ -1,7 +1,7 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import './App.css';
-import Home from './pages/Home';
-import { lightTheme } from './components/theme';
+import '@root/App.css';
+import Home from '@pages/Home';
+import { lightTheme } from '@components/theme';
 
 function App() {
 	return (
