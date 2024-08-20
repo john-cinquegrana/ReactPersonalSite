@@ -34,7 +34,17 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
 			<Container>
 				<Card
 					sx={{
-						margin: '80px 80px 10px 80px',
+						[theme.breakpoints.up('md')]: {
+							margin: '80px 80px 10px 80px',
+						},
+						[theme.breakpoints.down('md')]: {
+							margin: '30px 20px 10px 20px',
+						},
+						// margin: {
+						// 	[theme.breakpoints.up('md')]: '80px 80px 10px 80px',
+						// 	[theme.breakpoints.down('md')]:
+						// 		'40px 40px 10px 40px',
+						// },
 						padding: '16px',
 						backgroundColor: withAlpha,
 						backdropFilter: 'blur(10px)',
@@ -45,7 +55,13 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
 							variant='h1'
 							textAlign={'left'}
 							fontWeight={700}
-							letterSpacing='0.15rem'
+							letterSpacing={{
+								xl: '0.25rem',
+								lg: '0.2rem',
+								md: '0.18rem',
+								sm: '0.1rem',
+								xs: '0.07rem',
+							}}
 						>
 							{title}
 						</Typography>
