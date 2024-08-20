@@ -61,7 +61,7 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 					}}
 				>
 					<Typography
-						variant='h4'
+						variant='h5'
 						paddingRight={8}
 					>
 						{company}
@@ -73,7 +73,12 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 							flexFlow: 'row wrap',
 							justifyContent: 'space-between',
 							alignItems: 'flex-end',
-							maxWidth: '500px',
+							[theme.breakpoints.down('lg')]: {
+								maxWidth: '500px',
+							},
+							[theme.breakpoints.up('lg')]: {
+								maxWidth: '800px',
+							},
 							flexGrow: 1,
 						}}
 					>
