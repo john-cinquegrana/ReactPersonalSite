@@ -1,11 +1,11 @@
 import React from 'react';
-import AboutMe from '../content/AboutMe';
+import AboutMe from '@components/content/AboutMe';
 import { Box, Typography } from '@mui/material';
-import MainHeader from '../cards/MainHeader';
-import WorkExperience from '../cards/WorkExperience';
-import SocialBar from '../content/SocialBar';
-import BubbbleSvg from './../../assets/circle-scatter.svg';
-import BlurredBackground from '../text/BlurredBackground';
+import MainHeader from '@components/cards/MainHeader';
+import WorkExperience from '@components/cards/WorkExperience';
+import SocialBar from '@components/content/SocialBar';
+import BubbbleSvg from '@root/assets/circle-scatter.svg';
+import BlurredBackground from '@components/text/BlurredBackground';
 
 const Home: React.FC = () => {
 	return (
