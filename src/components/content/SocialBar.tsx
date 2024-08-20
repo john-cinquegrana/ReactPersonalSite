@@ -19,22 +19,22 @@ const SocialBar = () => {
 	const socials: SocialProps[] = [
 		{
 			text: 'GitHub',
-			icon: <GitHub />,
+			icon: <GitHub fontSize='inherit' />,
 			link: 'https://github.com/john-cinquegrana',
 		},
 		{
 			text: 'LinkedIn',
-			icon: <LinkedIn />,
+			icon: <LinkedIn fontSize='inherit' />,
 			link: 'https://www.LinkedIn.com/in/jcinquegrana/',
 		},
 		{
 			text: 'alllegron@gmail.com',
-			icon: <Email />,
+			icon: <Email fontSize='inherit' />,
 			link: 'mailto:alllegron@gmail.com',
 		},
 		{
 			text: 'Orange, NJ',
-			icon: <Place />,
+			icon: <Place fontSize='inherit' />,
 		},
 	];
 
