@@ -769,7 +769,7 @@ function themeFromMaterialColors(
 				},
 				// xs, and sm sizes
 				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '3rem',
+					fontSize: '4rem',
 				},
 				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '2.9rem',
@@ -787,7 +787,7 @@ function themeFromMaterialColors(
 				},
 				// xs, and sm sizes
 				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '2.3rem',
+					fontSize: '2.8rem',
 				},
 				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '2rem',
@@ -824,7 +824,7 @@ function themeFromMaterialColors(
 				},
 				// xs, and sm sizes
 				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '1.3rem',
+					fontSize: '2rem',
 				},
 				// xs, and sm sizes
 				[templateTheme.breakpoints.only('sm')]: {
