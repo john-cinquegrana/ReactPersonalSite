@@ -40,17 +40,26 @@ const Home: React.FC = () => {
 				}}
 			>
 				<AboutMe />
-				<BlurredBackground>
-					<Typography
-						variant='h2'
-						align='center'
-						sx={{
-							display: 'inline',
-						}}
-					>
-						Work Experience
-					</Typography>
-				</BlurredBackground>
+				<Box
+					sx={{
+						width: '100%',
+						display: 'flex',
+						flexFlow: 'row nowrap',
+						justifyContent: 'center',
+					}}
+				>
+					<BlurredBackground>
+						<Typography
+							variant='h2'
+							align='center'
+							sx={{
+								display: 'inline',
+							}}
+						>
+							Work Experience
+						</Typography>
+					</BlurredBackground>
+				</Box>
 				<WorkExperience
 					title='Lead Mobile and FullStack Developer'
 					company='911inform'
