@@ -745,13 +745,16 @@ function themeFromMaterialColors(
 					fontSize: '8rem',
 				},
 				// lg and xl sizes
-				[templateTheme.breakpoints.between('md', 'xl')]: {
+				[templateTheme.breakpoints.only('lg')]: {
 					fontSize: '6.2rem',
 					fontWeight: 700,
 				},
 				// sm, and xs sizes
-				[templateTheme.breakpoints.down('md')]: {
+				[templateTheme.breakpoints.only('md')]: {
 					fontSize: '4rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '3.2rem',
 				},
 			},
 			h2: {
@@ -761,12 +764,15 @@ function themeFromMaterialColors(
 					fontSize: '6.3rem',
 				},
 				// lg and xl sizes
-				[templateTheme.breakpoints.between('md', 'xl')]: {
+				[templateTheme.breakpoints.only('lg')]: {
 					fontSize: '5rem',
 				},
 				// xs, and sm sizes
-				[templateTheme.breakpoints.down('md')]: {
+				[templateTheme.breakpoints.only('md')]: {
 					fontSize: '3rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '2.9rem',
 				},
 			},
 			h3: {
@@ -776,12 +782,15 @@ function themeFromMaterialColors(
 					fontSize: '4.9rem',
 				},
 				// lg and xl sizes
-				[templateTheme.breakpoints.between('md', 'xl')]: {
+				[templateTheme.breakpoints.only('lg')]: {
 					fontSize: '4rem',
 				},
 				// xs, and sm sizes
-				[templateTheme.breakpoints.down('lg')]: {
+				[templateTheme.breakpoints.only('md')]: {
 					fontSize: '2.3rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '2rem',
 				},
 			},
 			h4: {
@@ -791,11 +800,15 @@ function themeFromMaterialColors(
 					fontSize: '4rem',
 				},
 				// lg and xl sizes
-				[templateTheme.breakpoints.between('md', 'xl')]: {
+				[templateTheme.breakpoints.only('lg')]: {
 					fontSize: '3.2rem',
 				},
 				// xs, and sm sizes
-				[templateTheme.breakpoints.down('lg')]: {
+				[templateTheme.breakpoints.only('md')]: {
+					fontSize: '1.8rem',
+				},
+				// xs, and sm sizes
+				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '1.8rem',
 				},
 			},
@@ -806,11 +819,15 @@ function themeFromMaterialColors(
 					fontSize: '3.35rem',
 				},
 				// lg and xl sizes
-				[templateTheme.breakpoints.between('md', 'xl')]: {
+				[templateTheme.breakpoints.only('lg')]: {
 					fontSize: '2.65rem',
 				},
 				// xs, and sm sizes
-				[templateTheme.breakpoints.down('lg')]: {
+				[templateTheme.breakpoints.only('md')]: {
+					fontSize: '1.3rem',
+				},
+				// xs, and sm sizes
+				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '1.3rem',
 				},
 			},
@@ -821,11 +838,14 @@ function themeFromMaterialColors(
 					fontSize: '2.7rem',
 				},
 				// lg and xl sizes
-				[templateTheme.breakpoints.between('md', 'xl')]: {
+				[templateTheme.breakpoints.only('lg')]: {
 					fontSize: '2rem',
 				},
 				// xs, and sm sizes
-				[templateTheme.breakpoints.down('lg')]: {
+				[templateTheme.breakpoints.only('md')]: {
+					fontSize: '1.15rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '1.15rem',
 				},
 			},
@@ -839,12 +859,15 @@ function themeFromMaterialColors(
 					fontSize: '1.85rem',
 				},
 				// lg and xl sizes
-				[templateTheme.breakpoints.between('md', 'xl')]: {
+				[templateTheme.breakpoints.only('lg')]: {
 					fontSize: '1.5rem',
 				},
 				// xs, and sm sizes
-				[templateTheme.breakpoints.down('lg')]: {
+				[templateTheme.breakpoints.only('md')]: {
 					fontSize: '1.2rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '0.7rem',
 				},
 			},
 			subtitle2: {
@@ -857,12 +880,15 @@ function themeFromMaterialColors(
 					fontSize: '1.6rem',
 				},
 				// lg and xl sizes
-				[templateTheme.breakpoints.between('md', 'xl')]: {
+				[templateTheme.breakpoints.only('lg')]: {
 					fontSize: '1.275rem',
 				},
 				// Have 1rem for sizes smaller than lg
-				[templateTheme.breakpoints.down('lg')]: {
+				[templateTheme.breakpoints.only('md')]: {
 					fontSize: '1rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '0.6rem',
 				},
 			},
 			body1: {
@@ -873,12 +899,15 @@ function themeFromMaterialColors(
 					fontSize: '1.6rem',
 				},
 				// lg and xl sizes
-				[templateTheme.breakpoints.between('md', 'xl')]: {
+				[templateTheme.breakpoints.only('lg')]: {
 					fontSize: '1.275rem',
 				},
 				// Have 1rem for sizes smaller than lg
-				[templateTheme.breakpoints.down('lg')]: {
+				[templateTheme.breakpoints.only('md')]: {
 					fontSize: '1rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '0.6rem',
 				},
 			},
 			body2: {
