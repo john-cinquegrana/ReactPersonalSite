@@ -40,23 +40,33 @@ const Home: React.FC = () => {
 				}}
 			>
 				<AboutMe />
-				<BlurredBackground>
-					<Typography
-						variant='h2'
-						align='center'
-						sx={{
-							display: 'inline',
-						}}
-					>
-						Work Experience
-					</Typography>
-				</BlurredBackground>
+				<Box
+					sx={{
+						width: '100%',
+						display: 'flex',
+						flexFlow: 'row nowrap',
+						justifyContent: 'center',
+					}}
+				>
+					<BlurredBackground>
+						<Typography
+							variant='h2'
+							align='center'
+							sx={{
+								display: 'inline',
+							}}
+						>
+							Work Experience
+						</Typography>
+					</BlurredBackground>
+				</Box>
 				<WorkExperience
 					title='Lead Mobile and FullStack Developer'
 					company='911inform'
 					startDate='05/2022'
 					endDate='08/2023'
 					location='Farmingdale, NJ'
+					description='An all-encompassing 911 and emergency management solution'
 					skills={[
 						'Flutter',
 						'Dart',
@@ -103,6 +113,7 @@ const Home: React.FC = () => {
 					startDate='09/2023'
 					endDate='Present'
 					location='New Brunswick, NJ'
+					description='The state university of New Jersey'
 					skills={[
 						'Flutter',
 						'React',

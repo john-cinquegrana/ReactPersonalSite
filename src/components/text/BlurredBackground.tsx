@@ -15,23 +15,14 @@ const BlurredBackground: React.FC<React.PropsWithChildren> = ({ children }) => {
 	return (
 		<Box
 			sx={{
-				display: 'flex',
-				flexFlow: 'column nowrap',
-				justifyContent: 'flex-start',
-				alignItems: 'center',
+				backdropFilter: 'blur(10px)',
+				backgroundColor: backgroundColor,
+				padding: '12px',
+				borderRadius: '8px',
+				width: 'auto',
 			}}
 		>
-			<Box
-				sx={{
-					backdropFilter: 'blur(10px)',
-					backgroundColor: backgroundColor,
-					padding: '12px',
-					borderRadius: '8px',
-					width: 'auto',
-				}}
-			>
-				{children}
-			</Box>
+			{children}
 		</Box>
 	);
 };

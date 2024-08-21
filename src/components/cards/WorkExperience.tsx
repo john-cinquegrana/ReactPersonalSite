@@ -11,6 +11,7 @@ interface WorkExperienceProps {
 	startDate: string;
 	endDate: string;
 	skills: string[];
+	description: string;
 }
 
 const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
@@ -21,6 +22,7 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 	endDate,
 	skills,
 	children,
+	description,
 }) => {
 	// Grab the theme so we can pull out colors
 	const theme = useTheme();
@@ -61,8 +63,14 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 					}}
 				>
 					<Typography
-						variant='h4'
-						paddingRight={8}
+						variant='h5'
+						paddingRight={{
+							xl: 10,
+							lg: 7,
+							md: 4,
+							sm: 2,
+							xs: 1,
+						}}
 					>
 						{company}
 					</Typography>
@@ -73,7 +81,12 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 							flexFlow: 'row wrap',
 							justifyContent: 'space-between',
 							alignItems: 'flex-end',
-							maxWidth: '500px',
+							[theme.breakpoints.down('lg')]: {
+								maxWidth: '500px',
+							},
+							[theme.breakpoints.up('lg')]: {
+								maxWidth: '800px',
+							},
 							flexGrow: 1,
 						}}
 					>
@@ -89,7 +102,7 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 					variant='subtitle2'
 					paddingBottom={2}
 				>
-					An all-encompassing 911 and emergency management solution
+					{description}
 				</Typography>
 				<Typography variant='h6'>Experiences</Typography>
 				{children}

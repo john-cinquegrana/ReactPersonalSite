@@ -740,62 +740,113 @@ function themeFromMaterialColors(
 			fontFamily: ['Lora Variable', 'Ubuntu', 'sans-serif'].join(','),
 			h1: {
 				fontFamily: headerFontFamily,
-				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '6rem',
+				// xl size, screens 1536+
+				[templateTheme.breakpoints.only('xl')]: {
+					fontSize: '8rem',
 				},
-				// Have 1rem for sizes smaller than md
-				[templateTheme.breakpoints.down('md')]: {
-					fontSize: '5rem',
+				// lg and xl sizes
+				[templateTheme.breakpoints.only('lg')]: {
+					fontSize: '6.2rem',
+					fontWeight: 700,
+				},
+				// sm, and xs sizes
+				[templateTheme.breakpoints.only('md')]: {
+					fontSize: '4rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '3.2rem',
 				},
 			},
 			h2: {
 				fontFamily: headerFontFamily,
-				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '3.95rem',
+				// xl size, screens 1536+
+				[templateTheme.breakpoints.only('xl')]: {
+					fontSize: '6.3rem',
 				},
-				// Have 1rem for sizes smaller than md
-				[templateTheme.breakpoints.down('md')]: {
-					fontSize: '3.75rem',
+				// lg and xl sizes
+				[templateTheme.breakpoints.only('lg')]: {
+					fontSize: '5rem',
+				},
+				// xs, and sm sizes
+				[templateTheme.breakpoints.only('md')]: {
+					fontSize: '4rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '2.9rem',
 				},
 			},
 			h3: {
 				fontFamily: headerFontFamily,
-				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '3.2rem',
+				// xl size, screens 1536+
+				[templateTheme.breakpoints.only('xl')]: {
+					fontSize: '4.9rem',
 				},
-				// Have 1rem for sizes smaller than md
-				[templateTheme.breakpoints.down('md')]: {
-					fontSize: '3rem',
+				// lg and xl sizes
+				[templateTheme.breakpoints.only('lg')]: {
+					fontSize: '4rem',
+				},
+				// xs, and sm sizes
+				[templateTheme.breakpoints.only('md')]: {
+					fontSize: '2.8rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '2rem',
 				},
 			},
 			h4: {
 				fontFamily: headerFontFamily,
-				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '2.325rem',
+				// xl size, screens 1536+
+				[templateTheme.breakpoints.only('xl')]: {
+					fontSize: '4rem',
 				},
-				// Have 1rem for sizes smaller than md
-				[templateTheme.breakpoints.down('md')]: {
-					fontSize: '2.125rem',
+				// lg and xl sizes
+				[templateTheme.breakpoints.only('lg')]: {
+					fontSize: '3.2rem',
+				},
+				// xs, and sm sizes
+				[templateTheme.breakpoints.only('md')]: {
+					fontSize: '1.8rem',
+				},
+				// xs, and sm sizes
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '1.8rem',
 				},
 			},
 			h5: {
 				fontFamily: headerFontFamily,
-				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '1.7rem',
+				// xl size, screens 1536+
+				[templateTheme.breakpoints.only('xl')]: {
+					fontSize: '3.35rem',
 				},
-				// Have 1rem for sizes smaller than md
-				[templateTheme.breakpoints.down('md')]: {
-					fontSize: '1.5rem',
+				// lg and xl sizes
+				[templateTheme.breakpoints.only('lg')]: {
+					fontSize: '2.65rem',
+				},
+				// xs, and sm sizes
+				[templateTheme.breakpoints.only('md')]: {
+					fontSize: '2rem',
+				},
+				// xs, and sm sizes
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '1.3rem',
 				},
 			},
 			h6: {
 				fontFamily: headerFontFamily,
-				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '1.55rem',
+				// xl size, screens 1536+
+				[templateTheme.breakpoints.only('xl')]: {
+					fontSize: '2.7rem',
 				},
-				// Have 1rem for sizes smaller than md
-				[templateTheme.breakpoints.down('md')]: {
-					fontSize: '1.25rem',
+				// lg and xl sizes
+				[templateTheme.breakpoints.only('lg')]: {
+					fontSize: '2rem',
+				},
+				// xs, and sm sizes
+				[templateTheme.breakpoints.only('md')]: {
+					fontSize: '1.15rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '1.15rem',
 				},
 			},
 			subtitle1: {
@@ -803,12 +854,20 @@ function themeFromMaterialColors(
 				fontStyle: 'italic',
 				opacity: 0.6,
 				fontWeight: 500,
-				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '1.35rem',
+				// xl size, screens 1536+
+				[templateTheme.breakpoints.only('xl')]: {
+					fontSize: '1.85rem',
 				},
-				// Have 1rem for sizes smaller than md
-				[templateTheme.breakpoints.down('md')]: {
-					fontSize: '1.225rem',
+				// lg and xl sizes
+				[templateTheme.breakpoints.only('lg')]: {
+					fontSize: '1.5rem',
+				},
+				// xs, and sm sizes
+				[templateTheme.breakpoints.only('md')]: {
+					fontSize: '1.2rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '0.7rem',
 				},
 			},
 			subtitle2: {
@@ -816,23 +875,39 @@ function themeFromMaterialColors(
 				fontStyle: 'italic',
 				fontWeight: 500,
 				opacity: 0.65,
-				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '1.2rem',
+				// xl size, screens 1536+
+				[templateTheme.breakpoints.only('xl')]: {
+					fontSize: '1.6rem',
 				},
-				// Have 1rem for sizes smaller than md
-				[templateTheme.breakpoints.down('md')]: {
+				// lg and xl sizes
+				[templateTheme.breakpoints.only('lg')]: {
+					fontSize: '1.275rem',
+				},
+				// Have 1rem for sizes smaller than lg
+				[templateTheme.breakpoints.only('md')]: {
 					fontSize: '1rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '0.6rem',
 				},
 			},
 			body1: {
 				fontFamily: bodyFontFamily,
 				fontWeight: 400,
-				[templateTheme.breakpoints.up('md')]: {
-					fontSize: '1.2rem',
+				// xl size, screens 1536+
+				[templateTheme.breakpoints.only('xl')]: {
+					fontSize: '1.6rem',
 				},
-				// Have 1rem for sizes smaller than md
-				[templateTheme.breakpoints.down('md')]: {
+				// lg and xl sizes
+				[templateTheme.breakpoints.only('lg')]: {
+					fontSize: '1.275rem',
+				},
+				// Have 1rem for sizes smaller than lg
+				[templateTheme.breakpoints.only('md')]: {
 					fontSize: '1rem',
+				},
+				[templateTheme.breakpoints.only('sm')]: {
+					fontSize: '0.6rem',
 				},
 			},
 			body2: {
@@ -847,6 +922,15 @@ function themeFromMaterialColors(
 		},
 		// Changes in the default properties of components
 		components: {
+			MuiContainer: {
+				styleOverrides: {
+					root: {},
+				},
+				defaultProps: {
+					fixed: false,
+					maxWidth: false,
+				},
+			},
 			MuiCard: {
 				styleOverrides: {
 					root: {
