@@ -31,15 +31,13 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
 				// backgroundSize: 'cover',
 			}}
 		>
-			<Container>
+			<Container
+				sx={{
+					padding: '0px',
+				}}
+			>
 				<Card
 					sx={{
-						[theme.breakpoints.up('md')]: {
-							margin: '80px 80px 10px 80px',
-						},
-						[theme.breakpoints.down('md')]: {
-							margin: '30px 20px 10px 20px',
-						},
 						// margin: {
 						// 	[theme.breakpoints.up('md')]: '80px 80px 10px 80px',
 						// 	[theme.breakpoints.down('md')]:

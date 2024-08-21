@@ -1,4 +1,4 @@
-import { Theme, createTheme } from '@mui/material/styles';
+import { Theme, createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
 	interface Palette {
@@ -742,11 +742,11 @@ function themeFromMaterialColors(
 				fontFamily: headerFontFamily,
 				// xl size, screens 1536+
 				[templateTheme.breakpoints.only('xl')]: {
-					fontSize: '8rem',
+					fontSize: '6rem',
 				},
 				// lg and xl sizes
 				[templateTheme.breakpoints.only('lg')]: {
-					fontSize: '6.2rem',
+					fontSize: '5rem',
 					fontWeight: 700,
 				},
 				// sm, and xs sizes
@@ -755,6 +755,9 @@ function themeFromMaterialColors(
 				},
 				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '3.2rem',
+				},
+				[templateTheme.breakpoints.only('xs')]: {
+					fontSize: '2.5rem',
 				},
 			},
 			h2: {
@@ -774,6 +777,9 @@ function themeFromMaterialColors(
 				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '2.9rem',
 				},
+				[templateTheme.breakpoints.only('xs')]: {
+					fontSize: '2rem',
+				},
 			},
 			h3: {
 				fontFamily: headerFontFamily,
@@ -791,6 +797,9 @@ function themeFromMaterialColors(
 				},
 				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '2rem',
+				},
+				[templateTheme.breakpoints.only('xs')]: {
+					fontSize: '1.8rem',
 				},
 			},
 			h4: {
@@ -811,6 +820,9 @@ function themeFromMaterialColors(
 				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '1.8rem',
 				},
+				[templateTheme.breakpoints.only('xs')]: {
+					fontSize: '1.6rem',
+				},
 			},
 			h5: {
 				fontFamily: headerFontFamily,
@@ -830,6 +842,9 @@ function themeFromMaterialColors(
 				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '1.3rem',
 				},
+				[templateTheme.breakpoints.only('xs')]: {
+					fontSize: '1.1rem',
+				},
 			},
 			h6: {
 				fontFamily: headerFontFamily,
@@ -847,6 +862,9 @@ function themeFromMaterialColors(
 				},
 				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '1.15rem',
+				},
+				[templateTheme.breakpoints.only('xs')]: {
+					fontSize: '1.0rem',
 				},
 			},
 			subtitle1: {
@@ -869,6 +887,9 @@ function themeFromMaterialColors(
 				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '0.7rem',
 				},
+				[templateTheme.breakpoints.only('xs')]: {
+					fontSize: '0.5rem',
+				},
 			},
 			subtitle2: {
 				fontFamily: bodyFontFamily,
@@ -890,6 +911,9 @@ function themeFromMaterialColors(
 				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '0.6rem',
 				},
+				[templateTheme.breakpoints.only('xs')]: {
+					fontSize: '0.4rem',
+				},
 			},
 			body1: {
 				fontFamily: bodyFontFamily,
@@ -908,6 +932,9 @@ function themeFromMaterialColors(
 				},
 				[templateTheme.breakpoints.only('sm')]: {
 					fontSize: '0.6rem',
+				},
+				[templateTheme.breakpoints.only('xs')]: {
+					fontSize: '0.4rem',
 				},
 			},
 			body2: {
@@ -939,6 +966,26 @@ function themeFromMaterialColors(
 						borderRadius: '8px',
 						boxShadow: 'none',
 						overflow: 'visible',
+						// margin: '100px',
+						[templateTheme.breakpoints.up(
+							templateTheme.breakpoints.values.md,
+						)]: {
+							margin: '30px 80px',
+							padding: '48px',
+						},
+						[templateTheme.breakpoints.between(
+							templateTheme.breakpoints.values.sm,
+							templateTheme.breakpoints.values.md,
+						)]: {
+							margin: '20px 24px',
+							padding: '24px',
+						},
+						[templateTheme.breakpoints.down(
+							templateTheme.breakpoints.values.sm,
+						)]: {
+							margin: '16px 20px',
+							padding: '16px',
+						},
 					},
 				},
 			},
@@ -967,8 +1014,15 @@ function themeFromMaterialColors(
 			// },
 		},
 	});
+	// Edit the text sizes to make them properly responsive
+	const finalTheme = responsiveFontSizes(newTheme, {
+		factor: 8,
+		breakpoints: ['xs', 'sm', 'md', 'lg', 'xl'],
+	});
+	console.log('Created theme:');
+	console.log(finalTheme);
 	// Return the brand new theme that we have created
-	return newTheme;
+	return finalTheme;
 }
 
 // Create the light theme that will be used for the application
