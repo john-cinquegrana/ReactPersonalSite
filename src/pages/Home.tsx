@@ -66,6 +66,7 @@ const Home: React.FC = () => {
 					startDate='05/2022'
 					endDate='08/2023'
 					location='Farmingdale, NJ'
+					description='An all-encompassing 911 and emergency management solution'
 					skills={[
 						'Flutter',
 						'Dart',
@@ -112,6 +113,7 @@ const Home: React.FC = () => {
 					startDate='09/2023'
 					endDate='Present'
 					location='New Brunswick, NJ'
+					description='The state university of New Jersey'
 					skills={[
 						'Flutter',
 						'React',

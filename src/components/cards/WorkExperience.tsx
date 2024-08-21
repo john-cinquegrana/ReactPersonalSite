@@ -11,6 +11,7 @@ interface WorkExperienceProps {
 	startDate: string;
 	endDate: string;
 	skills: string[];
+	description: string;
 }
 
 const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
@@ -21,6 +22,7 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 	endDate,
 	skills,
 	children,
+	description,
 }) => {
 	// Grab the theme so we can pull out colors
 	const theme = useTheme();
@@ -100,7 +102,7 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 					variant='subtitle2'
 					paddingBottom={2}
 				>
-					An all-encompassing 911 and emergency management solution
+					{description}
 				</Typography>
 				<Typography variant='h6'>Experiences</Typography>
 				{children}
