@@ -6,6 +6,7 @@ import WorkExperience from '@components/cards/WorkExperience';
 import SocialBar from '@components/content/SocialBar';
 import BubbbleSvg from '@root/assets/circle-scatter.svg';
 import BlurredBackground from '@components/text/BlurredBackground';
+import Bubbles from '@components/Bubbles';
 
 const Home: React.FC = () => {
 	return (
@@ -155,6 +156,7 @@ const Home: React.FC = () => {
 					</ul>
 				</WorkExperience>
 			</Box>
+			<Bubbles />
 		</Box>
 	);
 };
