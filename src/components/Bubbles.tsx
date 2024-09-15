@@ -1,69 +1,104 @@
-import React, { useEffect, useState } from 'react';
-import { Box } from '@mui/material';
+import React, { useState, useEffect, useRef } from 'react';
+import { Box, SxProps } from '@mui/system';
+import Circle from './Circle';
 import { keyframes } from '@emotion/react';
-import Circle from '@components/Circle';
 
-const floatUp = keyframes`
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-100vh);
-    }
-`;
+interface BubblesProps {
+	sx?: SxProps;
+}
 
-const generateRandomCircles = (numCircles: number) => {
-    return Array.from({ length: numCircles }, () => ({
-        id: Math.random().toString(36).substring(2, 9),
-        size: Math.random() * 50 + 10,
-        left: Math.random() * 100 + '%',
-        animationDuration: Math.random() * 10 + 20 + 's',
-    }));
+interface CircleProps {
+	id: number;
+	size: number;
+	top: number;
+	left: number;
+}
+
+const generateRandomCircles = (
+	count: number,
+	componentHeight: number,
+): CircleProps[] => {
+	const scrollY = window.scrollY;
+	return Array.from({ length: count }, (_, id) => ({
+		id,
+		size: Math.random() * 50 + 10,
+		top: scrollY + componentHeight + Math.random() * 100, // Start just off-screen considering scroll position
+		left: Math.random() * window.innerWidth,
+	}));
 };
 
-const Bubbles: React.FC = () => {
+const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
+	const [circles, setCircles] = useState<CircleProps[]>([]);
+	const containerRef = useRef<HTMLDivElement>(null);
 
-    // General values for the generation of bubbles to make them easier to change
-    // const maxCircles = 15;
+	useEffect(() => {
+		if (containerRef.current) {
+			const componentHeight = containerRef.current.clientHeight;
+			setCircles(generateRandomCircles(10, componentHeight));
+		}
+	}, []);
 
-    const [circles, setCircles] = useState(generateRandomCircles(10));
+	useEffect(() => {
+		const interval = setInterval(() => {
+			if (containerRef.current) {
+				const componentHeight = containerRef.current.clientHeight;
+				setCircles((prevCircles) => [
+					...prevCircles.filter(
+						(circle) => circle.top > -circle.size,
+					), // Remove bubbles that have moved off the top
+					...generateRandomCircles(1, componentHeight), // Add a new bubble
+				]);
+			}
+		}, 1000); // Generate a new bubble every second
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCircles(generateRandomCircles(10));
-        }, 60 * 1000); // Regenerate circles every 15 seconds
+		return () => clearInterval(interval);
+	}, []);
 
-        return () => clearInterval(interval);
-    }, []);
+	const moveUp = keyframes`
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-200%); }
+    `;
 
-    return (
-        <Box
-            sx={{
-                position: 'relative',
-                width: '100%',
-                height: '100vh',
-                overflow: 'hidden',
-                backgroundColor: 'transparent',
-            }}
-        >
-            {circles.map((circle) => (
-                <Circle
-                    key={circle.id}
-                    color='#FF750D'
-                    radius={circle.size}
-                    sx={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: circle.left,
-                        width: circle.size,
-                        height: circle.size,
-                        borderRadius: '50%',
-                        animation: `${floatUp} ${circle.animationDuration} linear infinite`,
-                    }}
-                />
-            ))}
-        </Box>
-    );
+	const handleAnimationEnd = (id: number) => {
+		setCircles((prevCircles) =>
+			prevCircles.filter((circle) => circle.id !== id),
+		);
+	};
+
+	return (
+		<Box
+			ref={containerRef}
+			sx={{
+				position: 'relative',
+				width: '100%',
+				height: '100%',
+				overflow: 'hidden',
+				backgroundColor: 'transparent',
+				...sx,
+			}}
+		>
+			{circles.map((circle) => (
+				<div
+					key={circle.id}
+					style={{
+						animation: `${moveUp} 20s linear`,
+						position: 'absolute',
+						top: circle.top,
+						left: circle.left,
+						width: circle.size,
+						height: circle.size,
+					}}
+					onAnimationEnd={() => handleAnimationEnd(circle.id)}
+				>
+					<Circle
+						key={circle.id}
+						color='#FF750D'
+						radius={circle.size}
+					/>
+				</div>
+			))}
+		</Box>
+	);
 };
 
 export default Bubbles;
