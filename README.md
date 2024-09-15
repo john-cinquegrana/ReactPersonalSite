@@ -1,30 +1,14 @@
-# React + TypeScript + Vite
+# [john-cinquegrana.com](john-cinquegrana.com)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains teh code for my personal website which is currently hosted on [Vercel](https://vercel.com/) at [john-cinquegrana.com](https://www.john-cinquegrana.com/). This website was created as a general *About Me* showcase of my current life and projects. It was created using the following technologies:
+- **Vite** as a build tool and dev runner
+- **Node.js** as the packaging and runtime
+- **Typescript** as a better alternative to Javascript
+- **React** as the frontend framework
+- **MUI** as the major component library
 
-Currently, two official plugins are available:
+## Deployment Pattern
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Currently the **Vercel** deployment is set up to track the **main** branch. Any commits, merges, or pushes to the **main** branch will cause a new deployment on the **Vercel** domain.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+All development work should be done on the **nightly** branch. This branch, as of current, has no associated actions.
