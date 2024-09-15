@@ -4,7 +4,6 @@ import { Box, Typography } from '@mui/material';
 import MainHeader from '@components/cards/MainHeader';
 import WorkExperience from '@components/cards/WorkExperience';
 import SocialBar from '@components/content/SocialBar';
-import BubbbleSvg from '@root/assets/circle-scatter.svg';
 import BlurredBackground from '@components/text/BlurredBackground';
 import Bubbles from '@components/Bubbles';
 
@@ -16,6 +15,7 @@ const Home: React.FC = () => {
 				flexFlow: 'column nowrap',
 				justifyContent: 'flex-start',
 				alignItems: 'stretch',
+				position: 'relative',
 			}}
 		>
 			<MainHeader title='John Cinquegrana' />
@@ -27,17 +27,8 @@ const Home: React.FC = () => {
 					justifyContent: 'flex-start',
 					alignItems: 'stretch',
 					padding: '0px',
-					imageRendering: 'crisp-edges',
-					backgroundImage: `url(${BubbbleSvg})`,
-					backgroundRepeat: 'repeat-y',
-					backgroundSize: '100% auto',
-					'@keyframes swim': {
-						from: {
-							backgroundPosition: 'center 6500px',
-						},
-						to: { backgroundPosition: 'center 0px' },
-					},
-					animation: 'swim 3600s infinite linear',
+					position: 'relative',
+					zIndex: 1,
 				}}
 			>
 				<AboutMe />
@@ -156,7 +147,16 @@ const Home: React.FC = () => {
 					</ul>
 				</WorkExperience>
 			</Box>
-			<Bubbles />
+			<Bubbles
+				sx={{
+					position: 'absolute',
+					top: 0,
+					left: 0,
+					width: '100%',
+					height: '100%',
+					zIndex: 0,
+				}}
+			/>
 		</Box>
 	);
 };
