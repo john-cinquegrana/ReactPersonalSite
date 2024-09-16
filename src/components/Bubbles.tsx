@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, SxProps } from '@mui/system';
 import Circle from './Circle';
-import { keyframes, css, Keyframes } from '@emotion/react';
+import { keyframes, css } from '@emotion/react';
 
 interface BubblesProps {
 	sx?: SxProps;
@@ -13,27 +13,7 @@ interface CircleProps {
 	size: number;
 	top: number | string;
 	left: number | string;
-	animation?: Keyframes;
 }
-
-/**
- * Genearates random circles to be displayed across the component.
- * @param count The number of circles to generate
- * @param componentHeight The height of the component
- * @param componentWidth The width of the component
- * @returns A list of circles randomly distributed across the component
- */
-const generateRandomCircles = (
-	count: number,
-	getId: () => number,
-): CircleProps[] => {
-	return Array.from({ length: count }, () => ({
-		id: getId(),
-		size: Math.random() * 50 + 10,
-		top: `${Math.random() * 85 + 15}%`,
-		left: `${Math.random() * 110 - 5}%`,
-	}));
-};
 
 /**
  * @returns A circle specifically generated to appear off the bottom of the screen.
@@ -50,43 +30,37 @@ const offScreenCircle = (
 		size: size,
 		top: top,
 		left: Math.random() * (componentWidth + size * 2) - size + 'px',
-		animation: keyframes`
-            0% { top: ${top}; }
-            100% { top: -${size}px; }
-        `,
 	};
 };
 
 function useCounter(initialValue: number) {
 	const counterRef = useRef(initialValue);
 
-	const increment = () => {
-		counterRef.current += 1;
-	};
-
-	const decrement = () => {
-		counterRef.current -= 1;
-	};
-
 	const getValue = () => {
-		return counterRef.current++;
+		const old_value = counterRef.current;
+		counterRef.current++;
+		return old_value;
 	};
 
-	return { increment, decrement, getValue };
+	return getValue;
 }
 
 /**
  * @returns An HTML element which has bubbles constantly moving upwards over it.
  */
 const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
-	const idCounter = useCounter(0);
+	const getCircleId = useCounter(0);
 
 	const [circles, setCircles] = useState<CircleProps[]>(
-		generateRandomCircles(10, idCounter.getValue),
+		Array.from({ length: 10 }, () => ({
+			id: getCircleId(),
+			size: Math.random() * 50 + 10,
+			top: `${Math.random() * 85 + 15}%`,
+			left: `${Math.random() * 110 - 5}%`,
+		})),
 	);
 
 	const removeCircle = (id: number) => {
-		console.log(`Removing circle with id: ${id}`);
 		setCircles((prevCircles) =>
 			prevCircles.filter((circle) => circle.id !== id),
 		);
@@ -109,7 +83,7 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 				const newCircle = offScreenCircle(
 					componentHeight,
 					componentWidth,
-					idCounter.getValue(),
+					getCircleId(),
 				);
 				addCircle(newCircle);
 			}
@@ -119,7 +93,7 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 		return () => {
 			clearInterval(interval);
 		};
-	}, [idCounter]);
+	}, [getCircleId]);
 
 	const moveUp = (size: number) => keyframes`
             0% { }
