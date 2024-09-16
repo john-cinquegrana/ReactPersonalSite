@@ -162,7 +162,6 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 	}, [node, getCircleId, bubbleTimer]);
 
 	const removeCircle = (id: number) => {
-		console.log('remove circle', id);
 		setCircles((prevCircles) =>
 			prevCircles.filter((circle) => circle.id !== id),
 		);
