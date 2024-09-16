@@ -10,10 +10,7 @@ interface CircleProps {
  */
 const Circle: React.FC<CircleProps> = ({ color, radius }) => {
 	return (
-		<svg
-			width={radius * 2}
-			height={radius * 2}
-		>
+		<svg style={{ padding: '4px' }}>
 			<circle
 				cx={radius}
 				cy={radius}
