@@ -14,5 +14,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    // Turn this off because prettier likes it and so do I
+    'no-mixed-spaces-and-tabs': 'off',
   },
 }
