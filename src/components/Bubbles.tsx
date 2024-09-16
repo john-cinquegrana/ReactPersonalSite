@@ -11,9 +11,8 @@ interface BubblesProps {
 interface CircleProps {
 	id: number;
 	size: number;
-	topDistance?: number;
-	topPercentage?: number;
-	left: number | string;
+	top: number;
+	left: number;
 	circleSpeed: number;
 }
 
@@ -34,36 +33,62 @@ function useCounter(initialValue: number) {
  */
 const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 	// Constant values to easily mess with the bubbles
-	const initialBubbles = 6;
 	const minBubleSpeed = 5; //Measured in px per second
 	const maxBubleSpeed = 10; //Measured in px per second
 	const minBubbleSize = 15;
 	const maxBubbleSize = 100;
+	const bubbleSpace = 300; // The maximum distance between bubbles
+
+	// Seconds between bubbles calculated to keep average spacing between bubbles
+	const bubbleTimer =
+		(bubbleSpace + (minBubbleSize + maxBubbleSize) / 2) /
+		((minBubleSpeed + maxBubleSpeed) / 2);
+
+	const maxHeight = useRef(2500); // The height we initially make bubbles down to
+	const maxWidth = useRef(2000); // The width we initially make bubbles across to
+
+	function calcHeight(node: HTMLDivElement) {
+		const currentHeight = node.getBoundingClientRect().height;
+		if (maxHeight.current < currentHeight) {
+			maxHeight.current = currentHeight;
+		}
+		return maxHeight.current;
+	}
+
+	function calcWidth(node: HTMLDivElement) {
+		const currentWidth = node.getBoundingClientRect().width;
+		if (maxWidth.current < currentWidth) {
+			maxWidth.current = currentWidth;
+		}
+		return maxWidth.current;
+	}
 
 	const getCircleId = useCounter(0);
 
 	// Hooks used for the state of the bubbles
 
-	const [circles, setCircles] = useState<CircleProps[]>(
-		Array.from({ length: initialBubbles }, () => {
-			// Randomize a speed for each circle
+	const [circles, setCircles] = useState<CircleProps[]>(() => {
+		// Build the random array of initial bubbles
+		const initialBubbles: CircleProps[] = [];
+		let currentHeight = Math.random() * 300 + 20;
+		while (currentHeight < maxHeight.current) {
 			const speed =
 				Math.random() * (maxBubleSpeed - minBubleSpeed) + minBubleSpeed;
-			// Get the distance from the top, assuming a scren size of 2000
-			const topPercent = Math.random() * 85 + 15;
-
-			// Decide a random bubble size
 			const size =
 				Math.random() * (maxBubbleSize - minBubbleSize) + minBubbleSize;
-			return {
+			const left = Math.random() * (maxWidth.current + size * 2) - size;
+			const circle = {
 				id: getCircleId(),
 				size: size,
-				topPercentage: topPercent,
-				left: `${Math.random() * 110 - 5}%`,
+				left: left,
+				top: currentHeight,
 				circleSpeed: speed,
 			};
-		}),
-	);
+			initialBubbles.push(circle);
+			currentHeight += Math.random() * (bubbleSpace + size);
+		}
+		return initialBubbles;
+	});
 
 	const [node, setNode] = useState<HTMLDivElement>();
 
@@ -82,19 +107,19 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 		const interval = setInterval(() => {
 			if (node) {
 				const newCircle = offScreenCircle(
-					node.getBoundingClientRect().height,
-					node.getBoundingClientRect().width,
+					calcHeight(node),
+					calcWidth(node),
 					getCircleId(),
 				);
 				addCircle(newCircle);
 			}
-		}, 1 * 1000); // Generate a new bubble every 10 seconds
+		}, bubbleTimer * 1000); // Generate a new bubble every 10 seconds
 
 		// Cleanup function to run after component is removed
 		return () => {
 			clearInterval(interval);
 		};
-	}, [node, getCircleId]);
+	}, [node, getCircleId, bubbleTimer]);
 
 	const removeCircle = (id: number) => {
 		console.log('remove circle', id);
@@ -113,41 +138,19 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
         `;
 
 	function makeCss(circle: CircleProps) {
-		// Create persistent variables for use later
-		let top;
+		// Calculate the distance for the animation depending on how far down we are
+		const position = circle.top + circle.size * 2;
+		// Re-calculate the timing based off the position and animation speed
+		const animationTime = position / circle.circleSpeed;
 
-		let animation;
-		// Figure out if we're using top distance or percent
-		if (circle.topDistance) {
-			top = circle.topDistance + 'px';
-		} else if (circle.topPercentage) {
-			top = circle.topPercentage + '%';
-		} else {
-			throw new Error('Circle must have topDistance or topPercentage');
-		}
-		// Only animate if we have a container
-		if (!node) {
-			animation = 'none';
-		} else {
-			// Calculate the distance for the animation depending on how far down we are
-			const position = circle.topDistance
-				? circle.topDistance
-				: (circle.topPercentage! *
-						node.getBoundingClientRect().height) /
-						100 +
-				  circle.size * 2;
+		const animation = css`
+			${moveUp(position + circle.size)} ${animationTime}s linear
+		`;
 
-			// Re-calculate the timing based off the position and animation speed
-			const animationTime = position / circle.circleSpeed;
-
-			animation = css`
-				${moveUp(position + circle.size)} ${animationTime}s linear
-			`;
-		}
 		const styles = css`
 			animation: ${animation};
-			top: ${top};
-			left: ${circle.left};
+			top: ${circle.top}px;
+			left: ${circle.left}px;
 			position: absolute;
 			display: flex;
 			justifycontent: center;
@@ -175,8 +178,8 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 		return {
 			id: id,
 			size: size,
-			topDistance: top,
-			left: Math.random() * (componentWidth + size * 2) - size + 'px',
+			top: top,
+			left: Math.random() * (componentWidth + size * 2) - size,
 			circleSpeed: speed,
 		};
 	};
