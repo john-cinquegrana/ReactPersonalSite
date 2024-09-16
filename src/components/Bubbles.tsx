@@ -42,6 +42,8 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 
 	const getCircleId = useCounter(0);
 
+	// Hooks used for the state of the bubbles
+
 	const [circles, setCircles] = useState<CircleProps[]>(
 		Array.from({ length: initialBubbles }, () => {
 			// Randomize a speed for each circle
@@ -64,38 +66,6 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 	);
 
 	const [node, setNode] = useState<HTMLDivElement>();
-
-	const removeCircle = (id: number) => {
-		console.log('remove circle', id);
-		setCircles((prevCircles) =>
-			prevCircles.filter((circle) => circle.id !== id),
-		);
-	};
-
-	/**
-	 * @returns A circle specifically generated to appear off the bottom of the screen.
-	 */
-	const offScreenCircle = (
-		componentHeight: number,
-		componentWidth: number,
-		id: number,
-	): CircleProps => {
-		// Log out the circle we are adding
-		console.log('Adding circle', id);
-		const size =
-			Math.random() * (maxBubbleSize - minBubbleSize) + minBubbleSize;
-		const top = Math.random() * 100 + size + componentHeight;
-		// Decide a random time to traverse the screen
-		const speed =
-			Math.random() * (maxBubleSpeed - minBubleSpeed) + minBubleSpeed;
-		return {
-			id: id,
-			size: size,
-			topDistance: top,
-			left: Math.random() * (componentWidth + size * 2) - size + 'px',
-			circleSpeed: speed,
-		};
-	};
 
 	// Re-render when containerRef changes
 	const reMake = useCallback((node: HTMLDivElement | null) => {
@@ -126,16 +96,21 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 		};
 	}, [node, getCircleId]);
 
-	const moveUp = (distance: number) => keyframes`
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-${distance}px); }
-        `;
+	const removeCircle = (id: number) => {
+		console.log('remove circle', id);
+		setCircles((prevCircles) =>
+			prevCircles.filter((circle) => circle.id !== id),
+		);
+	};
 
 	const handleAnimationEnd = (id: number) => {
 		removeCircle(id);
 	};
 
-	console.log('Rebuild');
+	const moveUp = (distance: number) => keyframes`
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-${distance}px); }
+        `;
 
 	function makeCss(circle: CircleProps) {
 		// Create persistent variables for use later
@@ -181,6 +156,30 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 		// console.log('styles', styles);
 		return styles;
 	}
+
+	/**
+	 * @returns A circle specifically generated to appear off the bottom of the screen.
+	 */
+	const offScreenCircle = (
+		componentHeight: number,
+		componentWidth: number,
+		id: number,
+	): CircleProps => {
+		// Log out the circle we are adding
+		const size =
+			Math.random() * (maxBubbleSize - minBubbleSize) + minBubbleSize;
+		const top = Math.random() * 100 + size + componentHeight;
+		// Decide a random time to traverse the screen
+		const speed =
+			Math.random() * (maxBubleSpeed - minBubleSpeed) + minBubleSpeed;
+		return {
+			id: id,
+			size: size,
+			topDistance: top,
+			left: Math.random() * (componentWidth + size * 2) - size + 'px',
+			circleSpeed: speed,
+		};
+	};
 
 	return (
 		<Box
