@@ -35,17 +35,17 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 	// Constant values to easily mess with the bubbles
 	const minBubleSpeed = 5; //Measured in px per second
 	const maxBubleSpeed = 10; //Measured in px per second
-	const minBubbleSize = 15;
+	const minBubbleSize = 30;
 	const maxBubbleSize = 100;
-	const bubbleSpace = 300; // The maximum distance between bubbles
+	const bubbleSpace = 400; // The maximum distance between bubbles
 
 	// Seconds between bubbles calculated to keep average spacing between bubbles
 	const bubbleTimer =
 		(bubbleSpace + (minBubbleSize + maxBubbleSize) / 2) /
 		((minBubleSpeed + maxBubleSpeed) / 2);
 
-	const maxHeight = useRef(2500); // The height we initially make bubbles down to
-	const maxWidth = useRef(2000); // The width we initially make bubbles across to
+	const maxHeight = useRef(3000); // The height we initially make bubbles down to
+	const maxWidth = useRef(3000); // The width we initially make bubbles across to
 
 	function calcHeight(node: HTMLDivElement) {
 		const currentHeight = node.getBoundingClientRect().height;
@@ -70,7 +70,9 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 	const [circles, setCircles] = useState<CircleProps[]>(() => {
 		// Build the random array of initial bubbles
 		const initialBubbles: CircleProps[] = [];
-		let currentHeight = Math.random() * 300 + 20;
+		// Adjust bubble space based on max Window Size
+		const stepSpace = (window.innerWidth / maxWidth.current) * bubbleSpace;
+		let currentHeight = (Math.random() * stepSpace) / 2 + 20;
 		while (currentHeight < maxHeight.current) {
 			const speed =
 				Math.random() * (maxBubleSpeed - minBubleSpeed) + minBubleSpeed;
@@ -85,7 +87,7 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 				circleSpeed: speed,
 			};
 			initialBubbles.push(circle);
-			currentHeight += Math.random() * (bubbleSpace + size);
+			currentHeight += Math.random() * (stepSpace + size);
 		}
 		return initialBubbles;
 	});
@@ -100,18 +102,56 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 	}, []);
 
 	useEffect(() => {
-		const addCircle = (circle: CircleProps) => {
-			setCircles((prevCircles) => [...prevCircles, circle]);
+		const offScreenCircle = (
+			maxHeight: number,
+			maxWidth: number,
+			currentWidth: number,
+			id: number,
+		): CircleProps[] => {
+			// Log out the circle we are adding
+			const size =
+				Math.random() * (maxBubbleSize - minBubbleSize) + minBubbleSize;
+			const top = Math.random() * 100 + size + maxHeight;
+			// Decide a random time to traverse the screen
+			const speed =
+				Math.random() * (maxBubleSpeed - minBubleSpeed) + minBubleSpeed;
+			const circle: CircleProps = {
+				id: id,
+				size: size,
+				top: top,
+				left: Math.random() * (maxWidth + size * 2) - size,
+				circleSpeed: speed,
+			};
+			const result = [circle];
+
+			// If this circle is being rendered off screen, create another one to be it's friend
+			if (circle.left > currentWidth) {
+				const friend = {
+					id: getCircleId(),
+					size: size,
+					top: top,
+					left: circle.left - currentWidth,
+					circleSpeed: speed,
+				};
+				result.push(friend);
+			}
+
+			return result;
+		};
+
+		const addCircles = (circles: CircleProps[]) => {
+			setCircles((prevCircles) => [...prevCircles, ...circles]);
 		};
 
 		const interval = setInterval(() => {
 			if (node) {
-				const newCircle = offScreenCircle(
+				const circleList = offScreenCircle(
 					calcHeight(node),
 					calcWidth(node),
+					node.getBoundingClientRect().width,
 					getCircleId(),
 				);
-				addCircle(newCircle);
+				addCircles(circleList);
 			}
 		}, bubbleTimer * 1000); // Generate a new bubble every 10 seconds
 
@@ -159,30 +199,6 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 		// console.log('styles', styles);
 		return styles;
 	}
-
-	/**
-	 * @returns A circle specifically generated to appear off the bottom of the screen.
-	 */
-	const offScreenCircle = (
-		componentHeight: number,
-		componentWidth: number,
-		id: number,
-	): CircleProps => {
-		// Log out the circle we are adding
-		const size =
-			Math.random() * (maxBubbleSize - minBubbleSize) + minBubbleSize;
-		const top = Math.random() * 100 + size + componentHeight;
-		// Decide a random time to traverse the screen
-		const speed =
-			Math.random() * (maxBubleSpeed - minBubleSpeed) + minBubleSpeed;
-		return {
-			id: id,
-			size: size,
-			top: top,
-			left: Math.random() * (componentWidth + size * 2) - size,
-			circleSpeed: speed,
-		};
-	};
 
 	return (
 		<Box
