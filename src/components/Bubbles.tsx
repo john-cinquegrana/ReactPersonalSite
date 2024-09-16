@@ -34,11 +34,11 @@ function useCounter(initialValue: number) {
  */
 const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 	// Constant values to easily mess with the bubbles
-	const initialBubbles = 10;
+	const initialBubbles = 6;
 	const minBubleSpeed = 5; //Measured in px per second
 	const maxBubleSpeed = 10; //Measured in px per second
-	const minBubbleSize = 10;
-	const maxBubbleSize = 50;
+	const minBubbleSize = 15;
+	const maxBubbleSize = 100;
 
 	const getCircleId = useCounter(0);
 
@@ -63,7 +63,7 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 		}),
 	);
 
-	const [rect, setRect] = useState<DOMRect>();
+	const [node, setNode] = useState<HTMLDivElement>();
 
 	const removeCircle = (id: number) => {
 		console.log('remove circle', id);
@@ -100,7 +100,7 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 	// Re-render when containerRef changes
 	const reMake = useCallback((node: HTMLDivElement | null) => {
 		if (node) {
-			setRect(node.getBoundingClientRect());
+			setNode(node);
 		}
 	}, []);
 
@@ -110,21 +110,21 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 		};
 
 		const interval = setInterval(() => {
-			if (rect) {
+			if (node) {
 				const newCircle = offScreenCircle(
-					rect.height,
-					rect.width,
+					node.getBoundingClientRect().height,
+					node.getBoundingClientRect().width,
 					getCircleId(),
 				);
 				addCircle(newCircle);
 			}
-		}, 5 * 1000); // Generate a new bubble every 10 seconds
+		}, 1 * 1000); // Generate a new bubble every 10 seconds
 
 		// Cleanup function to run after component is removed
 		return () => {
 			clearInterval(interval);
 		};
-	}, [rect, getCircleId]);
+	}, [node, getCircleId]);
 
 	const moveUp = (distance: number) => keyframes`
             0% { transform: translateY(0); }
@@ -151,13 +151,16 @@ const Bubbles: React.FC<BubblesProps> = ({ sx }) => {
 			throw new Error('Circle must have topDistance or topPercentage');
 		}
 		// Only animate if we have a container
-		if (!rect) {
+		if (!node) {
 			animation = 'none';
 		} else {
 			// Calculate the distance for the animation depending on how far down we are
 			const position = circle.topDistance
 				? circle.topDistance
-				: (circle.topPercentage! * rect.height) / 100 + circle.size * 2;
+				: (circle.topPercentage! *
+						node.getBoundingClientRect().height) /
+						100 +
+				  circle.size * 2;
 
 			// Re-calculate the timing based off the position and animation speed
 			const animationTime = position / circle.circleSpeed;
