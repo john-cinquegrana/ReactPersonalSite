@@ -3,6 +3,7 @@ import { Box, Container, useTheme } from '@mui/system';
 import SunsetWaves from './../../assets/sunset-waves.svg';
 import React from 'react';
 import Color from 'color';
+import Roulette from '../text/Roulette';
 
 interface MainHeaderProps {
 	title: string;
@@ -63,16 +64,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
 						>
 							{title}
 						</Typography>
-						<Typography
-							marginLeft={4}
-							variant='subtitle1'
-							textAlign={'left'}
-							fontSize={30}
-							fontWeight={500}
-							letterSpacing='0.10rem'
-						>
-							The World exists for Passion and Beauty
-						</Typography>
+						<Roulette />
 					</CardContent>
 				</Card>
 			</Container>
