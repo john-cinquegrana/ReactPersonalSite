@@ -5,12 +5,21 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import { Breakpoint, useBreakpoint } from '@root/hooks/styleHooks';
 
 const possibleTexts = [
-	'Mobile Developer With a Long Title',
-	'Worthy Opponent',
-	'Amazing Developer',
-	'Full-Stack Stacker',
+	// Business Titles
+	'Mobile Engineer and Team Leader',
+	'Experienced Flutter Lead',
+	'Cloud Architect',
+	'Full-Stack Speed Stacker',
+	// Personal Titles
 	'The Best React Developer',
+	'Ultimate Frisbee Enthusiast',
+	'Speedrun World-Record Holder',
 	'Jazz',
+	// Fun Titles
+	'Worthy Opponent',
+	'Renaissance Faire Tavern Hopper',
+	'404 Please Try Again',
+	'Thin Crust Connoisseur',
 ];
 
 interface RouletteTextProps {
@@ -117,9 +126,9 @@ const Roulette: React.FC = () => {
 			return newText;
 		});
 		// Get all the text that isn't newText or currentText
-		const shuffledTexts = possibleTexts.filter(
-			(text) => text != newText && text != currentText,
-		);
+		const shuffledTexts = possibleTexts
+			.filter((text) => text != newText && text != currentText)
+			.slice(0, 5);
 		shuffleArray(shuffledTexts);
 		setScrollText(shuffledTexts);
 		// Set the state to animate
