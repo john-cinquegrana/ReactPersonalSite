@@ -51,8 +51,35 @@ function animateY(start: number, end: number) {
 	`;
 }
 
+function bounceAnimation(height: number) {
+	return keyframes`
+		0% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-${height}px);
+		}
+		100% {
+			transform: translateY(0);
+		}`;
+}
+
+function shuffleArray<T>(array: Array<T>) {
+	for (let i = array.length - 1; i >= 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+}
+
 const Roulette: React.FC = () => {
-	const animationTime = 2;
+	// How long the jump animation runs at the start
+	const animationStartup = 0.4;
+	// The overlap time between the jump and roulette wheel animations
+	const animationBuffer = 0.1;
+	// The time between each word coming down
+	const animationStepTime = 0.17;
+	// How long it takes for each word to reach the bottom
+	const moveTime = 0.4;
 
 	// Create the state that we need to manage the roulette
 	const [currentText, setCurrentText] = React.useState<string>(
@@ -61,14 +88,14 @@ const Roulette: React.FC = () => {
 	const [nextText, setNextText] = React.useState<string | undefined>(
 		undefined,
 	);
-	// const [scrollText, setScrollText] = React.useState<string[] | undefined>(
-	// 	undefined,
-	// );
+	const [scrollText, setScrollText] = React.useState<string[] | undefined>(
+		undefined,
+	);
 	const [isAnimating, setIsAnimating] = React.useState<boolean>(false);
 
 	const handleClick = () => {
 		// Variable to store the next text value
-		let newText: string | undefined;
+		let newText: string;
 		// Change the state for currentText and nextText
 		setNextText(() => {
 			// Grab some text that is not the current text
@@ -83,17 +110,23 @@ const Roulette: React.FC = () => {
 			// Set the new text value
 			return newText;
 		});
+		// Get all the text that isn't newText or currentText
+		const shuffledTexts = possibleTexts.filter(
+			(text) => text != newText && text != currentText,
+		);
+		shuffleArray(shuffledTexts);
+		setScrollText(shuffledTexts);
 		// Set the state to animate
 		setIsAnimating(true);
 		// Wait for the animation to finish
 		setTimeout(() => {
 			// Set the new text value
-			setCurrentText(newText!);
+			setCurrentText(newText);
 			// Reset the next text value
 			setNextText(undefined);
 			// Reset the animation
 			setIsAnimating(false);
-		}, animationTime * 1000);
+		}, (animationStepTime * (shuffledTexts.length + 2) + animationStartup) * 1000);
 		// How else would we know the button was clicked?
 		console.log('Button clicked');
 	};
@@ -145,23 +178,59 @@ const Roulette: React.FC = () => {
 		// and the other up
 		else {
 			// Build the animations
-			const curTextAnimation = animateY(0, animationSize * 2);
-			const nextTextAnimation = animateY(-animationSize * 2, 0);
+			const curTextAnimation = keyframes`
+				100% {
+					transform: translateY(${animationSize}px);
+				}
+			`;
+			// Useful variables for the length of animation
+			const animationSteps = scrollText?.length ?? 0;
+			const stepTime = animationStepTime;
+			const baseDelay = animationStartup - animationBuffer;
+			// Give back the actual elements
 			return (
 				<>
 					<RouletteText
 						key={currentText}
 						sx={{
-							animation: `${curTextAnimation} ${animationTime}s linear`,
+							animation: `${bounceAnimation(
+								10,
+							)} ${animationStartup}s ease-in-out,
+							${curTextAnimation} ${moveTime * 0.5}s linear ${
+								animationStartup - animationBuffer
+							}s`,
+
 							animationFillMode: 'forwards',
 							position: 'absolute',
 						}}
 						text={currentText}
 					/>
+					{scrollText?.map((text, index) => (
+						<RouletteText
+							key={text}
+							sx={{
+								animation: `${animateY(
+									-animationSize,
+									animationSize,
+								)} ${moveTime}s linear ${
+									stepTime * index + baseDelay
+								}s`,
+								animationFillMode: 'forwards',
+								transform: `translateY(-${animationSize}px)`,
+								position: 'absolute',
+							}}
+							text={text}
+						/>
+					))}
 					<RouletteText
 						key={nextText}
 						sx={{
-							animation: `${nextTextAnimation} ${animationTime}s linear`,
+							animation: `${animateY(-animationSize, 0)} ${
+								moveTime * 0.5
+							}s linear ${
+								stepTime * animationSteps + baseDelay
+							}s`,
+							transform: `translateY(-${animationSize}px)`,
 							animationFillMode: 'forwards',
 							position: 'absolute',
 						}}
@@ -182,6 +251,16 @@ const Roulette: React.FC = () => {
 				alignItems: 'center',
 			}}
 		>
+			<IconButton
+				onClick={handleClick}
+				color='primary'
+				disabled={isAnimating}
+				sx={{
+					paddingRight: '16px',
+				}}
+			>
+				<RefreshIcon />
+			</IconButton>
 			<Box
 				sx={{
 					width: {
@@ -204,13 +283,6 @@ const Roulette: React.FC = () => {
 			>
 				{createRouletteText()}
 			</Box>
-			<IconButton
-				onClick={handleClick}
-				color='primary'
-				disabled={isAnimating}
-			>
-				<RefreshIcon />
-			</IconButton>
 		</Box>
 	);
 };
