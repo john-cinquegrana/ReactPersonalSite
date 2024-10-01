@@ -61,6 +61,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title }) => {
 								sm: '0.1rem',
 								xs: '0.07rem',
 							}}
+							paddingBottom={'12px'}
 						>
 							{title}
 						</Typography>
