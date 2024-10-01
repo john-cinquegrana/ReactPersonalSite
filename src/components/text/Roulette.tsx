@@ -151,34 +151,28 @@ const Roulette: React.FC = () => {
 	const currentBreakpont = useBreakpoint();
 
 	let animationSize: number;
-	let iconButtonSize: 'small' | 'large' | 'medium';
 	let boxHeight: number;
 
 	switch (currentBreakpont) {
 		case Breakpoint.XS:
 			animationSize = 28;
 			boxHeight = 28;
-			iconButtonSize = 'medium';
 			break;
 		case Breakpoint.SM:
 			animationSize = 28;
 			boxHeight = 28;
-			iconButtonSize = 'medium';
 			break;
 		case Breakpoint.MD:
 			animationSize = 34;
 			boxHeight = 34;
-			iconButtonSize = 'medium';
 			break;
 		case Breakpoint.LG:
 			animationSize = 42;
 			boxHeight = 42;
-			iconButtonSize = 'large';
 			break;
 		case Breakpoint.XL:
 			animationSize = 52;
 			boxHeight = 52;
-			iconButtonSize = 'large';
 			break;
 	}
 
@@ -283,13 +277,22 @@ const Roulette: React.FC = () => {
 				onClick={handleClick}
 				color='primary'
 				disabled={isAnimating}
-				size={iconButtonSize}
+				// size={iconButtonSize}
 				sx={{
-					fontSize: 'small',
 					paddingRight: '16px',
 				}}
 			>
-				<RefreshIcon />
+				<RefreshIcon
+					sx={{
+						fontSize: {
+							xs: '1rem',
+							sm: '1rem',
+							md: '1.215rem',
+							lg: '1.5rem',
+							xl: '1.86rem',
+						},
+					}}
+				/>
 			</IconButton>
 			<Box
 				sx={{
