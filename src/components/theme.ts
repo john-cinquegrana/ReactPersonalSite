@@ -741,131 +741,131 @@ function themeFromMaterialColors(
 			h1: {
 				fontFamily: headerFontFamily,
 				// xl size, screens 1536+
-				[templateTheme.breakpoints.only('xl')]: {
-					fontSize: '6rem',
-				},
-				// lg and xl sizes
-				[templateTheme.breakpoints.only('lg')]: {
-					fontSize: '5rem',
-					fontWeight: 700,
-				},
-				// sm, and xs sizes
-				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '4rem',
-				},
-				[templateTheme.breakpoints.only('sm')]: {
-					fontSize: '3.2rem',
-				},
-				[templateTheme.breakpoints.only('xs')]: {
-					fontSize: '2.5rem',
-				},
+				// [templateTheme.breakpoints.only('xl')]: {
+				// 	fontSize: '6rem',
+				// },
+				// // lg and xl sizes
+				// [templateTheme.breakpoints.only('lg')]: {
+				// 	fontSize: '5rem',
+				// 	fontWeight: 700,
+				// },
+				// // sm, and xs sizes
+				// [templateTheme.breakpoints.only('md')]: {
+				// 	fontSize: '4rem',
+				// },
+				// [templateTheme.breakpoints.only('sm')]: {
+				// 	fontSize: '3.2rem',
+				// },
+				// [templateTheme.breakpoints.only('xs')]: {
+				// 	fontSize: '2.5rem',
+				// },
 			},
 			h2: {
 				fontFamily: headerFontFamily,
 				// xl size, screens 1536+
-				[templateTheme.breakpoints.only('xl')]: {
-					fontSize: '6.3rem',
-				},
-				// lg and xl sizes
-				[templateTheme.breakpoints.only('lg')]: {
-					fontSize: '5rem',
-				},
-				// xs, and sm sizes
-				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '4rem',
-				},
-				[templateTheme.breakpoints.only('sm')]: {
-					fontSize: '2.9rem',
-				},
-				[templateTheme.breakpoints.only('xs')]: {
-					fontSize: '2rem',
-				},
+				// [templateTheme.breakpoints.only('xl')]: {
+				// 	fontSize: '6.3rem',
+				// },
+				// // lg and xl sizes
+				// [templateTheme.breakpoints.only('lg')]: {
+				// 	fontSize: '5rem',
+				// },
+				// // xs, and sm sizes
+				// [templateTheme.breakpoints.only('md')]: {
+				// 	fontSize: '4rem',
+				// },
+				// [templateTheme.breakpoints.only('sm')]: {
+				// 	fontSize: '2.9rem',
+				// },
+				// [templateTheme.breakpoints.only('xs')]: {
+				// 	fontSize: '2rem',
+				// },
 			},
 			h3: {
 				fontFamily: headerFontFamily,
 				// xl size, screens 1536+
-				[templateTheme.breakpoints.only('xl')]: {
-					fontSize: '4.9rem',
-				},
-				// lg and xl sizes
-				[templateTheme.breakpoints.only('lg')]: {
-					fontSize: '4rem',
-				},
-				// xs, and sm sizes
-				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '2.8rem',
-				},
-				[templateTheme.breakpoints.only('sm')]: {
-					fontSize: '2rem',
-				},
-				[templateTheme.breakpoints.only('xs')]: {
-					fontSize: '1.8rem',
-				},
+				// [templateTheme.breakpoints.only('xl')]: {
+				// 	fontSize: '4.9rem',
+				// },
+				// // lg and xl sizes
+				// [templateTheme.breakpoints.only('lg')]: {
+				// 	fontSize: '4rem',
+				// },
+				// // xs, and sm sizes
+				// [templateTheme.breakpoints.only('md')]: {
+				// 	fontSize: '2.8rem',
+				// },
+				// [templateTheme.breakpoints.only('sm')]: {
+				// 	fontSize: '2rem',
+				// },
+				// [templateTheme.breakpoints.only('xs')]: {
+				// 	fontSize: '1.8rem',
+				// },
 			},
 			h4: {
 				fontFamily: headerFontFamily,
 				// xl size, screens 1536+
-				[templateTheme.breakpoints.only('xl')]: {
-					fontSize: '4rem',
-				},
-				// lg and xl sizes
-				[templateTheme.breakpoints.only('lg')]: {
-					fontSize: '3.2rem',
-				},
-				// xs, and sm sizes
-				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '1.8rem',
-				},
-				// xs, and sm sizes
-				[templateTheme.breakpoints.only('sm')]: {
-					fontSize: '1.8rem',
-				},
-				[templateTheme.breakpoints.only('xs')]: {
-					fontSize: '1.6rem',
-				},
+				// [templateTheme.breakpoints.only('xl')]: {
+				// 	fontSize: '4rem',
+				// },
+				// // lg and xl sizes
+				// [templateTheme.breakpoints.only('lg')]: {
+				// 	fontSize: '3.2rem',
+				// },
+				// // xs, and sm sizes
+				// [templateTheme.breakpoints.only('md')]: {
+				// 	fontSize: '1.8rem',
+				// },
+				// // xs, and sm sizes
+				// [templateTheme.breakpoints.only('sm')]: {
+				// 	fontSize: '1.8rem',
+				// },
+				// [templateTheme.breakpoints.only('xs')]: {
+				// 	fontSize: '1.6rem',
+				// },
 			},
 			h5: {
 				fontFamily: headerFontFamily,
 				// xl size, screens 1536+
-				[templateTheme.breakpoints.only('xl')]: {
-					fontSize: '3.35rem',
-				},
-				// lg and xl sizes
-				[templateTheme.breakpoints.only('lg')]: {
-					fontSize: '2.65rem',
-				},
-				// xs, and sm sizes
-				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '2rem',
-				},
-				// xs, and sm sizes
-				[templateTheme.breakpoints.only('sm')]: {
-					fontSize: '1.3rem',
-				},
-				[templateTheme.breakpoints.only('xs')]: {
-					fontSize: '1.1rem',
-				},
+				// [templateTheme.breakpoints.only('xl')]: {
+				// 	fontSize: '3.35rem',
+				// },
+				// // lg and xl sizes
+				// [templateTheme.breakpoints.only('lg')]: {
+				// 	fontSize: '2.65rem',
+				// },
+				// // xs, and sm sizes
+				// [templateTheme.breakpoints.only('md')]: {
+				// 	fontSize: '2rem',
+				// },
+				// // xs, and sm sizes
+				// [templateTheme.breakpoints.only('sm')]: {
+				// 	fontSize: '1.3rem',
+				// },
+				// [templateTheme.breakpoints.only('xs')]: {
+				// 	fontSize: '1.1rem',
+				// },
 			},
 			h6: {
 				fontFamily: headerFontFamily,
 				// xl size, screens 1536+
-				[templateTheme.breakpoints.only('xl')]: {
-					fontSize: '2.7rem',
-				},
-				// lg and xl sizes
-				[templateTheme.breakpoints.only('lg')]: {
-					fontSize: '2rem',
-				},
-				// xs, and sm sizes
-				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '1.15rem',
-				},
-				[templateTheme.breakpoints.only('sm')]: {
-					fontSize: '1.15rem',
-				},
-				[templateTheme.breakpoints.only('xs')]: {
-					fontSize: '1.0rem',
-				},
+				// [templateTheme.breakpoints.only('xl')]: {
+				// 	fontSize: '2.7rem',
+				// },
+				// // lg and xl sizes
+				// [templateTheme.breakpoints.only('lg')]: {
+				// 	fontSize: '2rem',
+				// },
+				// // xs, and sm sizes
+				// [templateTheme.breakpoints.only('md')]: {
+				// 	fontSize: '1.15rem',
+				// },
+				// [templateTheme.breakpoints.only('sm')]: {
+				// 	fontSize: '1.15rem',
+				// },
+				// [templateTheme.breakpoints.only('xs')]: {
+				// 	fontSize: '1.0rem',
+				// },
 			},
 			subtitle1: {
 				fontFamily: bodyFontFamily,
@@ -873,23 +873,23 @@ function themeFromMaterialColors(
 				opacity: 0.6,
 				fontWeight: 500,
 				// xl size, screens 1536+
-				[templateTheme.breakpoints.only('xl')]: {
-					fontSize: '1.85rem',
-				},
-				// lg and xl sizes
-				[templateTheme.breakpoints.only('lg')]: {
-					fontSize: '1.5rem',
-				},
-				// xs, and sm sizes
-				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '1.2rem',
-				},
-				[templateTheme.breakpoints.only('sm')]: {
-					fontSize: '0.7rem',
-				},
-				[templateTheme.breakpoints.only('xs')]: {
-					fontSize: '0.5rem',
-				},
+				// [templateTheme.breakpoints.only('xl')]: {
+				// 	fontSize: '1.85rem',
+				// },
+				// // lg and xl sizes
+				// [templateTheme.breakpoints.only('lg')]: {
+				// 	fontSize: '1.5rem',
+				// },
+				// // xs, and sm sizes
+				// [templateTheme.breakpoints.only('md')]: {
+				// 	fontSize: '1.2rem',
+				// },
+				// [templateTheme.breakpoints.only('sm')]: {
+				// 	fontSize: '0.7rem',
+				// },
+				// [templateTheme.breakpoints.only('xs')]: {
+				// 	fontSize: '0.5rem',
+				// },
 			},
 			subtitle2: {
 				fontFamily: bodyFontFamily,
@@ -897,45 +897,45 @@ function themeFromMaterialColors(
 				fontWeight: 500,
 				opacity: 0.65,
 				// xl size, screens 1536+
-				[templateTheme.breakpoints.only('xl')]: {
-					fontSize: '1.6rem',
-				},
-				// lg and xl sizes
-				[templateTheme.breakpoints.only('lg')]: {
-					fontSize: '1.275rem',
-				},
-				// Have 1rem for sizes smaller than lg
-				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '1rem',
-				},
-				[templateTheme.breakpoints.only('sm')]: {
-					fontSize: '0.6rem',
-				},
-				[templateTheme.breakpoints.only('xs')]: {
-					fontSize: '0.4rem',
-				},
+				// [templateTheme.breakpoints.only('xl')]: {
+				// 	fontSize: '1.6rem',
+				// },
+				// // lg and xl sizes
+				// [templateTheme.breakpoints.only('lg')]: {
+				// 	fontSize: '1.275rem',
+				// },
+				// // Have 1rem for sizes smaller than lg
+				// [templateTheme.breakpoints.only('md')]: {
+				// 	fontSize: '1rem',
+				// },
+				// [templateTheme.breakpoints.only('sm')]: {
+				// 	fontSize: '0.6rem',
+				// },
+				// [templateTheme.breakpoints.only('xs')]: {
+				// 	fontSize: '0.4rem',
+				// },
 			},
 			body1: {
 				fontFamily: bodyFontFamily,
 				fontWeight: 400,
 				// xl size, screens 1536+
-				[templateTheme.breakpoints.only('xl')]: {
-					fontSize: '1.6rem',
-				},
-				// lg and xl sizes
-				[templateTheme.breakpoints.only('lg')]: {
-					fontSize: '1.275rem',
-				},
-				// Have 1rem for sizes smaller than lg
-				[templateTheme.breakpoints.only('md')]: {
-					fontSize: '1rem',
-				},
-				[templateTheme.breakpoints.only('sm')]: {
-					fontSize: '0.6rem',
-				},
-				[templateTheme.breakpoints.only('xs')]: {
-					fontSize: '0.4rem',
-				},
+				// [templateTheme.breakpoints.only('xl')]: {
+				// 	fontSize: '1.6rem',
+				// },
+				// // lg and xl sizes
+				// [templateTheme.breakpoints.only('lg')]: {
+				// 	fontSize: '1.275rem',
+				// },
+				// // Have 1rem for sizes smaller than lg
+				// [templateTheme.breakpoints.only('md')]: {
+				// 	fontSize: '1rem',
+				// },
+				// [templateTheme.breakpoints.only('sm')]: {
+				// 	fontSize: '0.6rem',
+				// },
+				// [templateTheme.breakpoints.only('xs')]: {
+				// 	fontSize: '0.4rem',
+				// },
 			},
 			body2: {
 				fontFamily: bodyFontFamily,
@@ -1016,7 +1016,7 @@ function themeFromMaterialColors(
 	});
 	// Edit the text sizes to make them properly responsive
 	const finalTheme = responsiveFontSizes(newTheme, {
-		factor: 8,
+		factor: 2,
 		breakpoints: ['xs', 'sm', 'md', 'lg', 'xl'],
 	});
 	console.log('Created theme:');
