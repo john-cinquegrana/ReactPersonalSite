@@ -90,6 +90,13 @@ const SocialBar = () => {
 						flexFlow: 'row nowrap',
 						justifyContent: 'center',
 						alignItems: 'center',
+						fontSize: {
+							xs: '0.8rem',
+							sm: '1.05rem',
+							md: '1.2rem',
+							lg: '1.4rem',
+							xl: '1.6rem',
+						},
 					};
 					// The function to be called when this element is clicked on
 					let onClick = undefined;
@@ -113,6 +120,13 @@ const SocialBar = () => {
 									fontStyle: 'normal',
 									opacity: 1,
 									paddingLeft: '6px',
+									fontSize: {
+										xs: '0.8rem',
+										sm: '1.05rem',
+										md: '1.2rem',
+										lg: '1.4rem',
+										xl: '1.6rem',
+									},
 								}}
 							>
 								{social.text}
