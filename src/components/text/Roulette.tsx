@@ -27,35 +27,74 @@ const RouletteText: React.FC<RouletteTextProps> = ({ text, sx }) => {
 			fontSize={30}
 			fontWeight={500}
 			letterSpacing='0.10rem'
-			sx={sx}
+			sx={{
+				whiteSpace: 'nowrap',
+				overflow: 'hidden',
+				textOverflow: 'ellipsis',
+				margin: 0,
+				...sx,
+			}}
 		>
 			{text}
 		</Typography>
 	);
 };
 
+function animateY(start: number, end: number) {
+	return keyframes`
+		0% {
+			transform: translateY(${start}px);
+		}
+		100% {
+			transform: translateY(${end}px);
+		}
+	`;
+}
+
 const Roulette: React.FC = () => {
 	const animationTime = 2;
 
-	const [texts, setTexts] = React.useState([possibleTexts[0]]);
+	// Create the state that we need to manage the roulette
+	const [currentText, setCurrentText] = React.useState<string>(
+		possibleTexts[0],
+	);
+	const [nextText, setNextText] = React.useState<string | undefined>(
+		undefined,
+	);
+	// const [scrollText, setScrollText] = React.useState<string[] | undefined>(
+	// 	undefined,
+	// );
+	const [isAnimating, setIsAnimating] = React.useState<boolean>(false);
 
 	const handleClick = () => {
-		// Assign a random text, that is not the current one, to the front of texts
-		setTexts((prev) => {
-			let newText =
+		// Variable to store the next text value
+		let newText: string | undefined;
+		// Change the state for currentText and nextText
+		setNextText(() => {
+			// Grab some text that is not the current text
+			newText =
 				possibleTexts[Math.floor(Math.random() * possibleTexts.length)];
-			while (prev.includes(newText)) {
+			while (currentText == newText) {
 				newText =
 					possibleTexts[
 						Math.floor(Math.random() * possibleTexts.length)
 					];
 			}
-			return [newText, ...prev];
+			// Set the new text value
+			return newText;
 		});
-		// After all the animations, clean the unused text out of the DOM
+		// Set the state to animate
+		setIsAnimating(true);
+		// Wait for the animation to finish
 		setTimeout(() => {
-			setTexts((prev) => [prev[0]]);
-		}, animationTime * 1000 + 1000); // Duration of the animation
+			// Set the new text value
+			setCurrentText(newText!);
+			// Reset the next text value
+			setNextText(undefined);
+			// Reset the animation
+			setIsAnimating(false);
+		}, animationTime * 1000);
+		// How else would we know the button was clicked?
 		console.log('Button clicked');
 	};
 
@@ -63,7 +102,7 @@ const Roulette: React.FC = () => {
 
 	const currentBreakpont = useBreakpoint();
 
-	let animationSize;
+	let animationSize: number;
 
 	switch (currentBreakpont) {
 		case Breakpoint.XS:
@@ -83,54 +122,52 @@ const Roulette: React.FC = () => {
 			break;
 	}
 
-	const animations = Array.from({ length: texts.length }, () => 'none');
-	if (texts.length > 1) {
-		for (let i = 0; i < texts.length - 1; i++) {
-			animations[i] = keyframes`
-                0% {
-                    transform: translateY(-${animationSize * 2}px);
-                }
-                100% {
-                    transform: translateY(0px);
-                }
-            `;
+	const animations = Array.from({ length: currentText.length }, () => 'none');
+	if (currentText.length > 1) {
+		for (let i = 0; i < currentText.length - 1; i++) {
+			animations[i] = animateY(-animationSize * 2, 0);
 		}
 		// Handle the last animation should it exist
-		animations[texts.length - 1] = keyframes`
-            0% {
-                transform: translateY(0px);
-            }
-            100% {
-                transform: translateY(${animationSize * 2}px);
-            }
-        `;
+		animations[currentText.length - 1] = animateY(0, animationSize * 2);
 	}
 
-	function createRouletteText(index: number) {
-		const length = texts.length;
-		if (length === 1) {
+	function createRouletteText() {
+		// If we're not animating, we just return the current text
+		if (!isAnimating) {
 			return (
 				<RouletteText
-					key={texts[index]}
-					sx={{
-						margin: 0,
-						backgroundColor: 'transparent',
-					}}
-					text={texts[index]}
+					key={currentText}
+					text={currentText}
 				/>
 			);
-		} else {
+		}
+		// If we are animating, give back the two text elements, one going down
+		// and the other up
+		else {
+			// Build the animations
+			const curTextAnimation = animateY(0, animationSize * 2);
+			const nextTextAnimation = animateY(-animationSize * 2, 0);
 			return (
-				<RouletteText
-					key={texts[index]}
-					sx={{
-						animation: `${animations[index]} ${animationTime}s linear`,
-						animationFillMode: 'forwards',
-						position: 'absolute',
-						margin: 0,
-					}}
-					text={texts[index]}
-				/>
+				<>
+					<RouletteText
+						key={currentText}
+						sx={{
+							animation: `${curTextAnimation} ${animationTime}s linear`,
+							animationFillMode: 'forwards',
+							position: 'absolute',
+						}}
+						text={currentText}
+					/>
+					<RouletteText
+						key={nextText}
+						sx={{
+							animation: `${nextTextAnimation} ${animationTime}s linear`,
+							animationFillMode: 'forwards',
+							position: 'absolute',
+						}}
+						text={nextText!}
+					/>
+				</>
 			);
 		}
 	}
@@ -165,12 +202,12 @@ const Roulette: React.FC = () => {
 					overflow: 'hidden',
 				}}
 			>
-				{texts.map((_, index) => createRouletteText(index))}
+				{createRouletteText()}
 			</Box>
 			<IconButton
 				onClick={handleClick}
 				color='primary'
-				disabled={texts.length > 1}
+				disabled={isAnimating}
 			>
 				<RefreshIcon />
 			</IconButton>
