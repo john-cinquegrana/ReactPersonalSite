@@ -34,7 +34,7 @@ const RouletteText: React.FC<RouletteTextProps> = ({ text, sx }) => {
 			marginLeft={4}
 			fontSize={{
 				xs: '1rem',
-				sm: '1rem',
+				sm: '1.15rem',
 				md: '1.215rem',
 				lg: '1.5rem',
 				xl: '1.86rem',
@@ -141,7 +141,7 @@ const Roulette: React.FC = () => {
 			setNextText(undefined);
 			// Reset the animation
 			setIsAnimating(false);
-		}, (animationStepTime * (shuffledTexts.length + 2) + animationStartup) * 1000);
+		}, (animationStepTime * (shuffledTexts.length + 1) + animationStartup) * 1000);
 		// How else would we know the button was clicked?
 		console.log('Button clicked');
 	};
@@ -159,8 +159,8 @@ const Roulette: React.FC = () => {
 			boxHeight = 28;
 			break;
 		case Breakpoint.SM:
-			animationSize = 28;
-			boxHeight = 28;
+			animationSize = 32;
+			boxHeight = 32;
 			break;
 		case Breakpoint.MD:
 			animationSize = 34;
@@ -220,7 +220,6 @@ const Roulette: React.FC = () => {
 							${curTextAnimation} ${moveTime * 0.5}s linear ${
 								animationStartup - animationBuffer
 							}s`,
-
 							animationFillMode: 'forwards',
 							position: 'absolute',
 						}}
@@ -269,6 +268,7 @@ const Roulette: React.FC = () => {
 				flexDirection: 'row',
 				flexWrap: 'nowrap',
 				justifyContent: 'flex-start',
+				height: `${boxHeight}px`,
 				width: '100%',
 				alignItems: 'center',
 			}}
@@ -277,7 +277,7 @@ const Roulette: React.FC = () => {
 				onClick={handleClick}
 				color='primary'
 				disabled={isAnimating}
-				// size={iconButtonSize}
+				size='small'
 				sx={{
 					paddingRight: '16px',
 				}}
@@ -285,8 +285,8 @@ const Roulette: React.FC = () => {
 				<RefreshIcon
 					sx={{
 						fontSize: {
-							xs: '1rem',
-							sm: '1rem',
+							xs: '1.1rem',
+							sm: '1.15rem',
 							md: '1.215rem',
 							lg: '1.5rem',
 							xl: '1.86rem',
@@ -298,7 +298,7 @@ const Roulette: React.FC = () => {
 				sx={{
 					width: {
 						xs: '324px',
-						sm: '324px',
+						sm: '350px',
 						md: '380px',
 						lg: '460px',
 						xl: '550px',
