@@ -24,7 +24,13 @@ const Skill: React.FC<SkillProps> = ({ color, label }) => {
 			sx={{
 				backgroundColor: usedColor,
 				color: theme.palette.onPrimary,
-				padding: '12px 16px 12px 16px',
+				padding: {
+					xs: '8px 10px',
+					sm: '8px 12px',
+					md: '9px 13px',
+					lg: '8px 14px',
+					xl: '10px 16px',
+				},
 				margin: '4px',
 				borderRadius: '10px',
 			}}
