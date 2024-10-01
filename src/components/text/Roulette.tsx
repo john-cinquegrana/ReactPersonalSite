@@ -23,8 +23,14 @@ const RouletteText: React.FC<RouletteTextProps> = ({ text, sx }) => {
 		<Typography
 			variant='subtitle1'
 			marginLeft={4}
+			fontSize={{
+				xs: '1rem',
+				sm: '1rem',
+				md: '1.215rem',
+				lg: '1.5rem',
+				xl: '1.86rem',
+			}}
 			textAlign={'left'}
-			fontSize={30}
 			fontWeight={500}
 			letterSpacing='0.10rem'
 			sx={{
@@ -136,22 +142,34 @@ const Roulette: React.FC = () => {
 	const currentBreakpont = useBreakpoint();
 
 	let animationSize: number;
+	let iconButtonSize: 'small' | 'large' | 'medium';
+	let boxHeight: number;
 
 	switch (currentBreakpont) {
 		case Breakpoint.XS:
-			animationSize = 14;
+			animationSize = 28;
+			boxHeight = 28;
+			iconButtonSize = 'medium';
 			break;
 		case Breakpoint.SM:
-			animationSize = 20;
+			animationSize = 28;
+			boxHeight = 28;
+			iconButtonSize = 'medium';
 			break;
 		case Breakpoint.MD:
 			animationSize = 34;
+			boxHeight = 34;
+			iconButtonSize = 'medium';
 			break;
 		case Breakpoint.LG:
 			animationSize = 42;
+			boxHeight = 42;
+			iconButtonSize = 'large';
 			break;
 		case Breakpoint.XL:
 			animationSize = 52;
+			boxHeight = 52;
+			iconButtonSize = 'large';
 			break;
 	}
 
@@ -247,7 +265,8 @@ const Roulette: React.FC = () => {
 				display: 'flex',
 				flexDirection: 'row',
 				flexWrap: 'nowrap',
-				justifyContent: 'center',
+				justifyContent: 'flex-start',
+				width: '100%',
 				alignItems: 'center',
 			}}
 		>
@@ -255,7 +274,9 @@ const Roulette: React.FC = () => {
 				onClick={handleClick}
 				color='primary'
 				disabled={isAnimating}
+				size={iconButtonSize}
 				sx={{
+					fontSize: 'small',
 					paddingRight: '16px',
 				}}
 			>
@@ -264,19 +285,13 @@ const Roulette: React.FC = () => {
 			<Box
 				sx={{
 					width: {
-						xs: '190px',
-						sm: '245px',
-						md: '390px',
+						xs: '324px',
+						sm: '324px',
+						md: '380px',
 						lg: '460px',
 						xl: '550px',
 					},
-					height: {
-						xs: '14px',
-						sm: '20px',
-						md: '34px',
-						lg: '42px',
-						xl: '52px',
-					},
+					height: `${boxHeight}px`,
 					position: 'relative',
 					overflow: 'hidden',
 				}}
