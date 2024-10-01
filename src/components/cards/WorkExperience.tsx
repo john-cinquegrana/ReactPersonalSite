@@ -63,7 +63,7 @@ const WorkExperience: React.FC<PropsWithChildren<WorkExperienceProps>> = ({
 					}}
 				>
 					<Typography
-						variant='h5'
+						variant='h4'
 						paddingRight={{
 							xl: 10,
 							lg: 7,
