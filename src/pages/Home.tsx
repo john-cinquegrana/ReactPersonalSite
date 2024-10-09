@@ -6,6 +6,7 @@ import WorkExperience from '@components/cards/WorkExperience';
 import SocialBar from '@components/content/SocialBar';
 import BlurredBackground from '@components/text/BlurredBackground';
 import Bubbles from '@components/Bubbles';
+import AutoScrollList from '@components/AutoScrollList';
 
 const Home: React.FC = () => {
 	return (
@@ -36,6 +37,10 @@ const Home: React.FC = () => {
 						zIndex: 1,
 					}}
 				>
+					<AutoScrollList
+						items={['helo', 'world', 'this', 'is', 'a', 'test']}
+						height={20}
+					/>
 					<AboutMe />
 					<Box
 						sx={{
