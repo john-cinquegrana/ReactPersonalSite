@@ -37,10 +37,12 @@ const Home: React.FC = () => {
 						zIndex: 1,
 					}}
 				>
-					<AutoScrollList
-						items={['helo', 'world', 'this', 'is', 'a', 'test']}
-						height={20}
-					/>
+					<Box>
+						<AutoScrollList
+							items={['helo', 'world', 'this', 'is', 'a', 'test']}
+							height={20}
+						/>
+					</Box>
 					<AboutMe />
 					<Box
 						sx={{
