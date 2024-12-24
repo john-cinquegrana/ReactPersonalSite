@@ -63,6 +63,67 @@ const Home: React.FC = () => {
 					</div>
 				</CardBody>
 			</Card>
+			<Card className='my-16'>
+				<CardBody>
+					<div className='flex flex-col items-stretch'>
+						<h2 className='text-7xl text-primary-900 text-center'>
+							Products
+						</h2>
+						<div className='flex flex-row justify-stretch my-8'>
+							<div className='flex flex-col items-stretch mx-8'>
+								<div className='flex flex-row justify-evenly items-center my-4'>
+									<img
+										src='https://inform.911inform.com/wp-content/uploads/2020/03/footer_logo-min.png'
+										alt='Product 4'
+										className='h-auto w-auto max-h-24 max-w-24'
+									/>
+									<img
+										src='https://911inform.com/images/911inform.jpg'
+										alt='Product 5'
+										className='h-auto w-auto max-h-24 max-w-24'
+									/>
+								</div>
+								<p className='text-lg text-primary-900 my-2'>
+									911inform is an Emergency Management
+									Solution that exists as both a mobile app
+									and a web app. I started at 911inform as a{' '}
+									<b>Full Stack Developer</b>. As I progressed
+									through the company, I was given more and
+									more high-profile tasks. I redesigned the
+									algorithm for mapping GPS coordinates to our
+									maps, helped created a Selenium-based
+									testing suite, created an IOT system for
+									tracking moving 911 callers, and founded a
+									UI/UX design team. Eventually I was given
+									lead of the effort to create a new Mobile
+									Application. Nearly one year later, that app
+									had been completed.
+								</p>
+							</div>
+							<div className='flex flex-col items-stretch mx-8'>
+								<div className='flex flex-row justify-evenly items-center my-4'>
+									<img
+										src='https://my.rutgers.edu/uxp/static/media/rutgers-shield-logo-new.436fc289.svg'
+										alt='myRutgers shield logo'
+										className='h-auto w-auto max-h-24 max-w-24'
+									/>
+									<img
+										src='https://my.rutgers.edu/uxp/assets/images/my-rutgers-logo-light-new.png'
+										alt='myRutgers light logo'
+										className='h-auto w-auto max-h-24 max-w-24'
+									/>
+								</div>
+								<p className='text-lg text-primary-900 my-2'>
+									911inform is an Emergency Management
+									Solution that exists as both a mobile app
+									and a web app. I started at 911inform as a{' '}
+									<b>Full Stack Developer</b>.
+								</p>
+							</div>
+						</div>
+					</div>
+				</CardBody>
+			</Card>
 		</div>
 	);
 };
