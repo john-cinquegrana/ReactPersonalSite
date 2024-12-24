@@ -1,4 +1,10 @@
-# React + TypeScript + Vite
+# My personal website
+
+## Developer versions
+
+- **Node** - 20.7.0
+
+# Pre-made Readme
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
