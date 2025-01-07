@@ -70,7 +70,7 @@ const Home: React.FC = () => {
 							Products
 						</h2>
 						<div className='flex flex-row justify-stretch my-8'>
-							<div className='flex flex-col items-stretch mx-8'>
+							<div className='flex flex-1 flex-col items-stretch mx-8'>
 								<div className='flex flex-row justify-evenly items-center my-4'>
 									<img
 										src='https://inform.911inform.com/wp-content/uploads/2020/03/footer_logo-min.png'
@@ -100,7 +100,7 @@ const Home: React.FC = () => {
 									had been completed.
 								</p>
 							</div>
-							<div className='flex flex-col items-stretch mx-8'>
+							<div className='flex flex-1 flex-col items-stretch mx-8'>
 								<div className='flex flex-row justify-evenly items-center my-4'>
 									<img
 										src='https://my.rutgers.edu/uxp/static/media/rutgers-shield-logo-new.436fc289.svg'
@@ -114,10 +114,77 @@ const Home: React.FC = () => {
 									/>
 								</div>
 								<p className='text-lg text-primary-900 my-2'>
-									911inform is an Emergency Management
-									Solution that exists as both a mobile app
-									and a web app. I started at 911inform as a{' '}
-									<b>Full Stack Developer</b>.
+									Rutgers is the State University of New
+									Jersey, known for its diverse academic
+									programs and research initiatives. The
+									myRutgers portal is a comprehensive web and
+									mobile platform designed to provide
+									students, faculty, and staff with easy
+									access to university resources, services,
+									and information. Upon joining the team, I
+									was given position as{' '}
+									<b>Lead Mobile Developer</b>, and took
+									charge of the initial release of the
+									myRutgers mobile app. Starting from nothing,
+									it now offers features such as course
+									registration, grade tracking, campus news,
+									and personalized notifications.
+								</p>
+							</div>
+						</div>
+					</div>
+				</CardBody>
+			</Card>
+			<Card className='my-16'>
+				<CardBody>
+					<div className='flex flex-col items-stretch'>
+						<h2 className='text-7xl text-primary-900 text-center'>
+							Technologies
+						</h2>
+						<div className='flex flex-row justify-between content-center my-8'>
+							<div className='w-1/3'>
+								<img
+									src='https://storage.googleapis.com/cms-storage-bucket/4fd5520fe28ebf839174.svg'
+									alt='Flutter Logo'
+									className='h-full w-auto max-h-24 max-w-24 mx-auto'
+								/>
+							</div>
+							<div className='w-2/3 flex flex-row items-center'>
+								<p>
+									I love Flutter it's the dirty best. It's so
+									good you should use it.
+								</p>
+							</div>
+						</div>
+						<div className='flex flex-row justify-between content-center my-8'>
+							<div className='w-1/3'>
+								<img
+									src='/src/assets/firebase_logomark.svg'
+									alt='Firebase Logo'
+									className='h-full w-auto max-h-24 max-w-24 mx-auto'
+								/>
+							</div>
+							<div className='w-2/3 flex flex-row items-center'>
+								<p>
+									Firebase is a wonderful tool that many
+									people love, and even more will learn to
+									use.
+								</p>
+							</div>
+						</div>
+						<div className='flex flex-row justify-between content-center my-8'>
+							<div className='w-1/3'>
+								<img
+									src='/src/assets/aws-color.svg'
+									alt='Flutter Logo'
+									className='h-full w-auto max-h-24 max-w-24 mx-auto'
+								/>
+							</div>
+							<div className='w-2/3 flex flex-row items-center'>
+								<p>
+									Firebase is a wonderful tool that many
+									people love, and even more will learn to
+									use.
 								</p>
 							</div>
 						</div>
