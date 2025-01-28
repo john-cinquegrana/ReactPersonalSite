@@ -1,5 +1,6 @@
 import { Card, CardBody, Spacer } from '@nextui-org/react';
 import React from 'react';
+import GrowShowcase from '../components/GrowShowcase';
 
 const Home: React.FC = () => {
 	return (
@@ -13,25 +14,17 @@ const Home: React.FC = () => {
 			</Card>
 			<Card className='my-16'>
 				<CardBody className='flex flex-row justify-around content-stretch py-8 px-12 text-left'>
-					<div className='flex flex-col justify-around content-stretch mx-4 h-full'>
-						<p className='text-2xl text-primary-900 w-full my-4'>
-							Mobile Developer
-						</p>
-						<p className='text-2xl text-primary-900 w-full my-4'>
-							Team Leader
-						</p>
-						<p className='text-2xl text-primary-900 w-full my-4'>
-							DevOps Engineer
-						</p>
-						<p className='text-2xl text-primary-900 w-full my-4'>
-							AI/ML Engineer
-						</p>
-						<p className='text-5xl text-primary-800 font-bold w-full my-4'>
-							UI/UX Designer
-						</p>
-						<p className='text-2xl text-primary-900 w-full my-4'>
-							Full Stack Developer
-						</p>
+					<div className='flex flex-col justify-around content-stretch mx-4 h-full w-1/2'>
+						<GrowShowcase
+							items={[
+								'Mobile Developer',
+								'Team Leader',
+								'DevOps Engineer',
+								'AI/ML Engineer',
+								'UI/UX Designer',
+								'Full Stack Developer',
+							]}
+						/>
 					</div>
 					<div className='flex flex-col justify-between content-stretch mx-4 max-w-2xl'>
 						<h2 className='text-7xl text-primary-900'>
