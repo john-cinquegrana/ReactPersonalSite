@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { semanticColors } from '@heroui/react';
 
 interface GrowShowcaseProps {
 	items: string[];
 }
 
 const GrowShowcase: React.FC<GrowShowcaseProps> = ({ items }) => {
+	// Grab the necessary animated values from the theme
+	const primary600 = semanticColors.dark.primary[600];
+	// @ts-expect-error HeroUI typed ColorScale
+	const foreground: string = semanticColors.dark.foreground.DEFAULT;
+
 	const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
 	useEffect(() => {
@@ -39,15 +45,19 @@ const GrowShowcase: React.FC<GrowShowcaseProps> = ({ items }) => {
 						// scale: selectedIndex === index ? 1.5 : 1,
 						fontSize: selectedIndex === index ? '3rem' : '1.5rem',
 						color:
-							selectedIndex === index
-								? 'hsl(var(--heroui-primary-600))'
-								: 'hsl(var(--heroui-foreground))',
+							selectedIndex === index ? primary600 : foreground,
 						fontWeight: selectedIndex === index ? 'bold' : 'normal',
+						// style: {
+						// 	color:
+						// 		selectedIndex === index
+						// 			? 'hsl(var(--heroui-primary-600))'
+						// 			: 'hsl(var(--heroui-foreground))',
+						// },
 					}}
 					transition={{
 						type: 'tween',
 						duration: 0.75,
-						color: { duration: 0.75, type: 'tween' },
+						// color: { duration: 0.75, type: 'tween' },
 						ease: 'easeInOut',
 					}}
 				>

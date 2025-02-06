@@ -6,10 +6,13 @@ export default function Drag() {
 	const ref = useRef<HTMLDivElement>(null);
 	const { x, y } = useFollowPointer(ref);
 
+	// console.log('x', x.get(), 'y', y.get());
+
 	return (
 		<motion.div
+			id='drag'
 			ref={ref}
-			style={{ ...ball, x, y }}
+			style={{ ...ball, x, y, position: 'fixed', pointerEvents: 'none' }}
 		/>
 	);
 }

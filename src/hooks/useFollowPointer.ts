@@ -15,6 +15,7 @@ export default function useFollowPointer(
 		if (!ref.current) return;
 
 		const handlePointerMove = ({ clientX, clientY }: MouseEvent) => {
+			console.log('move');
 			const element = ref.current!;
 
 			frame.read(() => {
@@ -27,10 +28,33 @@ export default function useFollowPointer(
 			});
 		};
 
-		window.addEventListener('pointermove', handlePointerMove);
+		// let lastScrollX = window.scrollX;
+		// let lastScrollY = window.scrollY;
 
-		return () =>
+		// const handleScroll = () => {
+		// 	console.log('scroll');
+		// 	// const element = ref.current!;
+		// 	// const rect = element.getBoundingClientRect();
+		// 	const scrollX = window.scrollX;
+		// 	const scrollY = window.scrollY;
+
+		// 	const deltaX = scrollX - lastScrollX;
+		// 	const deltaY = scrollY - lastScrollY;
+
+		// 	xPoint.set(xPoint.get() - deltaX);
+		// 	yPoint.set(yPoint.get() - deltaY);
+
+		// 	lastScrollX = scrollX;
+		// 	lastScrollY = scrollY;
+		// };
+
+		window.addEventListener('pointermove', handlePointerMove);
+		// window.addEventListener('scroll', handleScroll);
+
+		return () => {
 			window.removeEventListener('pointermove', handlePointerMove);
+			// window.removeEventListener('scroll', handleScroll);
+		};
 	}, [ref, xPoint, yPoint]);
 
 	return { x, y };
