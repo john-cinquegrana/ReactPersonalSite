@@ -9,9 +9,14 @@ const GrowShowcase: React.FC<GrowShowcaseProps> = ({ items }) => {
 	const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
 	useEffect(() => {
+		let previousIndex: number | null = null;
 		const interval = setInterval(() => {
-			const randomIndex = Math.floor(Math.random() * items.length);
+			let randomIndex;
+			do {
+				randomIndex = Math.floor(Math.random() * items.length);
+			} while (randomIndex === previousIndex);
 			setSelectedIndex(randomIndex);
+			previousIndex = randomIndex;
 			// console.log(`Selected random index ${randomIndex}`);
 		}, 4000);
 
@@ -26,17 +31,25 @@ const GrowShowcase: React.FC<GrowShowcaseProps> = ({ items }) => {
 				<motion.p
 					key={index}
 					className='my-4 w-full h-7 text-sm'
-					initial={{ fontSize: '1.5rem' }}
+					initial={{
+						fontSize: '1.5rem',
+						// color: 'hsl(var(--heroui-foreground))',
+					}}
 					animate={{
-						type: 'spring',
+						// scale: selectedIndex === index ? 1.5 : 1,
 						fontSize: selectedIndex === index ? '3rem' : '1.5rem',
 						color:
 							selectedIndex === index
-								? 'rgb(204,227,253)'
-								: 'rgb(230,241,254)',
+								? 'hsl(var(--heroui-primary-600))'
+								: 'hsl(var(--heroui-foreground))',
 						fontWeight: selectedIndex === index ? 'bold' : 'normal',
 					}}
-					transition={{ duration: 0.75 }}
+					transition={{
+						type: 'tween',
+						duration: 0.75,
+						color: { duration: 0.75, type: 'tween' },
+						ease: 'easeInOut',
+					}}
 				>
 					{item}
 				</motion.p>

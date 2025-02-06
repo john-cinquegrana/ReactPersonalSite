@@ -1,13 +1,13 @@
-import { Card, CardBody, Spacer } from '@nextui-org/react';
+import { Card, CardBody, Spacer } from '@heroui/react';
 import React from 'react';
 import GrowShowcase from '../components/GrowShowcase';
 
 const Home: React.FC = () => {
 	return (
 		<div className='px-8 flex flex-col justify-start content-stretch'>
-			<Card className='bg-primary-100 text-center rounded-t-none h-64'>
+			<Card className='bg-focus text-default-900 text-center rounded-t-none h-64'>
 				<CardBody className='flex flex-col justify-end content-center'>
-					<h1 className='text-8xl bg-transparent p-8 text-primary-900 text-center'>
+					<h1 className='text-8xl bg-transparent p-8 text-center'>
 						John Cinquegrana
 					</h1>
 				</CardBody>
@@ -27,11 +27,9 @@ const Home: React.FC = () => {
 						/>
 					</div>
 					<div className='flex flex-col justify-between content-stretch mx-4 max-w-2xl'>
-						<h2 className='text-7xl text-primary-900'>
-							Roles and Toils
-						</h2>
+						<h2 className='text-7xl'>Roles and Toils</h2>
 						<div className='indent-8'>
-							<p className='text-lg text-primary-900'>
+							<p className='text-lg'>
 								When working in this industry, you have to wear
 								a lot of hats. When I began in the programming
 								industry I was nothing but a Full Stack
@@ -43,7 +41,7 @@ const Home: React.FC = () => {
 								and expand my skill set.
 							</p>
 							<Spacer y={3} />
-							<p className='text-lg text-primary-900'>
+							<p className='text-lg'>
 								Today working as a lead Mobile Developer, I have
 								to be able to easily step into any of these
 								roles at a moments notice. From creating new
@@ -59,9 +57,7 @@ const Home: React.FC = () => {
 			<Card className='my-16'>
 				<CardBody>
 					<div className='flex flex-col items-stretch'>
-						<h2 className='text-7xl text-primary-900 text-center'>
-							Products
-						</h2>
+						<h2 className='text-7xl text-center'>Products</h2>
 						<div className='flex flex-row justify-stretch my-8'>
 							<div className='flex flex-1 flex-col items-stretch mx-8'>
 								<div className='flex flex-row justify-evenly items-center my-4'>
@@ -76,7 +72,7 @@ const Home: React.FC = () => {
 										className='h-auto w-auto max-h-24 max-w-24'
 									/>
 								</div>
-								<p className='text-lg text-primary-900 my-2'>
+								<p className='text-lg my-2'>
 									911inform is an Emergency Management
 									Solution that exists as both a mobile app
 									and a web app. I started at 911inform as a{' '}
@@ -106,7 +102,7 @@ const Home: React.FC = () => {
 										className='h-auto w-auto max-h-24 max-w-24'
 									/>
 								</div>
-								<p className='text-lg text-primary-900 my-2'>
+								<p className='text-lg my-2'>
 									Rutgers is the State University of New
 									Jersey, known for its diverse academic
 									programs and research initiatives. The
@@ -131,9 +127,7 @@ const Home: React.FC = () => {
 			<Card className='my-16'>
 				<CardBody>
 					<div className='flex flex-col items-stretch'>
-						<h2 className='text-7xl text-primary-900 text-center'>
-							Technologies
-						</h2>
+						<h2 className='text-7xl text-center'>Technologies</h2>
 						<div className='flex flex-row justify-between content-center my-8'>
 							<div className='w-1/3'>
 								<img
