@@ -2,6 +2,7 @@ import { Card, CardBody, Spacer } from '@heroui/react';
 import React from 'react';
 import GrowShowcase from '../components/GrowShowcase';
 import Drag from '../components/Drag';
+import GlassCard from '../components/GlassCard';
 
 const Home: React.FC = () => {
 	return (
@@ -15,7 +16,7 @@ const Home: React.FC = () => {
 						</h1>
 					</CardBody>
 				</Card>
-				<Card className='my-16'>
+				<GlassCard className='my-16'>
 					<CardBody className='flex flex-row justify-around content-stretch py-8 px-12 text-left'>
 						<div className='flex flex-col justify-around content-stretch mx-4 h-full w-1/2'>
 							<GrowShowcase
@@ -58,8 +59,8 @@ const Home: React.FC = () => {
 							</div>
 						</div>
 					</CardBody>
-				</Card>
-				<Card className='my-16'>
+				</GlassCard>
+				<GlassCard className='my-16'>
 					<CardBody>
 						<div className='flex flex-col items-stretch'>
 							<h2 className='text-7xl text-center'>Products</h2>
@@ -131,8 +132,8 @@ const Home: React.FC = () => {
 							</div>
 						</div>
 					</CardBody>
-				</Card>
-				<Card className='my-16'>
+				</GlassCard>
+				<GlassCard className='my-16'>
 					<CardBody>
 						<div className='flex flex-col items-stretch'>
 							<h2 className='text-7xl text-center'>
@@ -187,7 +188,7 @@ const Home: React.FC = () => {
 							</div>
 						</div>
 					</CardBody>
-				</Card>
+				</GlassCard>
 			</div>
 		</>
 	);
