@@ -15,7 +15,7 @@ const Home: React.FC = () => {
 				style={{
 					backgroundImage: `url("${red_circle}")`, // Set the background image
 					backgroundRepeat: 'repeat',
-					backgroundSize: '120px 120px',
+					backgroundSize: '75px 75px',
 				}}
 			>
 				{/* <img
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
 					alt='Flutter Logo'
 					className='h-full w-auto max-h-24 max-w-24 mx-auto'
 				/> */}
-				<Card className='bg-focus text-default-900 text-center rounded-t-none h-64'>
+				<Card className='bg-primary-500 bg-opacity-70 text-default-900 text-center my-16 py-8'>
 					<CardBody className='flex flex-col justify-end content-center'>
 						<h1 className='text-8xl bg-transparent p-8 text-center'>
 							John Cinquegrana
