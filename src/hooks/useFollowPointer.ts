@@ -32,13 +32,13 @@ export default function useFollowPointer(
 			frame.read(() => {
 				xPoint.set(
 					mouseX -
-						// element.offsetLeft -
+						element.offsetLeft -
 						element.offsetWidth / 2 +
 						window.scrollX,
 				);
 				yPoint.set(
 					mouseY -
-						// element.offsetTop -
+						element.offsetTop -
 						element.offsetHeight / 2 +
 						window.scrollY,
 				);
