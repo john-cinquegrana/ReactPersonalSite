@@ -4,10 +4,11 @@ import GrowShowcase from '../components/GrowShowcase';
 import Drag from '../components/Drag';
 import GlassCard from '../components/GlassCard';
 import red_circle from '../assets/red_circle.svg';
+import Container from '../components/Container';
 
 const Home: React.FC = () => {
 	return (
-		<>
+		<Container>
 			<Drag />
 			<div
 				id='Circles'
@@ -204,7 +205,7 @@ const Home: React.FC = () => {
 					</CardBody>
 				</GlassCard>
 			</div>
-		</>
+		</Container>
 	);
 };
 
