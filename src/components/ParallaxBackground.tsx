@@ -18,8 +18,8 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({
 }) => {
 	const { scrollYProgress } = useScroll();
 	const wyeScroll = useParallax(scrollYProgress, 200);
-	const blobScroll = useParallax(scrollYProgress, 400);
-	const triangleScroll = useParallax(scrollYProgress, 600);
+	const triangleScroll = useParallax(scrollYProgress, 300);
+	const blobScroll = useParallax(scrollYProgress, 450);
 
 	return (
 		<div
@@ -35,16 +35,16 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({
 				className='parallax-layer w-full fixed'
 			/>
 			<motion.img
-				src={blobScatter}
+				src={triangleScatter}
 				style={{
-					y: blobScroll,
+					y: triangleScroll,
 				}}
 				className='parallax-layer w-full fixed'
 			/>
 			<motion.img
-				src={triangleScatter}
+				src={blobScatter}
 				style={{
-					y: triangleScroll,
+					y: blobScroll,
 				}}
 				className='parallax-layer w-full fixed'
 			/>
