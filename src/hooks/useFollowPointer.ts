@@ -20,7 +20,7 @@ export default function useFollowPointer(
 		// ref.current.parentElement!.
 
 		const handlePointerMove = ({ clientX, clientY }: MouseEvent) => {
-			console.log('move');
+			// console.log('move');
 			const element = ref.current!;
 
 			mouseX = clientX;
@@ -28,10 +28,16 @@ export default function useFollowPointer(
 
 			frame.read(() => {
 				xPoint.set(
-					mouseX - element.offsetLeft - element.offsetWidth / 2,
+					mouseX -
+						// element.offsetLeft -
+						element.offsetWidth / 2 +
+						window.scrollX,
 				);
 				yPoint.set(
-					mouseY - element.offsetTop - element.offsetHeight / 2,
+					mouseY -
+						// element.offsetTop -
+						element.offsetHeight / 2 +
+						window.scrollY,
 				);
 			});
 		};
