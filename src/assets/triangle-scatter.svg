@@ -1,1 +1,57 @@
-<svg id="visual" viewBox="0 0 1920 3000" width="1920" height="3000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><g><g transform="translate(712 391)"><path d="M0 -95.7L82.9 47.8L-82.9 47.8Z" fill="#004493"></path></g><g transform="translate(838 1943)"><path d="M0 -61L52.8 30.5L-52.8 30.5Z" fill="#004493"></path></g><g transform="translate(865 2340)"><path d="M0 -82L71 41L-71 41Z" fill="#004493"></path></g><g transform="translate(1798 2173)"><path d="M0 -66L57.2 33L-57.2 33Z" fill="#004493"></path></g><g transform="translate(1104 2840)"><path d="M0 -37L32 18.5L-32 18.5Z" fill="#004493"></path></g><g transform="translate(1490 1892)"><path d="M0 -54L46.8 27L-46.8 27Z" fill="#004493"></path></g><g transform="translate(1767 566)"><path d="M0 -41L35.5 20.5L-35.5 20.5Z" fill="#004493"></path></g><g transform="translate(220 1069)"><path d="M0 -43L37.2 21.5L-37.2 21.5Z" fill="#004493"></path></g><g transform="translate(692 717)"><path d="M0 -61L52.8 30.5L-52.8 30.5Z" fill="#004493"></path></g><g transform="translate(548 2504)"><path d="M0 -73L63.2 36.5L-63.2 36.5Z" fill="#004493"></path></g><g transform="translate(1824 2577)"><path d="M0 -40L34.6 20L-34.6 20Z" fill="#004493"></path></g><g transform="translate(166 2575)"><path d="M0 -56L48.5 28L-48.5 28Z" fill="#004493"></path></g><g transform="translate(661 1536)"><path d="M0 -78L67.5 39L-67.5 39Z" fill="#004493"></path></g><g transform="translate(399 1312)"><path d="M0 -63L54.6 31.5L-54.6 31.5Z" fill="#004493"></path></g><g transform="translate(186 2015)"><path d="M0 -73L63.2 36.5L-63.2 36.5Z" fill="#004493"></path></g><g transform="translate(200 2298)"><path d="M0 -85L73.6 42.5L-73.6 42.5Z" fill="#004493"></path></g><g transform="translate(1453 1621)"><path d="M0 -61L52.8 30.5L-52.8 30.5Z" fill="#004493"></path></g></g></svg>
+<svg id="triangles" viewBox="0 0 1920 3000" width="1920" height="3000" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <g>
+
+        <g transform="translate(712 391)">
+            <path d="M0 -95.7L82.9 47.8L-82.9 47.8Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(838 1943)">
+            <path d="M0 -61L52.8 30.5L-52.8 30.5Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(865 2340)">
+            <path d="M0 -82L71 41L-71 41Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(1798 2173)">
+            <path d="M0 -66L57.2 33L-57.2 33Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(1104 2840)">
+            <path d="M0 -37L32 18.5L-32 18.5Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(1490 1892)">
+            <path d="M0 -54L46.8 27L-46.8 27Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(1767 566)">
+            <path d="M0 -41L35.5 20.5L-35.5 20.5Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(220 1069)">
+            <path d="M0 -43L37.2 21.5L-37.2 21.5Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(692 717)">
+            <path d="M0 -61L52.8 30.5L-52.8 30.5Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(548 2504)">
+            <path d="M0 -73L63.2 36.5L-63.2 36.5Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(1824 2577)">
+            <path d="M0 -40L34.6 20L-34.6 20Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(166 2575)">
+            <path d="M0 -56L48.5 28L-48.5 28Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(661 1536)">
+            <path d="M0 -78L67.5 39L-67.5 39Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(399 1312)">
+            <path d="M0 -63L54.6 31.5L-54.6 31.5Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(186 2015)">
+            <path d="M0 -73L63.2 36.5L-63.2 36.5Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(200 2298)">
+            <path d="M0 -85L73.6 42.5L-73.6 42.5Z" fill="#004493"></path>
+        </g>
+        <g transform="translate(1453 1621)">
+            <path d="M0 -61L52.8 30.5L-52.8 30.5Z" fill="#004493"></path>
+        </g>
+    </g>
+</svg>
