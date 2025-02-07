@@ -146,7 +146,7 @@ const LabelSmall: FC<TypographyProps> = ({ children, className, ...props }) => (
 
 const BodyLarge: FC<TypographyProps> = ({ children, className, ...props }) => (
 	<p
-		className={`text-lg ss:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl ${className}`}
+		className={`text-base ss:text-base md:text-xl lg:text-2xl 2xl:text-3xl ${className}`}
 		{...props}
 	>
 		{children}
@@ -155,7 +155,7 @@ const BodyLarge: FC<TypographyProps> = ({ children, className, ...props }) => (
 
 const BodyMedium: FC<TypographyProps> = ({ children, className, ...props }) => (
 	<p
-		className={`text-sm ss:text-base md:text-base lg:text-xl 2xl:text-2xl ${className}`}
+		className={`text-sm ss:text-sm md:text-lg lg:text-xl xl:text-2xl ${className}`}
 		{...props}
 	>
 		{children}
@@ -164,7 +164,7 @@ const BodyMedium: FC<TypographyProps> = ({ children, className, ...props }) => (
 
 const BodySmall: FC<TypographyProps> = ({ children, className, ...props }) => (
 	<p
-		className={`text-sm ss:text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl ${className}`}
+		className={`text-xs ss:text-xs md:text-sm lg:text-base 2xl:text-lg ${className}`}
 		{...props}
 	>
 		{children}
