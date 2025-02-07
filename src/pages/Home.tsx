@@ -6,6 +6,7 @@ import GlassCard from '../components/GlassCard';
 
 import Container from '../components/Container';
 import ParallaxBackground from '../components/ParallaxBackground';
+import NameHeader from '../components/NameHeader';
 
 const Home: React.FC = () => {
 	return (
@@ -22,13 +23,7 @@ const Home: React.FC = () => {
 					id='Content'
 					className='px-8 flex flex-col justify-start content-stretch'
 				>
-					<GlassCard className='bg-primary-400 text-default-900 text-center my-16 py-8'>
-						<CardBody className='flex flex-col justify-end content-center'>
-							<h1 className='text-8xl bg-transparent p-8 text-center'>
-								John Cinquegrana
-							</h1>
-						</CardBody>
-					</GlassCard>
+					<NameHeader />
 					<GlassCard className='my-16'>
 						<CardBody className='flex flex-row justify-around content-stretch py-8 px-12 text-left'>
 							<div className='flex flex-col justify-around content-stretch mx-4 h-full w-1/2'>
