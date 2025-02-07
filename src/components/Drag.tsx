@@ -12,7 +12,13 @@ export default function Drag() {
 		<motion.div
 			id='drag'
 			ref={ref}
-			style={{ ...ball, x, y, position: 'fixed', pointerEvents: 'none' }}
+			style={{
+				...ball,
+				x,
+				y,
+				position: 'absolute',
+				pointerEvents: 'none',
+			}}
 		/>
 	);
 }

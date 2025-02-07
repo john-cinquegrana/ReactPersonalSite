@@ -3,6 +3,9 @@ import { RefObject, useEffect } from 'react';
 
 const spring = { damping: 3, stiffness: 50, restDelta: 0.001 };
 
+let mouseX: number;
+let mouseY: number;
+
 export default function useFollowPointer(
 	ref: RefObject<HTMLDivElement | null>,
 ) {
@@ -14,46 +17,59 @@ export default function useFollowPointer(
 	useEffect(() => {
 		if (!ref.current) return;
 
+		// ref.current.parentElement!.
+
 		const handlePointerMove = ({ clientX, clientY }: MouseEvent) => {
 			console.log('move');
 			const element = ref.current!;
 
+			mouseX = clientX;
+			mouseY = clientY;
+
 			frame.read(() => {
 				xPoint.set(
-					clientX - element.offsetLeft - element.offsetWidth / 2,
+					mouseX - element.offsetLeft - element.offsetWidth / 2,
 				);
 				yPoint.set(
-					clientY - element.offsetTop - element.offsetHeight / 2,
+					mouseY - element.offsetTop - element.offsetHeight / 2,
 				);
 			});
 		};
 
-		// let lastScrollX = window.scrollX;
-		// let lastScrollY = window.scrollY;
+		const handleScroll = () => {
+			const element = ref.current!;
 
-		// const handleScroll = () => {
-		// 	console.log('scroll');
-		// 	// const element = ref.current!;
-		// 	// const rect = element.getBoundingClientRect();
-		// 	const scrollX = window.scrollX;
-		// 	const scrollY = window.scrollY;
+			// Get the parent coordinates to compare to since we are assuming
+			// absolute positioning
+			// const parentElement = element.parentElement!;
+			// const parentLeft = parentElement.offsetLeft;
+			// const parentTop = parentElement.offsetTop;
 
-		// 	const deltaX = scrollX - lastScrollX;
-		// 	const deltaY = scrollY - lastScrollY;
+			const scrollX = window.scrollX;
+			const scrollY = window.scrollY;
 
-		// 	xPoint.set(xPoint.get() - deltaX);
-		// 	yPoint.set(yPoint.get() - deltaY);
-
-		// 	lastScrollX = scrollX;
-		// 	lastScrollY = scrollY;
-		// };
+			frame.read(() => {
+				xPoint.set(
+					mouseX -
+						element.offsetLeft -
+						element.offsetWidth / 2 +
+						scrollX,
+				);
+				yPoint.set(
+					mouseY -
+						element.offsetTop -
+						element.offsetHeight / 2 +
+						scrollY,
+				);
+			});
+		};
 
 		window.addEventListener('pointermove', handlePointerMove);
-		// window.addEventListener('scroll', handleScroll);
+		window.addEventListener('scroll', handleScroll);
 
 		return () => {
 			window.removeEventListener('pointermove', handlePointerMove);
-			// window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener('scroll', handleScroll);
 		};
 	}, [ref, xPoint, yPoint]);
 
