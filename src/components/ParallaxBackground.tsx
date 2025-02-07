@@ -3,50 +3,59 @@ import { motion, MotionValue, useScroll, useTransform } from 'framer-motion';
 import wyeScatter from '../assets/wye-scatter.svg';
 import blobScatter from '../assets/blob-scatter.svg';
 import triangleScatter from '../assets/triangle-scatter.svg';
+import { assert } from 'console';
 
 interface ParallaxBackgroundProps extends React.HTMLProps<HTMLDivElement> {
 	children: ReactNode;
 }
 
-function useParallax(value: MotionValue<number>, distance: number) {
-	return useTransform(value, [0, 1], [distance, -distance]);
+/**
+ * @param value The scroll value that is being used to calculate the parallax
+ * @param scale The multiplier for the scroll speed. 1 is same speed as
+ * content, 0.5 would be 50% relative scroll speed.
+ * @returns A MotionValue containing the appropriate scroll value
+ */
+function useParallax(value: MotionValue<number>, scale: number) {
+	assert(0 <= scale && scale <= 1, 'Scale must be between 0 and 1');
+	return useTransform(value, (value) => value * (1 - scale));
 }
 
 const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({
 	children,
 	...divProps
 }) => {
-	const { scrollYProgress } = useScroll();
-	const wyeScroll = useParallax(scrollYProgress, 200);
-	const triangleScroll = useParallax(scrollYProgress, 300);
-	const blobScroll = useParallax(scrollYProgress, 450);
+	const { scrollY } = useScroll();
+	// Float value is offset from normal scroll speed. Bigger number is bigger offset and
+	// therefore slower scroll
+	const wyeScroll = useParallax(scrollY, 0.75);
+	const triangleScroll = useParallax(scrollY, 0.83);
+	const blobScroll = useParallax(scrollY, 0.9);
 
 	return (
 		<div
-			className='w-full'
+			className='w-full h-full relative overflow-hidden'
 			{...divProps}
-			style={{ position: 'relative', overflow: 'hidden' }}
 		>
 			<motion.img
 				src={wyeScatter}
 				style={{
 					y: wyeScroll,
 				}}
-				className='parallax-layer w-full fixed'
+				className='w-full h-full min-h-full absolute object-cover'
 			/>
 			<motion.img
 				src={triangleScatter}
 				style={{
 					y: triangleScroll,
 				}}
-				className='parallax-layer w-full fixed'
+				className='w-full h-full min-h-full absolute object-cover'
 			/>
 			<motion.img
 				src={blobScatter}
 				style={{
 					y: blobScroll,
 				}}
-				className='parallax-layer w-full fixed'
+				className='w-full h-full min-h-full absolute object-cover'
 			/>
 			<div
 				className='flex flex-col items-center  w-full'

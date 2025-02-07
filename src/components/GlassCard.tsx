@@ -16,7 +16,7 @@ const GlassCard: React.FC<GlassCardProps> = ({ children, style, ...props }) => {
 				...style,
 			}}
 			{...props}
-			className={props.className + ' bg-opacity-70 backdrop-blur-sm '}
+			className={props.className + ' bg-opacity-90 backdrop-blur-md '}
 		>
 			{children}
 		</Card>
