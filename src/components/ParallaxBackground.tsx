@@ -3,7 +3,6 @@ import { motion, MotionValue, useScroll, useTransform } from 'framer-motion';
 import wyeScatter from '../assets/wye-scatter.svg';
 import blobScatter from '../assets/blob-scatter.svg';
 import triangleScatter from '../assets/triangle-scatter.svg';
-import { assert } from 'console';
 
 interface ParallaxBackgroundProps extends React.HTMLProps<HTMLDivElement> {
 	children: ReactNode;
@@ -16,7 +15,9 @@ interface ParallaxBackgroundProps extends React.HTMLProps<HTMLDivElement> {
  * @returns A MotionValue containing the appropriate scroll value
  */
 function useParallax(value: MotionValue<number>, scale: number) {
-	assert(0 <= scale && scale <= 1, 'Scale must be between 0 and 1');
+	if (scale < 0 || scale > 1) {
+		throw new Error('Scale must be between 0 and 1');
+	}
 	return useTransform(value, (value) => value * (1 - scale));
 }
 
