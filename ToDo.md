@@ -7,7 +7,7 @@ A list of things I want/need to get done on the site
 
 - [ ] Tinker with the text sizes at each breakpoint a little bit more
 - [ ] Fix the weird event where the drag circle just stays in the upper left corner for some reason
-- [ ] Put in Containers that have maximum sizes based on viewport so that I don't have to handle that many breakpoints
+- [ ] Handle mobile sizes with different layouts
 
 ## Cool Things
 
@@ -16,6 +16,7 @@ A list of things I want/need to get done on the site
 
 ## Finished Fixes
 
+- [x] Put in Containers that have maximum sizes based on viewport so that I don't have to handle that many breakpoints
 - [x] Fix the bubble animation so that it works properly on Vercel
 
 ### Abondoned Changes
