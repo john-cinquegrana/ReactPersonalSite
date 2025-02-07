@@ -5,7 +5,7 @@ import { BodyMedium, DisplayMedium } from './Typography';
 
 function NameHeader() {
 	return (
-		<GlassCard className='bg-primary-200 text-default-900 text-center my-16 py-8'>
+		<GlassCard className='bg-primary-100 text-default-900 text-center my-16 py-8'>
 			<CardBody className='flex flex-row justify-evenly content-center'>
 				<img
 					src={saxophone}
