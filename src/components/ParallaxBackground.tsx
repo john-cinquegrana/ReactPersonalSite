@@ -23,7 +23,7 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({
 
 	return (
 		<div
-			className='parallax-background'
+			className='w-full'
 			{...divProps}
 			style={{ position: 'relative', overflow: 'hidden' }}
 		>
@@ -31,36 +31,29 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({
 				src={wyeScatter}
 				style={{
 					y: wyeScroll,
-					position: 'fixed',
-					top: 0,
-					left: 0,
-					width: '100%',
 				}}
-				className='parallax-layer'
+				className='parallax-layer w-full fixed'
 			/>
 			<motion.img
 				src={blobScatter}
 				style={{
 					y: blobScroll,
-					position: 'fixed',
-					top: 0,
-					left: 0,
-					width: '100%',
 				}}
-				className='parallax-layer'
+				className='parallax-layer w-full fixed'
 			/>
 			<motion.img
 				src={triangleScatter}
 				style={{
 					y: triangleScroll,
-					position: 'fixed',
-					top: 0,
-					left: 0,
-					width: '100%',
 				}}
-				className='parallax-layer'
+				className='parallax-layer w-full fixed'
 			/>
-			<div style={{ position: 'relative' }}>{children}</div>
+			<div
+				className='flex flex-col items-center  w-full'
+				style={{ position: 'relative' }}
+			>
+				{children}
+			</div>
 		</div>
 	);
 };
