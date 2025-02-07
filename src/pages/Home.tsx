@@ -1,4 +1,4 @@
-import { Card, CardBody, Spacer } from '@heroui/react';
+import { CardBody, Spacer } from '@heroui/react';
 import React from 'react';
 import GrowShowcase from '../components/GrowShowcase';
 import Drag from '../components/Drag';
@@ -22,13 +22,13 @@ const Home: React.FC = () => {
 					id='Content'
 					className='px-8 flex flex-col justify-start content-stretch'
 				>
-					<Card className='bg-primary-500 bg-opacity-70 text-default-900 text-center my-16 py-8'>
+					<GlassCard className='bg-primary-400 text-default-900 text-center my-16 py-8'>
 						<CardBody className='flex flex-col justify-end content-center'>
 							<h1 className='text-8xl bg-transparent p-8 text-center'>
 								John Cinquegrana
 							</h1>
 						</CardBody>
-					</Card>
+					</GlassCard>
 					<GlassCard className='my-16'>
 						<CardBody className='flex flex-row justify-around content-stretch py-8 px-12 text-left'>
 							<div className='flex flex-col justify-around content-stretch mx-4 h-full w-1/2'>
