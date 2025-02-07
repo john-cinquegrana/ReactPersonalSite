@@ -2,23 +2,23 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
     <g fill="#481878">
         <path d="M48 27.7L48 123.8L-48 123.8L-48 27.7L-131.2 -20.3L-83.2 -103.5L0 -55.5L83.2 -103.5L131.2 -20.3Z"
-            transform="translate(925 1117)"></path>
+            transform="translate(925 1117) rotate(201)"></path>
         <path d="M21 12.2L21 54.3L-21 54.3L-21 12.2L-57.5 -8.9L-36.5 -45.4L0 -24.3L36.5 -45.4L57.5 -8.9Z"
-            transform="translate(1596 2456)"></path>
+            transform="translate(1596 2456) rotate(34)"></path>
         <path d="M22.7 13.1L22.7 58.4L-22.7 58.4L-22.7 13.1L-61.9 -9.6L-39.3 -48.8L0 -26.2L39.3 -48.8L61.9 -9.6Z"
-            transform="translate(869 1483)"></path>
+            transform="translate(869 1483) rotate(74)"></path>
         <path d="M38 22L38 98.1L-38 98.1L-38 22L-104 -16.1L-65.9 -82L0 -43.9L65.9 -82L104 -16.1Z"
-            transform="translate(928 2062)"></path>
+            transform="translate(928 2062) rotate(204)"></path>
         <path d="M31.8 18.4L31.8 82.1L-31.8 82.1L-31.8 18.4L-87 -13.5L-55.2 -68.6L0 -36.8L55.2 -68.6L87 -13.5Z"
-            transform="translate(274 319)"></path>
+            transform="translate(274 319) rotate(107)"></path>
         <path d="M27 15.6L27 69.6L-27 69.6L-27 15.6L-73.7 -11.4L-46.7 -58.1L0 -31.2L46.7 -58.1L73.7 -11.4Z"
-            transform="translate(476 1109)"></path>
+            transform="translate(476 1109) rotate(29)"></path>
         <path d="M39.9 23.1L39.9 102.9L-39.9 102.9L-39.9 23.1L-109.1 -16.9L-69.2 -86.1L0 -46.1L69.2 -86.1L109.1 -16.9Z"
-            transform="translate(502 1760)"></path>
+            transform="translate(502 1760) rotate(192)"></path>
         <path
             d="M47.5 27.4L47.5 122.4L-47.5 122.4L-47.5 27.4L-129.8 -20.1L-82.3 -102.3L0 -54.8L82.3 -102.3L129.8 -20.1Z"
-            transform="translate(1263 1299)"></path>
+            transform="translate(1263 1299) rotate(179)"></path>
         <path d="M27.8 16L27.8 71.6L-27.8 71.6L-27.8 16L-75.9 -11.7L-48.1 -59.9L0 -32.1L48.1 -59.9L75.9 -11.7Z"
-            transform="translate(811 386)"></path>
+            transform="translate(811 386) rotate(255)"></path>
     </g>
 </svg>
