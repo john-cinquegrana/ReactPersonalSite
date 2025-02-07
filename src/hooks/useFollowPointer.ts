@@ -15,7 +15,10 @@ export default function useFollowPointer(
 	const y = useSpring(yPoint, spring);
 
 	useEffect(() => {
-		if (!ref.current) return;
+		if (!ref.current) {
+			console.warn('No ref provided');
+			return;
+		}
 
 		// ref.current.parentElement!.
 

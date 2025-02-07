@@ -30,6 +30,6 @@ export default function Drag() {
 const ball = {
 	width: 100,
 	height: 100,
-	backgroundColor: '#ff0088',
+	backgroundColor: 'hsl(var(--heroui-primary))',
 	borderRadius: '50%',
 };
