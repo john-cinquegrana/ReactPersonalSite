@@ -10,7 +10,7 @@ const DisplayLarge: FC<TypographyProps> = ({
 	...props
 }) => (
 	<h1
-		className={`text-2xl ss:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl ${className}`}
+		className={`text-2xl ss:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold tracking-wide ${className}`}
 		{...props}
 	>
 		{children}
@@ -23,7 +23,7 @@ const DisplayMedium: FC<TypographyProps> = ({
 	...props
 }) => (
 	<h1
-		className={`text-xl ss:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl ${className}`}
+		className={`text-xl ss:text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl font-bold tracking-wide ${className}`}
 		{...props}
 	>
 		{children}
@@ -36,7 +36,7 @@ const DisplaySmall: FC<TypographyProps> = ({
 	...props
 }) => (
 	<h1
-		className={`text-lg ss:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl ${className}`}
+		className={`text-lg ss:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl font-bold tracking-wide ${className}`}
 		{...props}
 	>
 		{children}
@@ -49,7 +49,7 @@ const HeadlineLarge: FC<TypographyProps> = ({
 	...props
 }) => (
 	<h2
-		className={`text-xl ss:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl ${className}`}
+		className={`text-xl ss:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl font-semibold ${className}`}
 		{...props}
 	>
 		{children}
@@ -62,7 +62,7 @@ const HeadlineMedium: FC<TypographyProps> = ({
 	...props
 }) => (
 	<h2
-		className={`text-2xl ss:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl ${className}`}
+		className={`text-lg ss:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold ${className}`}
 		{...props}
 	>
 		{children}
@@ -75,7 +75,7 @@ const HeadlineSmall: FC<TypographyProps> = ({
 	...props
 }) => (
 	<h2
-		className={`text-xl ss:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl ${className}`}
+		className={`text-xl ss:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl font-semibold ${className}`}
 		{...props}
 	>
 		{children}
@@ -155,7 +155,7 @@ const BodyLarge: FC<TypographyProps> = ({ children, className, ...props }) => (
 
 const BodyMedium: FC<TypographyProps> = ({ children, className, ...props }) => (
 	<p
-		className={`text-md ss:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl ${className}`}
+		className={`text-sm ss:text-base md:text-lg lg:text-xl 2xl:text-2xl ${className}`}
 		{...props}
 	>
 		{children}

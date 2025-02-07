@@ -7,6 +7,7 @@ import GlassCard from '../components/GlassCard';
 import Container from '../components/Container';
 import ParallaxBackground from '../components/ParallaxBackground';
 import NameHeader from '../components/NameHeader';
+import { BodyMedium, HeadlineMedium } from '../components/Typography';
 
 const Home: React.FC = () => {
 	return (
@@ -39,9 +40,11 @@ const Home: React.FC = () => {
 								/>
 							</div>
 							<div className='flex flex-col justify-between content-stretch mx-4 max-w-2xl'>
-								<h2 className='text-7xl'>Roles and Toils</h2>
+								<HeadlineMedium className=''>
+									Roles and Toils
+								</HeadlineMedium>
 								<div className='indent-8'>
-									<p className='text-lg'>
+									<BodyMedium className='text-lg'>
 										When working in this industry, you have
 										to wear a lot of hats. When I began in
 										the programming industry I was nothing
@@ -52,9 +55,9 @@ const Home: React.FC = () => {
 										of industries and have learned a lot
 										along the way. I am always looking to
 										learn more and expand my skill set.
-									</p>
+									</BodyMedium>
 									<Spacer y={3} />
-									<p className='text-lg'>
+									<BodyMedium className='text-lg'>
 										Today working as a lead Mobile
 										Developer, I have to be able to easily
 										step into any of these roles at a
@@ -64,7 +67,7 @@ const Home: React.FC = () => {
 										team members to develop in, whatever
 										creates the best experience possible is
 										what I am doing.
-									</p>
+									</BodyMedium>
 								</div>
 							</div>
 						</CardBody>
@@ -72,9 +75,9 @@ const Home: React.FC = () => {
 					<GlassCard className='my-16'>
 						<CardBody>
 							<div className='flex flex-col items-stretch'>
-								<h2 className='text-7xl text-center'>
+								<HeadlineMedium className='text-7xl text-center'>
 									Products
-								</h2>
+								</HeadlineMedium>
 								<div className='flex flex-row justify-stretch my-8'>
 									<div className='flex flex-1 flex-col items-stretch mx-8'>
 										<div className='flex flex-row justify-evenly items-center my-4'>
@@ -89,7 +92,7 @@ const Home: React.FC = () => {
 												className='h-auto w-auto max-h-24 max-w-24'
 											/>
 										</div>
-										<p className='text-lg my-2'>
+										<BodyMedium className='text-lg my-2'>
 											911inform is an Emergency Management
 											Solution that exists as both a
 											mobile app and a web app. I started
@@ -108,7 +111,7 @@ const Home: React.FC = () => {
 											new Mobile Application. Nearly one
 											year later, that app had been
 											completed.
-										</p>
+										</BodyMedium>
 									</div>
 									<div className='flex flex-1 flex-col items-stretch mx-8'>
 										<div className='flex flex-row justify-evenly items-center my-4'>
@@ -123,7 +126,7 @@ const Home: React.FC = () => {
 												className='h-auto w-auto max-h-24 max-w-24'
 											/>
 										</div>
-										<p className='text-lg my-2'>
+										<BodyMedium className='text-lg my-2'>
 											Rutgers is the State University of
 											New Jersey, known for its diverse
 											academic programs and research
@@ -143,7 +146,7 @@ const Home: React.FC = () => {
 											registration, grade tracking, campus
 											news, and personalized
 											notifications.
-										</p>
+										</BodyMedium>
 									</div>
 								</div>
 							</div>
@@ -152,9 +155,9 @@ const Home: React.FC = () => {
 					<GlassCard className='my-16'>
 						<CardBody>
 							<div className='flex flex-col items-stretch'>
-								<h2 className='text-7xl text-center'>
+								<HeadlineMedium className='text-7xl text-center'>
 									Technologies
-								</h2>
+								</HeadlineMedium>
 								<div className='flex flex-row justify-between content-center my-8'>
 									<div className='w-1/3'>
 										<img
@@ -164,10 +167,10 @@ const Home: React.FC = () => {
 										/>
 									</div>
 									<div className='w-2/3 flex flex-row items-center'>
-										<p>
+										<BodyMedium>
 											I love Flutter it's the dirty best.
 											It's so good you should use it.
-										</p>
+										</BodyMedium>
 									</div>
 								</div>
 								<div className='flex flex-row justify-between content-center my-8'>
@@ -179,11 +182,11 @@ const Home: React.FC = () => {
 										/>
 									</div>
 									<div className='w-2/3 flex flex-row items-center'>
-										<p>
+										<BodyMedium>
 											Firebase is a wonderful tool that
 											many people love, and even more will
 											learn to use.
-										</p>
+										</BodyMedium>
 									</div>
 								</div>
 								<div className='flex flex-row justify-between content-center my-8'>
@@ -195,11 +198,11 @@ const Home: React.FC = () => {
 										/>
 									</div>
 									<div className='w-2/3 flex flex-row items-center'>
-										<p>
+										<BodyMedium>
 											Firebase is a wonderful tool that
 											many people love, and even more will
 											learn to use.
-										</p>
+										</BodyMedium>
 									</div>
 								</div>
 							</div>
