@@ -3,16 +3,14 @@ import React from 'react';
 import GrowShowcase from '../components/GrowShowcase';
 import Drag from '../components/Drag';
 import GlassCard from '../components/GlassCard';
-import red_circle from '../assets/red_circle.svg';
+
 import Container from '../components/Container';
+import ParallaxBackground from '../components/ParallaxBackground';
 
 const Home: React.FC = () => {
 	return (
-		<main
+		<ParallaxBackground
 			style={{
-				backgroundImage: `url("${red_circle}")`, // Set the background image
-				backgroundRepeat: 'repeat',
-				backgroundSize: '75px 75px',
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
@@ -214,7 +212,7 @@ const Home: React.FC = () => {
 					</GlassCard>
 				</div>
 			</Container>
-		</main>
+		</ParallaxBackground>
 	);
 };
 
