@@ -34,3 +34,7 @@ body,
 #root > div {
 	overflow: none;
 }
+
+svg {
+	height: 100%;
+}
