@@ -155,7 +155,7 @@ const BodyLarge: FC<TypographyProps> = ({ children, className, ...props }) => (
 
 const BodyMedium: FC<TypographyProps> = ({ children, className, ...props }) => (
 	<p
-		className={`text-sm ss:text-base md:text-lg lg:text-xl 2xl:text-2xl ${className}`}
+		className={`text-sm ss:text-base md:text-base lg:text-xl 2xl:text-2xl ${className}`}
 		{...props}
 	>
 		{children}

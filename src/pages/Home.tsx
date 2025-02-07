@@ -27,7 +27,7 @@ const Home: React.FC = () => {
 					<NameHeader />
 					<GlassCard className='my-16'>
 						<CardBody className='flex flex-row justify-around content-stretch py-8 px-12 text-left'>
-							<div className='flex flex-col justify-around content-stretch mx-4 h-full w-1/2'>
+							<div className='flex flex-col justify-around items-start mx-4 h-full w-1/2'>
 								<GrowShowcase
 									items={[
 										'Mobile Developer',
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
 									]}
 								/>
 							</div>
-							<div className='flex flex-col justify-between content-stretch mx-4 max-w-2xl'>
+							<div className='flex flex-col justify-between content-stretch mx-4 max-w-[50%]'>
 								<HeadlineMedium className=''>
 									Roles and Toils
 								</HeadlineMedium>

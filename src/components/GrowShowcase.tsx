@@ -12,6 +12,8 @@ const GrowShowcase: React.FC<GrowShowcaseProps> = ({ items }) => {
 	// @ts-expect-error HeroUI typed ColorScale
 	const foreground: string = semanticColors.dark.foreground.DEFAULT;
 
+	/* Code for animating between randomly selected values */
+
 	const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
 	useEffect(() => {
@@ -34,35 +36,40 @@ const GrowShowcase: React.FC<GrowShowcaseProps> = ({ items }) => {
 	return (
 		<>
 			{items.map((item, index) => (
-				<motion.p
+				<div
 					key={index}
-					className='my-4 w-full h-7 text-sm'
-					initial={{
-						fontSize: '1.5rem',
-						// color: 'hsl(var(--heroui-foreground))',
-					}}
-					animate={{
-						// scale: selectedIndex === index ? 1.5 : 1,
-						fontSize: selectedIndex === index ? '3rem' : '1.5rem',
-						color:
-							selectedIndex === index ? primary600 : foreground,
-						fontWeight: selectedIndex === index ? 'bold' : 'normal',
-						// style: {
-						// 	color:
-						// 		selectedIndex === index
-						// 			? 'hsl(var(--heroui-primary-600))'
-						// 			: 'hsl(var(--heroui-foreground))',
-						// },
-					}}
-					transition={{
-						type: 'tween',
-						duration: 0.75,
-						// color: { duration: 0.75, type: 'tween' },
-						ease: 'easeInOut',
-					}}
+					className='my-4 h-7 w-full'
 				>
-					{item}
-				</motion.p>
+					<motion.p
+						className='my-4 max-w-[50%] left-0 ss:text-xs sm:text-xs md:text-sm xl:text-3xl 2xl:text-4xl 3xl:text-5xl line-clamp-1'
+						initial={
+							{
+								// fontSize: '1.5rem',
+								// color: 'hsl(var(--heroui-foreground))',
+							}
+						}
+						animate={{
+							scale: selectedIndex === index ? 1.5 : 1,
+							// fontSize:
+							// 	selectedIndex === index ? '3rem' : '1.5rem',
+							color:
+								selectedIndex === index
+									? primary600
+									: foreground,
+							fontWeight:
+								selectedIndex === index ? 'bold' : 'normal',
+							transformOrigin: 'left',
+						}}
+						transition={{
+							type: 'tween',
+							duration: 0.75,
+							// color: { duration: 0.75, type: 'tween' },
+							ease: 'easeInOut',
+						}}
+					>
+						{item}
+					</motion.p>
+				</div>
 			))}
 		</>
 	);
