@@ -8,6 +8,7 @@ import { CardBody, Spacer } from '@heroui/react';
 import GrowShowcase from '../components/GrowShowcase';
 import { BodyMedium, HeadlineMedium } from '../components/Typography';
 import LayeredWaves from '../assets/layers.svg';
+import myRutgers from '../assets/myRUTGERS_H_RED_WHITE_RGB.svg';
 
 const Home: React.FC = () => {
 	return (
@@ -53,10 +54,10 @@ function RolesCard() {
 				</div>
 				<div className='flex flex-col justify-around content-stretch mx-4 max-w-[50%]'>
 					<HeadlineMedium className=''>
-						Roles and Toils
+						Roles and Developments
 					</HeadlineMedium>
 					<div className='indent-8'>
-						<BodyMedium className='text-lg'>
+						<BodyMedium>
 							When working in this industry, you have to wear a
 							lot of hats. When I began in the programming
 							industry I was nothing but a Full Stack Developer.
@@ -67,7 +68,7 @@ function RolesCard() {
 							learn more and expand my skill set.
 						</BodyMedium>
 						<Spacer y={3} />
-						<BodyMedium className='text-lg'>
+						<BodyMedium>
 							Today working as a lead Mobile Developer, I have to
 							be able to easily step into any of these roles at a
 							moments notice. From creating new servers and
@@ -88,7 +89,7 @@ function ProductsCard() {
 		<GlassCard className='my-16 w-full'>
 			<CardBody>
 				<div className='flex flex-col items-stretch'>
-					<HeadlineMedium className='text-7xl text-center'>
+					<HeadlineMedium className=' text-center'>
 						Products
 					</HeadlineMedium>
 					<div className='flex flex-row justify-stretch my-8'>
@@ -96,9 +97,9 @@ function ProductsCard() {
 							<img
 								src='https://inform.911inform.com/wp-content/uploads/2020/03/footer_logo-min.png'
 								alt='Product 4'
-								className='h-auto w-auto max-h-16 m-4 fit object-contain'
+								className='w-auto h-16 m-4 fit object-contain'
 							/>
-							<BodyMedium className='text-lg my-2'>
+							<BodyMedium className='my-2'>
 								911inform is an Emergency Management Solution
 								that exists as both a mobile app and a web app.
 								I started at 911inform as a{' '}
@@ -115,19 +116,13 @@ function ProductsCard() {
 							</BodyMedium>
 						</div>
 						<div className='flex flex-1 flex-col items-stretch mx-8'>
-							<div className='flex flex-row justify-evenly items-center my-4'>
-								<img
-									src='https://my.rutgers.edu/uxp/static/media/rutgers-shield-logo-new.436fc289.svg'
-									alt='myRutgers shield logo'
-									className='h-auto w-auto max-h-24 max-w-24'
-								/>
-								<img
-									src='https://my.rutgers.edu/uxp/assets/images/my-rutgers-logo-light-new.png'
-									alt='myRutgers light logo'
-									className='h-auto w-auto max-h-24 max-w-24'
-								/>
-							</div>
-							<BodyMedium className='text-lg my-2'>
+							<img
+								src={myRutgers}
+								alt='myRutgers shield logo'
+								className='w-auto h-16 m-4 fit object-contain'
+							/>
+
+							<BodyMedium className='my-2'>
 								Rutgers is the State University of New Jersey,
 								known for its diverse academic programs and
 								research initiatives. The myRutgers portal is a
@@ -155,11 +150,21 @@ function TechnologiesCard() {
 		<GlassCard className='my-16 w-full'>
 			<CardBody>
 				<div className='flex flex-col items-stretch'>
-					<HeadlineMedium className='text-7xl text-center'>
+					<HeadlineMedium className='text-center'>
 						Technologies
 					</HeadlineMedium>
+					<Spacer y={4} />
+					<div className='flex flex-col justify-center items-center w-full'>
+						<BodyMedium className='text-center max-w-4xl'>
+							Technology is the life blood of any engineer or
+							programmer. I have spent the majority of my life
+							working with different technologies. These are some
+							of my absolute favorites.
+						</BodyMedium>
+					</div>
+					<Spacer y={12} />
 					<div className='flex flex-row justify-between content-center my-8'>
-						<div className='w-1/3'>
+						<div className='w-1/3 flex flex-col justify-center content-center'>
 							<img
 								src='https://storage.googleapis.com/cms-storage-bucket/4fd5520fe28ebf839174.svg'
 								alt='Flutter Logo'
@@ -168,13 +173,19 @@ function TechnologiesCard() {
 						</div>
 						<div className='w-2/3 flex flex-row items-center'>
 							<BodyMedium>
-								I love Flutter it's the dirty best. It's so good
-								you should use it.
+								Flutter is the pinnacle of all the frontend
+								frameworks I have tried. It's constraint system
+								is ingenious compared to other frameworks. It
+								comes with a full comoponent library, theming
+								system, and state management right out of the
+								box. Of everything I have tried, Flutter is my
+								choice when I need good products done quickly.
+								If only they'd improve the SEO...
 							</BodyMedium>
 						</div>
 					</div>
 					<div className='flex flex-row justify-between content-center my-8'>
-						<div className='w-1/3'>
+						<div className='w-1/3 flex flex-col justify-center content-center'>
 							<img
 								src='/src/assets/firebase_logomark.svg'
 								alt='Firebase Logo'
@@ -183,13 +194,20 @@ function TechnologiesCard() {
 						</div>
 						<div className='w-2/3 flex flex-row items-center'>
 							<BodyMedium>
-								Firebase is a wonderful tool that many people
-								love, and even more will learn to use.
+								Firebase is a the first cloud provider that
+								follows the Google learning trend. Easy to use
+								but difficult to master. It starts simple, but
+								can ease you into the entire Google Cloud
+								Platform if you let it. I believe Firebase is
+								the perfect compromise for developers that need
+								reliable services from a top-company, but
+								haven't dove into the Cloud Infrastructure world
+								yet and want to learn while they create.
 							</BodyMedium>
 						</div>
 					</div>
 					<div className='flex flex-row justify-between content-center my-8'>
-						<div className='w-1/3'>
+						<div className='w-1/3 flex flex-col justify-center content-center'>
 							<img
 								src='/src/assets/aws-color.svg'
 								alt='Flutter Logo'
@@ -198,8 +216,17 @@ function TechnologiesCard() {
 						</div>
 						<div className='w-2/3 flex flex-row items-center'>
 							<BodyMedium>
-								Firebase is a wonderful tool that many people
-								love, and even more will learn to use.
+								AWS is the standard for a reason. From Cloud
+								Functions to database hosting to app depoyment
+								and CI/CD, there is nothing you cannot do on
+								AWS. That's not to say it's easy, I've spent
+								hours honing in on the correct IAM permissions
+								in CloudFormation templates, or wondering why my
+								Python cloud functions were too slow (I included
+								the entire AWS boto3 library twice). However, if
+								you need something hosted, and you need it to be
+								dependable and scallable, there's no one better
+								than AWS.
 							</BodyMedium>
 						</div>
 					</div>
