@@ -51,7 +51,7 @@ function RolesCard() {
 						]}
 					/>
 				</div>
-				<div className='flex flex-col justify-between content-stretch mx-4 max-w-[50%]'>
+				<div className='flex flex-col justify-around content-stretch mx-4 max-w-[50%]'>
 					<HeadlineMedium className=''>
 						Roles and Toils
 					</HeadlineMedium>
@@ -93,18 +93,11 @@ function ProductsCard() {
 					</HeadlineMedium>
 					<div className='flex flex-row justify-stretch my-8'>
 						<div className='flex flex-1 flex-col items-stretch mx-8'>
-							<div className='flex flex-row justify-evenly items-center my-4'>
-								<img
-									src='https://inform.911inform.com/wp-content/uploads/2020/03/footer_logo-min.png'
-									alt='Product 4'
-									className='h-auto w-auto max-h-24 max-w-24'
-								/>
-								<img
-									src='https://911inform.com/images/911inform.jpg'
-									alt='Product 5'
-									className='h-auto w-auto max-h-24 max-w-24'
-								/>
-							</div>
+							<img
+								src='https://inform.911inform.com/wp-content/uploads/2020/03/footer_logo-min.png'
+								alt='Product 4'
+								className='h-auto w-auto max-h-16 m-4 fit object-contain'
+							/>
 							<BodyMedium className='text-lg my-2'>
 								911inform is an Emergency Management Solution
 								that exists as both a mobile app and a web app.
