@@ -33,34 +33,33 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({
 	const blobScroll = useParallax(scrollY, 0.9);
 
 	return (
-		<div
-			className='w-full h-full relative overflow-hidden'
-			{...divProps}
-		>
+		<div className='w-full h-full relative overflow-hidden'>
 			<motion.img
 				src={wyeScatter}
 				style={{
 					y: wyeScroll,
 				}}
-				className='w-full h-full min-h-full absolute object-cover'
+				className='w-full h-full min-h-full absolute object-cover overflow-visible'
 			/>
 			<motion.img
 				src={triangleScatter}
 				style={{
+					// top: triangleScroll,
 					y: triangleScroll,
 				}}
-				className='w-full h-full min-h-full absolute object-cover'
+				className='w-full h-full min-h-full absolute object-cover overflow-visible'
 			/>
 			<motion.img
 				src={blobScatter}
 				style={{
 					y: blobScroll,
 				}}
-				className='w-full h-full min-h-full absolute object-cover'
+				className='w-full h-full min-h-full absolute object-cover overflow-visible'
 			/>
 			<div
 				className='flex flex-col items-center  w-full'
 				style={{ position: 'relative' }}
+				{...divProps}
 			>
 				{children}
 			</div>
