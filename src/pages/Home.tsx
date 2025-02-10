@@ -9,6 +9,8 @@ import GrowShowcase from '../components/GrowShowcase';
 import { BodyMedium, HeadlineMedium } from '../components/Typography';
 import LayeredWaves from '../assets/layers.svg';
 import myRutgers from '../assets/myRUTGERS_H_RED_WHITE_RGB.svg';
+import firebase from '../assets/firebase_logomark.svg';
+import aws from '../assets/aws-color.svg';
 
 const Home: React.FC = () => {
 	return (
@@ -187,7 +189,7 @@ function TechnologiesCard() {
 					<div className='flex flex-row justify-between content-center my-8'>
 						<div className='w-1/3 flex flex-col justify-center content-center'>
 							<img
-								src='/src/assets/firebase_logomark.svg'
+								src={firebase}
 								alt='Firebase Logo'
 								className='h-full w-auto max-h-24 max-w-24 mx-auto'
 							/>
@@ -209,8 +211,8 @@ function TechnologiesCard() {
 					<div className='flex flex-row justify-between content-center my-8'>
 						<div className='w-1/3 flex flex-col justify-center content-center'>
 							<img
-								src='/src/assets/aws-color.svg'
-								alt='Flutter Logo'
+								src={aws}
+								alt='AWS Logo'
 								className='h-full w-auto max-h-24 max-w-24 mx-auto'
 							/>
 						</div>
