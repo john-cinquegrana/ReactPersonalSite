@@ -1,18 +1,41 @@
-import { CardBody } from '@heroui/react';
-import GlassCard from './GlassCard';
-import saxophone from '../assets/saxophone.svg';
+import { Button, Spacer } from '@heroui/react';
 import { BodyMedium, DisplayMedium } from './Typography';
 
 function NameHeader() {
 	return (
-		<GlassCard className='bg-primary-200 bg-opacity-60 backdrop-blur-2xl text-default-900 text-center my-16 py-8'>
-			<CardBody className='flex flex-row justify-evenly content-center'>
-				<img
-					src={saxophone}
-					alt='saxophone'
-					className='max-w-[25%]'
-				/>
-				<div className='flex flex-col justify-end items-stretch max-w-[50%]'>
+		<div className='flex flex-col items-center bg-secondary-500 text-secondary-50'>
+			<Spacer y={32} />
+			<div className='flex flex-row justify-around items-center'>
+				<div className='flex flex-col justify-end items-start max-w-[50%] overflow-visible'>
+					<div className='flex flex-col justify-end relative top-20 overflow-visible z-10'>
+						<Button
+							color='primary'
+							variant='flat'
+							className='m-2 bg-background'
+						>
+							Contact Me
+						</Button>
+						<Button
+							color='primary'
+							variant='flat'
+							className='m-2 bg-background'
+						>
+							My Experience
+						</Button>
+						<Button
+							color='primary'
+							variant='flat'
+							className='m-2 bg-background'
+						>
+							My Opinions
+						</Button>
+					</div>
+				</div>
+				<div className='flex flex-col justify-end items-start max-w-[50%]'>
+					<DisplayMedium className='text-center'>
+						John Cinquegrana
+					</DisplayMedium>
+					<Spacer y={8} />
 					<BodyMedium>
 						Hello hello! I am a full-stack developer making mobile
 						and web apps. I enjoy long walks on the mountaintops,
@@ -20,12 +43,10 @@ function NameHeader() {
 						City. If you have any reccomendations of where to get a
 						good hot chocolate, please let me know.
 					</BodyMedium>
-					<DisplayMedium className='bg-transparent p-8 text-center'>
-						John Cinquegrana
-					</DisplayMedium>
 				</div>
-			</CardBody>
-		</GlassCard>
+			</div>
+			{/* <Spacer y={32} /> */}
+		</div>
 	);
 }
 

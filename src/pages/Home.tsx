@@ -7,7 +7,7 @@ import GlassCard from '../components/GlassCard';
 import { CardBody, Spacer } from '@heroui/react';
 import GrowShowcase from '../components/GrowShowcase';
 import { BodyMedium, HeadlineMedium } from '../components/Typography';
-import LayeredWaves from '../assets/edited-layer.svg';
+import LayeredWaves from '../assets/layers.svg';
 
 const Home: React.FC = () => {
 	return (
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
 				<img
 					src={LayeredWaves}
 					alt='Layered Waves'
-					className='w-full h-[600px]'
+					className='w-full'
 				/>
 				<Container className='flex flex-col justify-start content-stretch px-10'>
 					<RolesCard />
