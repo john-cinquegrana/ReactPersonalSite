@@ -9,7 +9,7 @@ const Container: React.FC<
 > = ({ children, ...props }) => {
 	const passedProps = props;
 	passedProps.className +=
-		' w-[400px] xs:w-[480px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1536px] 3xl:w-[1920px]';
+		' md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1536px] 3xl:w-[1920px]';
 	return <div {...props}>{children}</div>;
 };
 
