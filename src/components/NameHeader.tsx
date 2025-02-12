@@ -1,5 +1,5 @@
 import { Button, Spacer } from '@heroui/react';
-import { BodyMedium, DisplayMedium } from './Typography';
+import { BodyMedium, BodySmall, DisplayMedium } from './Typography';
 import { FaGithub, FaRegCopy } from 'react-icons/fa6';
 import { MdEmail } from 'react-icons/md';
 import { HiDevicePhoneMobile } from 'react-icons/hi2';
@@ -10,7 +10,7 @@ function NameHeader() {
 	return (
 		<div className='flex flex-col items-center bg-secondary-500 text-secondary-50'>
 			<Spacer className='h-16 lg:h-32' />
-			<div className='flex flex-col-reverse lg:flex-row justify-between items-center lg:items-stretch'>
+			<div className='flex flex-col-reverse lg:flex-row justify-around items-center lg:items-stretch'>
 				{/* The div full of copy buttons */}
 				<ButtonColumn />
 				<Spacer className='h-10  lg:hidden' />
@@ -38,7 +38,7 @@ export default NameHeader;
 const ButtonColumn: FunctionComponent = () => {
 	return (
 		<>
-			<div className='hidden lg:flex flex-col justify-end items-center lg:p-2'>
+			<div className='hidden lg:flex flex-col justify-end items-start lg:p-2'>
 				<CopyButton
 					className='m-2 bg-background w-40 '
 					color='primary'
@@ -56,10 +56,10 @@ const ButtonColumn: FunctionComponent = () => {
 						);
 					}}
 					slideoutContent={
-						<BodyMedium>github.com/john-cinquegrana</BodyMedium>
+						<BodySmall>github.com/john-cinquegrana</BodySmall>
 					}
 				>
-					<p>Github Page</p>
+					<BodySmall>Github Page</BodySmall>
 				</CopyButton>
 				<CopyButton
 					color='primary'
@@ -72,11 +72,9 @@ const ButtonColumn: FunctionComponent = () => {
 					onClickPress={() => {
 						navigator.clipboard.writeText('alllegron@gmail.com');
 					}}
-					slideoutContent={
-						<BodyMedium>alllegron@gmail.com</BodyMedium>
-					}
+					slideoutContent={<BodySmall>alllegron@gmail.com</BodySmall>}
 				>
-					<p>Email Me</p>
+					<BodySmall>Email Me</BodySmall>
 				</CopyButton>
 				<CopyButton
 					color='primary'
@@ -89,11 +87,9 @@ const ButtonColumn: FunctionComponent = () => {
 					onClickPress={() => {
 						navigator.clipboard.writeText('+17327203916');
 					}}
-					slideoutContent={
-						<BodyMedium>+1 (732) 720 - 3916</BodyMedium>
-					}
+					slideoutContent={<BodySmall>+1 (732) 720 - 3916</BodySmall>}
 				>
-					Call Me
+					<BodySmall>Call Me</BodySmall>
 				</CopyButton>
 			</div>
 			<div className='flex lg:hidden flex-col justify-end items-center p-8'>
@@ -110,7 +106,7 @@ const ButtonColumn: FunctionComponent = () => {
 							);
 						}}
 					>
-						<p>Github Page</p>
+						<BodySmall>Github Page</BodySmall>
 					</Button>
 					<Button
 						className='m-2 bg-default-50 w-40 text-primary-500 flex-1'
@@ -123,7 +119,7 @@ const ButtonColumn: FunctionComponent = () => {
 							);
 						}}
 					>
-						<p>Copy Github URL</p>
+						<BodySmall>Copy Github URL</BodySmall>
 					</Button>
 				</div>
 				<div className='flex flex-row justify-between items-center'>
@@ -136,7 +132,7 @@ const ButtonColumn: FunctionComponent = () => {
 							window.location.href = 'mailto:alllegron@gmail.com';
 						}}
 					>
-						<p>Email Me</p>
+						<BodySmall>Email Me</BodySmall>
 					</Button>
 					<Button
 						className='m-2 bg-default-50 w-40 text-primary-500 flex-1'
@@ -149,7 +145,7 @@ const ButtonColumn: FunctionComponent = () => {
 							);
 						}}
 					>
-						<p>Copy Email</p>
+						<BodySmall>Copy Email</BodySmall>
 					</Button>
 				</div>
 				<div className='flex flex-row justify-between items-center'>
@@ -162,7 +158,7 @@ const ButtonColumn: FunctionComponent = () => {
 							window.location.href = 'tel:7327203916';
 						}}
 					>
-						<p>Call Me</p>
+						<BodySmall>Call Me</BodySmall>
 					</Button>
 					<Button
 						className='m-2 bg-default-50 w-40 text-primary-500 flex-1'
@@ -173,7 +169,7 @@ const ButtonColumn: FunctionComponent = () => {
 							navigator.clipboard.writeText('+17327203916');
 						}}
 					>
-						<p>Copy Number</p>
+						<BodySmall>Copy Number</BodySmall>
 					</Button>
 				</div>
 			</div>
