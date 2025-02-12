@@ -41,22 +41,24 @@ export default Home;
 function RolesCard() {
 	return (
 		<GlassCard className='my-3 md:w-full items-center'>
-			<CardBody className='flex flex-col-reverse lg:flex-row justify-around items-start text-left mx-4'>
+			<CardBody className='flex flex-col-reverse lg:flex-row justify-around items-stretch text-left mx-4 lg:px-10'>
 				<Spacer
 					y={4}
-					className='hidden md:block'
+					className='hidden md:block lg:hidden'
 				/>
-				<div className='hidden md:flex flex-col flex-wrap justify-around items-start max-h-40 w-full lg:h-full'>
-					<GrowShowcase
-						items={[
-							'Mobile Developer',
-							'Team Leader',
-							'DevOps Engineer',
-							'AI/ML Engineer',
-							'UI/UX Designer',
-							'Full Stack Developer',
-						]}
-					/>
+				<div className='min-h-full w-full flex flex-row justify-center items-center lg:my-4'>
+					<div className='hidden md:flex flex-col flex-wrap md:max-h-52 lg:max-h-none lg:flex-nowrap justify-around lg:justify-around items-start w-full lg:h-full'>
+						<GrowShowcase
+							items={[
+								'Mobile Developer',
+								'Team Leader',
+								'DevOps Engineer',
+								'AI/ML Engineer',
+								'UI/UX Designer',
+								'Full Stack Developer',
+							]}
+						/>
+					</div>
 				</div>
 				<div className='flex flex-col justify-around content-stretch lg:max-w-[50%]'>
 					<HeadlineMedium className='text-center py-4'>
@@ -93,7 +95,7 @@ function RolesCard() {
 function ProductsCard() {
 	return (
 		<GlassCard className='my-3 md:w-full items-center'>
-			<CardBody className='mx-4'>
+			<CardBody className='mx-4 lg:px-6'>
 				<div className='flex flex-col items-stretch'>
 					<HeadlineMedium className=' text-center'>
 						Products
@@ -158,7 +160,7 @@ function ProductsCard() {
 function TechnologiesCard() {
 	return (
 		<GlassCard className='my-3 md:w-full items-center'>
-			<CardBody className='mx-4'>
+			<CardBody className='mx-4 lg:px-6'>
 				<div className='flex flex-col items-stretch'>
 					<HeadlineMedium className='text-center'>
 						Technologies
@@ -174,11 +176,11 @@ function TechnologiesCard() {
 					</div>
 					<Spacer className='h-4 md:h-12' />
 					<div className='flex flex-col md:flex-row justify-between content-center my-5 md:mx-4 md:my-8'>
-						<div className='my-6 flex flex-col justify-center content-center'>
+						<div className='my-6 flex flex-col justify-center content-center md:min-w-[15%]'>
 							<img
 								src='https://storage.googleapis.com/cms-storage-bucket/4fd5520fe28ebf839174.svg'
 								alt='Flutter Logo'
-								className='h-full w-auto max-h-24 max-w-24 mx-auto'
+								className='h-full w-auto max-h-24 max-w-24 xl:max-h-40 xl:max-w-40 mx-auto'
 							/>
 						</div>
 						<div className='md:max-w-[80%] flex flex-row items-center'>
@@ -195,11 +197,11 @@ function TechnologiesCard() {
 						</div>
 					</div>
 					<div className='flex flex-col md:flex-row justify-between content-center my-5 md:mx-4 md:my-8'>
-						<div className='my-6 flex flex-col justify-center content-center'>
+						<div className='my-6 flex flex-col justify-center content-center md:min-w-[15%]'>
 							<img
 								src={firebase}
 								alt='Firebase Logo'
-								className='h-full w-auto max-h-24 max-w-24 mx-auto'
+								className='h-full w-auto max-h-24 max-w-24 xl:max-h-40 xl:max-w-40 mx-auto'
 							/>
 						</div>
 						<div className='md:max-w-[80%] flex flex-row items-center'>
@@ -217,11 +219,11 @@ function TechnologiesCard() {
 						</div>
 					</div>
 					<div className='flex flex-col md:flex-row justify-between content-center my-5 md:mx-4 md:my-8'>
-						<div className='my-6 flex flex-col justify-center content-center'>
+						<div className='my-6 flex flex-col justify-center content-center md:min-w-[15%]'>
 							<img
 								src={aws}
 								alt='AWS Logo'
-								className='h-full w-auto max-h-24 max-w-24 mx-auto'
+								className='h-full w-auto max-h-24 max-w-24 xl:max-h-40 xl:max-w-40 mx-auto'
 							/>
 						</div>
 						<div className='md:max-w-[80%] flex flex-row items-center'>
