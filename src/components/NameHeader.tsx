@@ -95,7 +95,7 @@ const ButtonColumn: FunctionComponent = () => {
 			<div className='flex lg:hidden flex-col justify-end items-center p-8'>
 				<div className='flex flex-row justify-between items-center'>
 					<Button
-						className='m-2 bg-background w-32 md:flex-1'
+						className='m-2 bg-background w-32 md:w-56'
 						color='primary'
 						variant='flat'
 						endContent={<FaGithub />}
@@ -109,7 +109,7 @@ const ButtonColumn: FunctionComponent = () => {
 						<BodySmall>Github Page</BodySmall>
 					</Button>
 					<Button
-						className='m-2 bg-default-50 w-24 text-primary-500 md:flex-1'
+						className='m-2 bg-default-50 w-24 md:w-48 text-primary-500'
 						color='primary'
 						variant='faded'
 						endContent={<FaRegCopy />}
@@ -127,7 +127,7 @@ const ButtonColumn: FunctionComponent = () => {
 				</div>
 				<div className='flex flex-row justify-between items-center'>
 					<Button
-						className='m-2 bg-background w-32 md:flex-1'
+						className='m-2 bg-background w-32 md:w-56'
 						color='primary'
 						variant='flat'
 						endContent={<MdEmail />}
@@ -138,7 +138,7 @@ const ButtonColumn: FunctionComponent = () => {
 						<BodySmall>Email Me</BodySmall>
 					</Button>
 					<Button
-						className='m-2 bg-default-50 w-24 text-primary-500 md:flex-1'
+						className='m-2 bg-default-50 w-24 md:w-48 text-primary-500'
 						color='primary'
 						variant='faded'
 						endContent={<FaRegCopy />}
@@ -156,7 +156,7 @@ const ButtonColumn: FunctionComponent = () => {
 				</div>
 				<div className='flex flex-row justify-between items-center'>
 					<Button
-						className='m-2 bg-background w-32 md:flex-1'
+						className='m-2 bg-background w-32 md:w-56'
 						color='primary'
 						variant='flat'
 						endContent={<HiDevicePhoneMobile />}
@@ -167,7 +167,7 @@ const ButtonColumn: FunctionComponent = () => {
 						<BodySmall>Call Me</BodySmall>
 					</Button>
 					<Button
-						className='m-2 bg-default-50 w-24 text-primary-500 md:flex-1'
+						className='m-2 bg-default-50 w-24 md:w-48 text-primary-500'
 						color='primary'
 						variant='faded'
 						endContent={<FaRegCopy />}
