@@ -26,11 +26,11 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({
 	...divProps
 }) => {
 	const { scrollY } = useScroll();
-	// Float value is offset from normal scroll speed. Bigger number is bigger offset and
+	// Float value is percentage of normal scroll speed. Lower number is bigger offset from 1 and
 	// therefore slower scroll
-	const wyeScroll = useParallax(scrollY, 0.75);
-	const triangleScroll = useParallax(scrollY, 0.83);
-	const blobScroll = useParallax(scrollY, 0.9);
+	const wyeScroll = useParallax(scrollY, 0.9);
+	const triangleScroll = useParallax(scrollY, 0.85);
+	const blobScroll = useParallax(scrollY, 0.8);
 
 	return (
 		<div className='w-full h-full relative overflow-hidden'>
