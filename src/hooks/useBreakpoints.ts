@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
 export enum Breakpoint {
-	SS = 0,
+	Z = 0,
+	SS = 200,
 	XS = 480,
 	SM = 640,
 	MD = 768,
@@ -19,7 +20,8 @@ const getBreakpoint = (width: number): Breakpoint => {
 	if (width >= Breakpoint.MD) return Breakpoint.MD;
 	if (width >= Breakpoint.SM) return Breakpoint.SM;
 	if (width >= Breakpoint.XS) return Breakpoint.XS;
-	return Breakpoint.SS;
+	if (width >= Breakpoint.SS) return Breakpoint.SS;
+	return Breakpoint.Z;
 };
 
 const useBreakpoints = (): Breakpoint => {

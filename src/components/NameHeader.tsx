@@ -14,12 +14,12 @@ function NameHeader() {
 				{/* The div full of copy buttons */}
 				<ButtonColumn />
 				<Spacer className='h-10  lg:hidden' />
-				<div className='flex flex-col justify-end items-center lg:items-start max-w-[50%]'>
+				<div className='px-4 flex flex-col justify-end items-center lg:items-start lg:max-w-[50%]'>
 					<DisplayMedium className='text-center'>
 						John Cinquegrana
 					</DisplayMedium>
 					<Spacer y={8} />
-					<BodyMedium className='text-center lg:text-left'>
+					<BodyMedium className='text-center lg:text-left max-w-full'>
 						Hello hello! I am a full-stack developer making mobile
 						and web apps. I enjoy long walks on the mountaintops,
 						and swinging through the concrete jungle of New York
@@ -95,7 +95,7 @@ const ButtonColumn: FunctionComponent = () => {
 			<div className='flex lg:hidden flex-col justify-end items-center p-8'>
 				<div className='flex flex-row justify-between items-center'>
 					<Button
-						className='m-2 bg-background w-40 flex-1'
+						className='m-2 bg-background w-32 md:flex-1'
 						color='primary'
 						variant='flat'
 						endContent={<FaGithub />}
@@ -109,7 +109,7 @@ const ButtonColumn: FunctionComponent = () => {
 						<BodySmall>Github Page</BodySmall>
 					</Button>
 					<Button
-						className='m-2 bg-default-50 w-40 text-primary-500 flex-1'
+						className='m-2 bg-default-50 w-24 text-primary-500 md:flex-1'
 						color='primary'
 						variant='faded'
 						endContent={<FaRegCopy />}
@@ -119,12 +119,15 @@ const ButtonColumn: FunctionComponent = () => {
 							);
 						}}
 					>
-						<BodySmall>Copy Github URL</BodySmall>
+						<BodySmall className='hidden md:block'>
+							Copy Github URL
+						</BodySmall>
+						<BodySmall className='block md:hidden'>Copy</BodySmall>
 					</Button>
 				</div>
 				<div className='flex flex-row justify-between items-center'>
 					<Button
-						className='m-2 bg-background w-40 flex-1'
+						className='m-2 bg-background w-32 md:flex-1'
 						color='primary'
 						variant='flat'
 						endContent={<MdEmail />}
@@ -135,7 +138,7 @@ const ButtonColumn: FunctionComponent = () => {
 						<BodySmall>Email Me</BodySmall>
 					</Button>
 					<Button
-						className='m-2 bg-default-50 w-40 text-primary-500 flex-1'
+						className='m-2 bg-default-50 w-24 text-primary-500 md:flex-1'
 						color='primary'
 						variant='faded'
 						endContent={<FaRegCopy />}
@@ -145,12 +148,15 @@ const ButtonColumn: FunctionComponent = () => {
 							);
 						}}
 					>
-						<BodySmall>Copy Email</BodySmall>
+						<BodySmall className='hidden md:block'>
+							Copy Email
+						</BodySmall>
+						<BodySmall className='block md:hidden'>Copy</BodySmall>
 					</Button>
 				</div>
 				<div className='flex flex-row justify-between items-center'>
 					<Button
-						className='m-2 bg-background w-40 flex-1'
+						className='m-2 bg-background w-32 md:flex-1'
 						color='primary'
 						variant='flat'
 						endContent={<HiDevicePhoneMobile />}
@@ -161,7 +167,7 @@ const ButtonColumn: FunctionComponent = () => {
 						<BodySmall>Call Me</BodySmall>
 					</Button>
 					<Button
-						className='m-2 bg-default-50 w-40 text-primary-500 flex-1'
+						className='m-2 bg-default-50 w-24 text-primary-500 md:flex-1'
 						color='primary'
 						variant='faded'
 						endContent={<FaRegCopy />}
@@ -169,7 +175,10 @@ const ButtonColumn: FunctionComponent = () => {
 							navigator.clipboard.writeText('+17327203916');
 						}}
 					>
-						<BodySmall>Copy Number</BodySmall>
+						<BodySmall className='hidden md:block'>
+							Copy Number
+						</BodySmall>
+						<BodySmall className='block md:hidden'>Copy</BodySmall>
 					</Button>
 				</div>
 			</div>

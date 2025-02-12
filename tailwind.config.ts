@@ -8,8 +8,8 @@ const config = {
 	],
 	theme: {
 		screens: {
-			ss: '0',
-			// => @media (min-width: 0px) { ... }
+			ss: '200px',
+			// => @media (min-width: 200px) { ... }
 
 			xs: '480px',
 			// => @media (min-width: 480px) { ... }
