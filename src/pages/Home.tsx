@@ -25,7 +25,7 @@ const Home: React.FC = () => {
 					alt='Layered Waves'
 					className='w-full'
 				/>
-				<Container className='flex flex-col justify-start content-stretch px-10'>
+				<Container className='flex flex-col justify-start content-stretch px-2 md:px-10'>
 					<RolesCard />
 					<ProductsCard />
 					<TechnologiesCard />
@@ -40,9 +40,9 @@ export default Home;
 /* Simple Components for isolating home cards */
 function RolesCard() {
 	return (
-		<GlassCard className='my-16 w-full'>
-			<CardBody className='flex flex-row justify-around content-stretch py-8 px-12 text-left'>
-				<div className='flex flex-col justify-around items-start mx-4 h-full w-1/2'>
+		<GlassCard className='my-3 md:w-full'>
+			<CardBody className='flex flex-col-reverse lg:flex-row justify-around items-start text-left mx-4'>
+				<div className='hidden md:flex flex-col flex-wrap justify-around items-start  max-h-40 w-full lg:h-full'>
 					<GrowShowcase
 						items={[
 							'Mobile Developer',
@@ -54,11 +54,11 @@ function RolesCard() {
 						]}
 					/>
 				</div>
-				<div className='flex flex-col justify-around content-stretch mx-4 max-w-[50%]'>
-					<HeadlineMedium className=''>
+				<div className='flex flex-col justify-around content-stretch lg:max-w-[50%]'>
+					<HeadlineMedium className='text-center py-4'>
 						Roles and Developments
 					</HeadlineMedium>
-					<div className='indent-8'>
+					<div className='indent-8 py-4'>
 						<BodyMedium>
 							When working in this industry, you have to wear a
 							lot of hats. When I began in the programming
@@ -88,18 +88,18 @@ function RolesCard() {
 
 function ProductsCard() {
 	return (
-		<GlassCard className='my-16 w-full'>
-			<CardBody>
+		<GlassCard className='my-3 md:w-full'>
+			<CardBody className='mx-4'>
 				<div className='flex flex-col items-stretch'>
 					<HeadlineMedium className=' text-center'>
 						Products
 					</HeadlineMedium>
-					<div className='flex flex-row justify-stretch my-8'>
-						<div className='flex flex-1 flex-col items-stretch mx-8'>
+					<div className='flex flex-col md:flex-row justify-stretch my-8'>
+						<div className='flex flex-1 flex-col items-stretch'>
 							<img
 								src='https://inform.911inform.com/wp-content/uploads/2020/03/footer_logo-min.png'
 								alt='Product 4'
-								className='w-auto h-16 m-4 fit object-contain'
+								className='w-auto h-12 md:h-16 m-4 fit object-contain'
 							/>
 							<BodyMedium className='my-2'>
 								911inform is an Emergency Management Solution
@@ -117,11 +117,15 @@ function ProductsCard() {
 								app had been completed.
 							</BodyMedium>
 						</div>
-						<div className='flex flex-1 flex-col items-stretch mx-8'>
+						<Spacer
+							y={12}
+							className='md:hidden'
+						/>
+						<div className='flex flex-1 flex-col items-stretch'>
 							<img
 								src={myRutgers}
 								alt='myRutgers shield logo'
-								className='w-auto h-16 m-4 fit object-contain'
+								className='w-auto h-12 md:h-16 m-4 fit object-contain'
 							/>
 
 							<BodyMedium className='my-2'>
@@ -149,8 +153,8 @@ function ProductsCard() {
 
 function TechnologiesCard() {
 	return (
-		<GlassCard className='my-16 w-full'>
-			<CardBody>
+		<GlassCard className='my-3 md:w-full'>
+			<CardBody className='mx-4'>
 				<div className='flex flex-col items-stretch'>
 					<HeadlineMedium className='text-center'>
 						Technologies
@@ -164,16 +168,16 @@ function TechnologiesCard() {
 							of my absolute favorites.
 						</BodyMedium>
 					</div>
-					<Spacer y={12} />
-					<div className='flex flex-row justify-between content-center my-8'>
-						<div className='w-1/3 flex flex-col justify-center content-center'>
+					<Spacer className='h-4 md:h-12' />
+					<div className='flex flex-col md:flex-row justify-between content-center my-5 md:my-8'>
+						<div className='my-6 md:w-1/3 flex flex-col justify-center content-center'>
 							<img
 								src='https://storage.googleapis.com/cms-storage-bucket/4fd5520fe28ebf839174.svg'
 								alt='Flutter Logo'
 								className='h-full w-auto max-h-24 max-w-24 mx-auto'
 							/>
 						</div>
-						<div className='w-2/3 flex flex-row items-center'>
+						<div className='md:w-2/3 flex flex-row items-center'>
 							<BodyMedium>
 								Flutter is the pinnacle of all the frontend
 								frameworks I have tried. It's constraint system
@@ -186,15 +190,15 @@ function TechnologiesCard() {
 							</BodyMedium>
 						</div>
 					</div>
-					<div className='flex flex-row justify-between content-center my-8'>
-						<div className='w-1/3 flex flex-col justify-center content-center'>
+					<div className='flex flex-col md:flex-row justify-between content-center my-5 md:my-8'>
+						<div className='my-6 md:w-1/3 flex flex-col justify-center content-center'>
 							<img
 								src={firebase}
 								alt='Firebase Logo'
 								className='h-full w-auto max-h-24 max-w-24 mx-auto'
 							/>
 						</div>
-						<div className='w-2/3 flex flex-row items-center'>
+						<div className='md:w-2/3 flex flex-row items-center'>
 							<BodyMedium>
 								Firebase is a the first cloud provider that
 								follows the Google learning trend. Easy to use
@@ -208,15 +212,15 @@ function TechnologiesCard() {
 							</BodyMedium>
 						</div>
 					</div>
-					<div className='flex flex-row justify-between content-center my-8'>
-						<div className='w-1/3 flex flex-col justify-center content-center'>
+					<div className='flex flex-col md:flex-row justify-between content-center my-5 md:my-8'>
+						<div className='my-6 md:w-1/3 flex flex-col justify-center content-center'>
 							<img
 								src={aws}
 								alt='AWS Logo'
 								className='h-full w-auto max-h-24 max-w-24 mx-auto'
 							/>
 						</div>
-						<div className='w-2/3 flex flex-row items-center'>
+						<div className='md:w-2/3 flex flex-row items-center'>
 							<BodyMedium>
 								AWS is the standard for a reason. From Cloud
 								Functions to database hosting to app depoyment
