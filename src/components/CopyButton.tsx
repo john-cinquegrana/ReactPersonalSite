@@ -61,7 +61,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({
 				>
 					<PopoverTrigger>
 						<div
-							className='flex flex-row justify-start items-center'
+							className='flex flex-row justify-start items-center hover:cursor-pointer'
 							onClick={() => onClickPress()}
 						>
 							<FaRegCopy />
