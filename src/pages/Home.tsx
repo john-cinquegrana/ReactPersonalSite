@@ -40,7 +40,7 @@ export default Home;
 /* Simple Components for isolating home cards */
 function RolesCard() {
 	return (
-		<GlassCard className='my-3 md:w-full'>
+		<GlassCard className='my-3 md:w-full items-center'>
 			<CardBody className='flex flex-col-reverse lg:flex-row justify-around items-start text-left mx-4'>
 				<div className='hidden md:flex flex-col flex-wrap justify-around items-start  max-h-40 w-full lg:h-full'>
 					<GrowShowcase
@@ -88,7 +88,7 @@ function RolesCard() {
 
 function ProductsCard() {
 	return (
-		<GlassCard className='my-3 md:w-full'>
+		<GlassCard className='my-3 md:w-full items-center'>
 			<CardBody className='mx-4'>
 				<div className='flex flex-col items-stretch'>
 					<HeadlineMedium className=' text-center'>
@@ -153,7 +153,7 @@ function ProductsCard() {
 
 function TechnologiesCard() {
 	return (
-		<GlassCard className='my-3 md:w-full'>
+		<GlassCard className='my-3 md:w-full items-center'>
 			<CardBody className='mx-4'>
 				<div className='flex flex-col items-stretch'>
 					<HeadlineMedium className='text-center'>
