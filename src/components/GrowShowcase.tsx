@@ -38,10 +38,10 @@ const GrowShowcase: React.FC<GrowShowcaseProps> = ({ items }) => {
 			{items.map((item, index) => (
 				<div
 					key={index}
-					className='ss:my-1 md:my-2 lg:my-4 xl:my-6 h-7 w-full'
+					className='ss:my-1 md:my-2 lg:my-4 xl:my-6 h-7 w-1/2 lg:w-full'
 				>
 					<motion.p
-						className='my-4 max-w-[50%] left-0 ss:text-xs sm:text-xs md:text-[0.8rem] lg:text-lg xl:text-2xl 2xl:text-3xl line-clamp-1'
+						className='my-4 w-2/3 left-0 ss:text-xs sm:text-xs md:text-xl lg:text-lg xl:text-2xl 2xl:text-3xl line-clamp-1'
 						animate={{
 							scale: selectedIndex === index ? 1.5 : 1,
 							// fontSize:
